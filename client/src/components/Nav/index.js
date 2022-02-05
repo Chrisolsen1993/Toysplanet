@@ -37,8 +37,7 @@ function Nav() {
       <h1>
         <Link to="/">
           {/* <span role="img" aria-label="shopping bag"> 🧸</span> */}
-          <img  id="logoplanet" src="images/logo.planet.png" ></img>
-        
+          <span role='img'><img  id="logoplanet" src="images/logo.planet.png" width={150}/></span>
         </Link>
       </h1>
 
