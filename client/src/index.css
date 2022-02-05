@@ -1,6 +1,6 @@
 :root {
   --primary: #233e37;
-  --secondary: #47f3ea;
+  --secondary: #20639b;
   --tertiary: #b12704;
   --light: #fafafa;
   --dark: #27322cea;
@@ -26,6 +26,7 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
+  background-color: rgb(255, 228, 196);
 }
 
 h1,
@@ -101,6 +102,7 @@ button {
   outline: none;
   cursor: pointer;
   margin: 1px 1px;
+  color: white;
   background-color: var(--secondary);
 }
 
@@ -114,6 +116,7 @@ button[disabled] {
 }
 
 img {
+  border-radius: 10px;
   max-width: 100%;
 }
 
@@ -200,6 +203,7 @@ input:focus {
 }
 
 .card {
+  /* border-radius: 5px; */
   width: 25%;
   text-align: center;
 }
@@ -211,7 +215,7 @@ h1 {
   background-repeat: repeat-y;
 }
 header {
-  background-color: cornflowerblue;
+  background-color: #20639b;
   background-repeat: no-repeat;
 }
 #logoplanet {
