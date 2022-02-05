@@ -1,9 +1,9 @@
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
-  --tertiary: #B12704;
+  --primary: #233e37;
+  --secondary: #47f3ea;
+  --tertiary: #b12704;
   --light: #fafafa;
-  --dark: #272f32;
+  --dark: #27322cea;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -80,7 +80,12 @@ a:hover {
 }
 
 header {
+  background-color: blue;
   background: var(--primary);
+  /* background-image: src=
+    'https://www.toyplanet.com/on/demandware.static/Sites-ToyPlanet-Site/-/default/dw6c1d9e6d/images/logo.png'; */
+  /* background-image: url('https://www.toyplanet.com/on/demandware.static/Sites-ToyPlanet-Site/-/default/dw6c1d9e6d/images/logo.png');
+  background-repeat: repeat-y; */
 }
 
 header a {
@@ -91,28 +96,28 @@ button {
   font-size: 1rem;
   text-decoration: none;
   padding: 0.25rem 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 1px;
+  margin: 1px 1px;
   background-color: var(--secondary);
 }
 
 button:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 button[disabled] {
   cursor: default;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 img {
   max-width: 100%;
 }
 
-span[role="img"] {
+span[role='img'] {
   cursor: default;
 }
 
@@ -131,7 +136,7 @@ input {
 
 input:focus {
   border: 1px solid var(--secondary);
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -202,7 +207,16 @@ input:focus {
 .error-text {
   color: var(--error);
 }
-
+h1 {
+  background-repeat: repeat-y;
+}
+header {
+  background-color: cornflowerblue;
+  background-repeat: no-repeat;
+}
+#logoplanet {
+  background-repeat: no-repeat;
+}
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
