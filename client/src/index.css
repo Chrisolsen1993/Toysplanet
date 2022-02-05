@@ -84,8 +84,8 @@ header {
   background: var(--primary);
   /* background-image: src=
     'https://www.toyplanet.com/on/demandware.static/Sites-ToyPlanet-Site/-/default/dw6c1d9e6d/images/logo.png'; */
-  background-image: url('https://www.toyplanet.com/on/demandware.static/Sites-ToyPlanet-Site/-/default/dw6c1d9e6d/images/logo.png');
-  background-repeat: repeat-y;
+  /* background-image: url('https://www.toyplanet.com/on/demandware.static/Sites-ToyPlanet-Site/-/default/dw6c1d9e6d/images/logo.png');
+  background-repeat: repeat-y; */
 }
 
 header a {
@@ -100,7 +100,7 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 1px;
+  margin: 1px 1px;
   background-color: var(--secondary);
 }
 
