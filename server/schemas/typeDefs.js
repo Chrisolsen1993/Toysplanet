@@ -38,6 +38,15 @@ const typeDefs = gql`
     token: ID
     user: User
   }
+  type Message {
+    conversationId: String
+    sender: String
+    text: String
+  }
+  type Conversation{
+    _id: ID
+    members:[User]
+  }
 
   type Query {
     categories: [Category]
@@ -46,6 +55,8 @@ const typeDefs = gql`
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
+    userConversation(members: User): Conversation
+    getMessages(conversationId: String!):Message
   }
 
   type Mutation {
@@ -54,6 +65,8 @@ const typeDefs = gql`
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
+    addConversation(members:[User]!): Conversation
+    createMessage(conversationId: String!, sender: String!, text: String!): Mesage
   }
 `;
 
