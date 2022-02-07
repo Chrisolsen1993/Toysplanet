@@ -55,7 +55,7 @@ const typeDefs = gql`
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
-    userConversation(members: User): Conversation
+    userConversation: Conversation
     getMessages(conversationId: String!):Message
   }
 
@@ -65,8 +65,8 @@ const typeDefs = gql`
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
-    addConversation(members:[User]!): Conversation
-    createMessage(conversationId: String!, sender: String!, text: String!): Mesage
+    addConversation(members:[ID]!): Conversation
+    createMessage(conversationId: String!, sender: String!, text: String!): Message
   }
 `;
 

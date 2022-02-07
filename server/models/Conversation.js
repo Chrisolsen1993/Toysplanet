@@ -4,12 +4,15 @@ const { Schema } = mongoose;
 
 const conversationSchema = new Schema(
   {
-    members: {
-      type: Array,
-    },
+    members: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+      },
+    ],
   },
   { timestamps: true }
 );
 
-const Conversation = mongoose.model('Message', conversationSchema);
+const Conversation = mongoose.model('Conversation', conversationSchema);
 module.exports = Conversation;
