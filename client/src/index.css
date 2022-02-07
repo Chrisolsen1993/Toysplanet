@@ -71,6 +71,7 @@ p {
 }
 
 a {
+  float: right;
   color: var(--tertiary);
   text-decoration: none;
   font-weight: bold;
@@ -81,6 +82,7 @@ a:hover {
 }
 
 header {
+  text-align: right;
   background-color: blue;
   background: var(--primary);
   /* background-image: src=
@@ -92,7 +94,6 @@ header {
 header a {
   color: var(--light);
 }
-
 button {
   font-size: 1rem;
   text-decoration: none;
@@ -150,8 +151,13 @@ input:focus {
 }
 
 .flex-row {
+  
   display: flex;
   flex-wrap: wrap;
+}
+
+.nav {
+  list-style-type: none;
 }
 
 .space-between {
@@ -163,8 +169,18 @@ input:focus {
 }
 
 .mx-1 {
+  float: right;
+  text-align: right;
+  margin-top: 30px;
+  float: right;
+  color: black;
   margin-right: var(--spacing-one);
   margin-left: var(--spacing-one);
+}
+
+.mx-1:hover {
+  background-color: rgba(255, 228, 196, 0.979);
+  color: black;
 }
 
 .mx-2 {
@@ -183,6 +199,7 @@ input:focus {
 }
 
 .px-1 {
+ 
   padding-right: var(--spacing-one);
   padding-left: var(--spacing-one);
 }
