@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category } = require('../models');
+const { User, Product, Category, Message, Conversation } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -87,6 +87,22 @@ const resolvers = {
       });
 
       return { session: session.id };
+    },
+    userConversation: async(parent, args, context)=>{
+      if (context.user){
+        const conversation =await Conversation.find({
+          members: { $inc: context.user._id}
+        })
+        return conversation
+      }
+
+    },
+    getMessages: async(parent,args)=>{
+      const messages= await Message.find({
+        conversationId: args.conversationId
+      })
+      return messages
+
     }
   },
   Mutation: {
@@ -136,6 +152,18 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addConversation: async (parent,args)=>{
+      const newConversation = new Conversation({
+        members:[args.senderId, args.receiverId]
+      });
+      const savedConversation = await newConversation.save()
+       return savedConversation
+
+    },
+    createMessage: async(parent,args)=>{
+    const newMessage = await Message.create(args)
+        return newMessage
     }
   }
 };
