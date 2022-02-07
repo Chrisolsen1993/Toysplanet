@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 // change the setup
 const { Schema } = mongoose;
+const connection = mongoose.createConnection()
 
 const messageSchema = new Schema(
   {
@@ -17,5 +18,6 @@ const messageSchema = new Schema(
   { timestamps: true }
 );
 
-const Message= mongoose.model('Message', messageSchema);
+const Message= connection.model('Message', messageSchema);
+
 module.exports = Message;

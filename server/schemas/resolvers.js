@@ -153,12 +153,15 @@ const resolvers = {
 
       return { token, user };
     },
-    addConversation: async (parent,args)=>{
-      const newConversation = new Conversation({
-        members:[args.senderId, args.receiverId]
-      });
-      const savedConversation = await newConversation.save()
-       return savedConversation
+    addConversation: async (parent,args, context)=>{
+      if (context.user){
+      const newConversation =  await Conversation.create({
+        members:[context.user._id]
+
+      })
+      return newConversation
+      ;}
+      
 
     },
     createMessage: async(parent,args)=>{
