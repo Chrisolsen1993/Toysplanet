@@ -50,6 +50,7 @@ function Nav() {
 
   return (
     <header className="linkContainer">
+
       <h1>
         <Link to="/">
           {/* <span role="img" aria-label="shopping bag"> 🧸</span> */}
