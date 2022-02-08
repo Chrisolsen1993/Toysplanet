@@ -1,4 +1,5 @@
 import React from 'react'
+import Cart from "../Cart/index";
 import Auth from '../../utils/auth'
 import { Link } from 'react-router-dom'
 
@@ -18,6 +19,9 @@ function Nav() {
             <a href="/" onClick={() => Auth.logout()}>
               Logout
             </a>
+          </li>
+          <li className="mx-1">
+            <Cart />
           </li>
         </ul>
       )
@@ -44,8 +48,8 @@ function Nav() {
     }
   }
 
-  return (
-    <header className="linkcontainer px-1">
+  return 
+    <header className="linkContainer px-1">
       <h1>
         <Link to="/">
           {/* <span role="img" aria-label="shopping bag"> 🧸</span> */}
