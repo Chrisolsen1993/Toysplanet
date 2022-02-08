@@ -26,7 +26,7 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
-  background-color: rgb(255, 228, 196);
+  background-color: #F7EDE2;
 }
 
 h1,
@@ -151,13 +151,13 @@ input:focus {
 }
 
 .flex-row {
-  
   display: flex;
   flex-wrap: wrap;
 }
 
 .nav {
   list-style-type: none;
+  margin-right: 50px;
 }
 
 .space-between {
@@ -244,8 +244,18 @@ header {
   }
 }
 
+.linkContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.messengerContainer {
+  display: flex;
+}
+
 .messenger {
   height: calc(100vh - 70px);
+  background-color: white;
 }
 
 .chatMenu {
@@ -255,12 +265,14 @@ header {
 .chatMenuInput {
   width: 90%;
   padding: 10px 0;
+  margin-bottom: 20px;
   border: none;
   border-bottom: 1px solid gray;
 }
 
 .chatBox {
   flex: 5.5;
+  background-color: lightgray;
 }
 
 .chatBoxWrapper {
@@ -308,3 +320,4 @@ header {
   padding: 10px;
   height: 100%;
 }
+

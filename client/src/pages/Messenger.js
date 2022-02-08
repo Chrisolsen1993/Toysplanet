@@ -1,11 +1,10 @@
-import Nav from "../components/Nav/index";
 import Conversation from "../components/Conversation/index";
 import Message from "../components/Message/index";
-import ChatOnline from "../components/ChatOnline";
 
 export default function Messenger() {
   return (
     <>
+    <div className="messengerContainer">
       <div className="messenger">
           <div className="chatMenu">
               <div className="chatMenuWrapper">
@@ -31,11 +30,7 @@ export default function Messenger() {
               </div>
           </div>
       </div>
-      <div className="chatOnline">
-          <div className="chatOnlineWrapper">
-              <ChatOnline />
-          </div>
-      </div>
-      </>
+    </div>
+    </>
   )
 }
