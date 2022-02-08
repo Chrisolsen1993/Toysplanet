@@ -7,20 +7,15 @@
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
+  opacity: 0, 5;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: cover;
+  width: 100%;
 }
 
 * {
   box-sizing: border-box;
-}
-
-html,
-body {
-  opacity: 0, 5;
-  background-image: url('https://cdn4.vectorstock.com/i/1000x1000/49/28/spring-natural-background-with-blue-sky-clouds-vector-3844928.jpg');
-  min-height: 100%;
-  background-repeat: no-repeat;
-  position: cover;
-  background-size: 100%;
 }
 
 body {
@@ -31,9 +26,6 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
-
-  background-color: #F7EDE2;
-
 }
 
 h1,
@@ -44,7 +36,7 @@ h5,
 h6 {
   font-family: 'Rubik', sans-serif;
   font-weight: 500;
-  margin: 5px 0;
+  margin: 0px 0;
   line-height: 1.25;
 }
 
@@ -89,13 +81,7 @@ a:hover {
 }
 
 header {
-  text-align: right;
-  background-color: blue;
   background: var(--primary);
-  /* background-image: src=
-    'https://www.toyplanet.com/on/demandware.static/Sites-ToyPlanet-Site/-/default/dw6c1d9e6d/images/logo.png'; */
-  /* background-image: url('https://www.toyplanet.com/on/demandware.static/Sites-ToyPlanet-Site/-/default/dw6c1d9e6d/images/logo.png');
-  background-repeat: repeat-y; */
 }
 
 header a {
@@ -152,15 +138,13 @@ input:focus {
 }
 
 .container {
-  width: 85%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  background-image: url('https://cdn4.vectorstock.com/i/1000x1000/49/28/spring-natural-background-with-blue-sky-clouds-vector-3844928.jpg');
+  background-attachment:fixed;
+  width: 100%;
 }
 .linkcontainer {
   display: flex;
-  justify-content: space-between;
-  margin-right: 50px;
+  justify-content: space-evenly;
 }
 .flex-row {
   display: flex;
@@ -169,7 +153,10 @@ input:focus {
 
 .nav {
   list-style-type: none;
-  margin-right: 50px;
+}
+
+.navLinks {
+  margin-left: 40%;
 }
 
 .space-between {
@@ -180,10 +167,6 @@ input:focus {
   justify-content: flex-end;
 }
 
-.navLink {
-  display: flex;
-  justify-content: flex-end;
-}
 .mx-1 {
   display: flex;
   justify-content: flex-end;
@@ -236,8 +219,15 @@ input:focus {
 
 .card {
   /* border-radius: 5px; */
-  width: 25%;
+  width: 23%;
   text-align: center;
+}
+
+.cardBox {
+  background-color: white;
+  margin: 1%;
+  border-radius: 10%;
+  box-shadow: 5px 10px 8px #888888;
 }
 
 .error-text {
@@ -261,7 +251,7 @@ header {
 
 .linkContainer {
   display: flex;
-  justify-content: space-between;
+  padding: 5px 5px;
 }
 
 .messengerContainer {
