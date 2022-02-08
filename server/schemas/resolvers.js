@@ -167,7 +167,7 @@ const resolvers = {
       
 
     },
-    createMessage: async(parent,args)=>{
+    createMessage: async(parent,args,context)=>{
     const newMessage = await Message.create(args)
         return newMessage
     }

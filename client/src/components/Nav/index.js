@@ -48,7 +48,7 @@ function Nav() {
     }
   }
 
-  return 
+  return (
     <header className="linkContainer px-1">
       <h1>
         <Link to="/">
