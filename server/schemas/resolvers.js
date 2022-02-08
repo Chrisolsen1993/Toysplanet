@@ -91,8 +91,9 @@ const resolvers = {
     userConversation: async(parent, args, context)=>{
       if (context.user){
         const conversation =await Conversation.find({
-          members: { $inc: context.user._id}
+          members: { $in: [context.user._id]}
         })
+        console.log(context.user._id)
         return conversation
       }
 
@@ -159,6 +160,7 @@ const resolvers = {
       const newConversation =  await Conversation.create({
         members:[context.user._id, args.id ]
       } )
+  
       console.log(args)
       return newConversation
       ;}

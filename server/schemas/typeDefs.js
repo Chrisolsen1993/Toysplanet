@@ -55,7 +55,7 @@ const typeDefs = gql`
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
-    userConversation: Conversation
+    userConversation(member:ID!): [Conversation]
     getMessages(conversationId: String!):Message
   }
 
