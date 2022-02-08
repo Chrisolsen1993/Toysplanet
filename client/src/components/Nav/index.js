@@ -23,7 +23,12 @@ function Nav() {
       )
     } else {
       return (
-        <ul className="flex-row nav">
+        <ul className=" navlinks">
+          <li className="mx-1">
+            <Link className="navLink" to="/">
+              Homepage
+            </Link>
+          </li>
           <li className="mx-1">
             <Link className="navLink" to="/signup">
               Signup
@@ -40,7 +45,7 @@ function Nav() {
   }
 
   return (
-    <header className="flex-row px-1">
+    <header className="linkcontainer px-1">
       <h1>
         <Link to="/">
           {/* <span role="img" aria-label="shopping bag"> 🧸</span> */}

@@ -15,7 +15,12 @@
 
 html,
 body {
+  opacity: 0, 5;
+  background-image: url('https://cdn4.vectorstock.com/i/1000x1000/49/28/spring-natural-background-with-blue-sky-clouds-vector-3844928.jpg');
   min-height: 100%;
+  background-repeat: no-repeat;
+  position: cover;
+  background-size: 100%;
 }
 
 body {
@@ -26,7 +31,6 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
-  background-color: rgb(255, 228, 196);
 }
 
 h1,
@@ -117,8 +121,9 @@ button[disabled] {
 }
 
 img {
-  border-radius: 10px;
+  border-radius: 20px;
   max-width: 100%;
+  height: 50%;
 }
 
 span[role='img'] {
@@ -149,15 +154,19 @@ input:focus {
   margin-left: auto;
   margin-right: auto;
 }
-
+.linkcontainer {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 50px;
+}
 .flex-row {
-  
   display: flex;
   flex-wrap: wrap;
 }
 
 .nav {
   list-style-type: none;
+  margin-right: 50px;
 }
 
 .space-between {
@@ -168,9 +177,13 @@ input:focus {
   justify-content: flex-end;
 }
 
+.navLink {
+  display: flex;
+  justify-content: flex-end;
+}
 .mx-1 {
-  float: right;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
   margin-top: 30px;
   float: right;
   color: black;
@@ -199,7 +212,6 @@ input:focus {
 }
 
 .px-1 {
- 
   padding-right: var(--spacing-one);
   padding-left: var(--spacing-one);
 }
