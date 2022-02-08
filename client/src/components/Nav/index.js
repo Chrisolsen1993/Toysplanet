@@ -27,19 +27,19 @@ function Nav() {
       )
     } else {
       return (
-        <ul className=" navlinks">
+        <ul>
           <li className="mx-1">
-            <Link className="navLink" to="/">
+            <Link to="/">
               Homepage
             </Link>
           </li>
           <li className="mx-1">
-            <Link className="navLink" to="/signup">
+            <Link to="/signup">
               Signup
             </Link>
           </li>
           <li className="mx-1">
-            <Link className="navLink" to="/login">
+            <Link to="/login">
               Login
             </Link>
           </li>
@@ -49,7 +49,8 @@ function Nav() {
   }
 
   return (
-    <header className="linkContainer px-1">
+    <header className="linkContainer">
+
       <h1>
         <Link to="/">
           {/* <span role="img" aria-label="shopping bag"> 🧸</span> */}
@@ -59,7 +60,7 @@ function Nav() {
         </Link>
       </h1>
 
-      <nav>{showNavigation()}</nav>
+      <nav className='navLinks'>{showNavigation()}</nav>
     </header>
   )
 }
