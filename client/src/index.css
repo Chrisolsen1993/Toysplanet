@@ -137,26 +137,9 @@ input:focus {
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 
-.container {
-  background-image: url('https://cdn4.vectorstock.com/i/1000x1000/49/28/spring-natural-background-with-blue-sky-clouds-vector-3844928.jpg');
-  background-attachment:fixed;
-  width: 100%;
-}
-.linkcontainer {
-  display: flex;
-  justify-content: space-evenly;
-}
 .flex-row {
   display: flex;
   flex-wrap: wrap;
-}
-
-.nav {
-  list-style-type: none;
-}
-
-.navLinks {
-  margin-left: 40%;
 }
 
 .space-between {
@@ -217,41 +200,20 @@ input:focus {
   padding-bottom: var(--spacing-two);
 }
 
-.card {
-  /* border-radius: 5px; */
-  width: 23%;
-  text-align: center;
-}
-
-.cardBox {
-  background-color: white;
-  margin: 1%;
-  border-radius: 10%;
-  box-shadow: 5px 10px 8px #888888;
-}
-
 .error-text {
   color: var(--error);
 }
+
 h1 {
   background-repeat: repeat-y;
 }
-header {
-  background-color: #20639b;
-  background-repeat: no-repeat;
-}
-#logoplanet {
-  background-repeat: no-repeat;
-}
-@media screen and (max-width: 768px) {
-  .card {
-    width: 100%;
-  }
-}
 
-.linkContainer {
+.container {
   display: flex;
-  padding: 5px 5px;
+  justify-content: center;
+  background-image: url('https://cdn4.vectorstock.com/i/1000x1000/49/28/spring-natural-background-with-blue-sky-clouds-vector-3844928.jpg');
+  background-attachment:fixed;
+  width: 100%;
 }
 
 .messengerContainer {
@@ -315,13 +277,8 @@ header {
   color: white;
 }
 
-.chatOnline {
-  flex: 3;
-}
-
 .chatMenuWrapper,
-.chatBoxWrapper,
-.chatOnlineWrapper {
+.chatBoxWrapper {
   padding: 10px;
   height: 100%;
 }
