@@ -1,62 +1,72 @@
-import React, { useEffect } from 'react';
-import { useQuery } from '@apollo/client';
-import { useStoreContext } from '../../utils/GlobalState';
-import {
-  UPDATE_CATEGORIES,
-  UPDATE_CURRENT_CATEGORY,
-} from '../../utils/actions';
-import { QUERY_CATEGORIES } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
-import './style.css';
+import React, { useEffect } from 'react'
+import { useQuery } from '@apollo/client'
+import { useStoreContext } from '../../utils/GlobalState'
+import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions'
+import { QUERY_CATEGORIES } from '../../utils/queries'
+import { idbPromise } from '../../utils/helpers'
+import './style.css'
 
 function CategoryMenu() {
-  const [state, dispatch] = useStoreContext();
+  const [state, dispatch] = useStoreContext()
 
-  const { categories } = state;
+  const { categories } = state
 
-  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
+  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES)
 
   useEffect(() => {
     if (categoryData) {
       dispatch({
         type: UPDATE_CATEGORIES,
         categories: categoryData.categories,
-      });
+      })
       categoryData.categories.forEach((category) => {
-        idbPromise('categories', 'put', category);
-      });
+        idbPromise('categories', 'put', category)
+      })
     } else if (!loading) {
       idbPromise('categories', 'get').then((categories) => {
         dispatch({
           type: UPDATE_CATEGORIES,
           categories: categories,
-        });
-      });
+        })
+      })
     }
-  }, [categoryData, loading, dispatch]);
+  }, [categoryData, loading, dispatch])
 
   const handleClick = (id) => {
     dispatch({
       type: UPDATE_CURRENT_CATEGORY,
       currentCategory: id,
-    });
-  };
+    })
+  }
 
   return (
-    <div className='categoryNav'>
-      <h2>Choose a Category:</h2>
-      {categories.map((item) => (
-        <button
-          key={item._id}
-          onClick={() => {
-            handleClick(item._id);
-          }}
-        >
-          {item.name}
+    <div className="categoryNav">
+      {/* <button class="dropbtn">
+        {' '}
+        <i class="fa fa-caret-down">Choose a Category</i>
+        {/* Choose a Category */}
+      {/* <i class="fa fa-caret-down"></i>  */}
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa fa-caret-down">Choose Category</i>
         </button>
-      ))}
+        <div class="dropdown-content">
+          <div class="dropdown-content">
+            {categories.map((item) => (
+              <button
+                key={item._id}
+                onClick={() => {
+                  handleClick(item._id)
+                }}
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
-export default CategoryMenu;
+export default CategoryMenu

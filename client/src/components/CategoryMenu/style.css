@@ -1,3 +1,54 @@
 .categoryNav {
-    margin: 0 10px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 18px 18px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content {
+  position: absolute;
+
+  min-width: 160px;
+
+  z-index: 1;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropbtn {
+  padding: 12px 14px;
+  background-color: #20639b;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover:after:after {
+  display: none;
+  visibility: hidden;
+}
+/* .dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+} */
+
+/* .navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: red;
+} */
+.dropdown {
+  float: left;
+  overflow: hidden;
 }
