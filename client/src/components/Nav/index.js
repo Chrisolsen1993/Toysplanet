@@ -2,45 +2,46 @@ import React from 'react'
 import Cart from "../Cart/index";
 import Auth from '../../utils/auth'
 import { Link } from 'react-router-dom'
+import './style.css';
 
 function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className="flex-row nav">
-          <li className="mx-1">
-            <Link to="/orderHistory">Order History</Link>
+        <ul className="navLinks">
+          <li className='navImg'>
+            <Link to="/orderHistory"><img src='images/order-delivery.png' alt='orderhistory'/></Link>
           </li>
-          <li className="mx-1">
-            <Link to="/messenger">Messenger</Link>
+          <li>
+            <Link to="/messenger"><img src='images/message.png' alt='messages' /></Link>
           </li>
-          <li className="mx-1">
+          <li className='navImg'>
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
-              Logout
+              <img src='images/logout.png' alt='logout' />
             </a>
           </li>
-          <li className="mx-1">
+          <li className='navImg'>
             <Cart />
           </li>
         </ul>
       )
     } else {
       return (
-        <ul>
-          <li className="mx-1">
+        <ul className='navLinks'>
+          <li className='navImg'>
             <Link to="/">
-              Homepage
+              <img src='images/home.png' alt='home'/>
             </Link>
           </li>
-          <li className="mx-1">
+          <li className='navImg'>
             <Link to="/signup">
-              Signup
+            <img src='images/signup.png' alt='signup' />
             </Link>
-          </li>
-          <li className="mx-1">
+          </li> 
+          <li className='navImg'>
             <Link to="/login">
-              Login
+              <img src='images/login.png' alt='login'/>
             </Link>
           </li>
         </ul>
@@ -60,7 +61,7 @@ function Nav() {
         </Link>
       </h1>
 
-      <nav className='navLinks'>{showNavigation()}</nav>
+      <nav>{showNavigation()}</nav>
     </header>
   )
 }
