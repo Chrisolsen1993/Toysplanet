@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type Category {
@@ -43,9 +43,9 @@ const typeDefs = gql`
     sender: String
     text: String
   }
-  type Conversation{
+  type Conversation {
     _id: ID
-    members:[User]
+    members: [User]
   }
 
   type Query {
@@ -55,19 +55,39 @@ const typeDefs = gql`
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
-    userConversation(member:ID!): [Conversation]
-    getMessages(conversationId: String!):Message
+    userConversation(member: ID!): [Conversation]
+    getMessages(conversationId: String!): Message
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    addUser(
+      firstName: String!
+      lastName: String!
+      email: String!
+      password: String!
+    ): Auth
     addOrder(products: [ID]!): Order
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
+    updateUser(
+      firstName: String
+      lastName: String
+      email: String
+      password: String
+    ): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
-    addConversation(id:ID!): Conversation
-    createMessage(conversationId: String!, sender: String!, text: String!): Message
-    addProduct(name: String!, description: String, image: String, price: Float, category: String): Product
+    addConversation(id: ID!): Conversation
+    createMessage(
+      conversationId: String!
+      sender: String!
+      text: String!
+    ): Message
+    addProduct(
+      name: String!
+      description: String
+      image: String
+      price: Float
+      category: String
+    ): Product
   }
 `;
 

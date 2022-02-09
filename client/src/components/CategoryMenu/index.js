@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { useQuery } from '@apollo/client';
-import { useStoreContext } from '../../utils/GlobalState';
+import React, { useEffect } from "react";
+import { useQuery } from "@apollo/client";
+import { useStoreContext } from "../../utils/GlobalState";
 import {
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
-} from '../../utils/actions';
-import { QUERY_CATEGORIES } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
+} from "../../utils/actions";
+import { QUERY_CATEGORIES } from "../../utils/queries";
+import { idbPromise } from "../../utils/helpers";
 
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
@@ -22,10 +22,10 @@ function CategoryMenu() {
         categories: categoryData.categories,
       });
       categoryData.categories.forEach((category) => {
-        idbPromise('categories', 'put', category);
+        idbPromise("categories", "put", category);
       });
     } else if (!loading) {
-      idbPromise('categories', 'get').then((categories) => {
+      idbPromise("categories", "get").then((categories) => {
         dispatch({
           type: UPDATE_CATEGORIES,
           categories: categories,

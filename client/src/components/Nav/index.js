@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import Cart from "../Cart/index";
-import Auth from '../../utils/auth'
-import { Link } from 'react-router-dom'
+import Auth from "../../utils/auth";
+import { Link } from "react-router-dom";
 
 function Nav() {
   function showNavigation() {
@@ -24,7 +24,7 @@ function Nav() {
             <Cart />
           </li>
         </ul>
-      )
+      );
     } else {
       return (
         <ul className=" navlinks">
@@ -44,7 +44,7 @@ function Nav() {
             </Link>
           </li>
         </ul>
-      )
+      );
     }
   }
 
@@ -61,7 +61,7 @@ function Nav() {
 
       <nav>{showNavigation()}</nav>
     </header>
-  )
+  );
 }
 
-export default Nav
+export default Nav;
