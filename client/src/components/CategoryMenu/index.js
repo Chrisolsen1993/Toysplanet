@@ -53,10 +53,10 @@ function CategoryMenu() {
           <span>Choose Category</span>
           <FontAwesomeIcon icon={faCaretDown} />
         </button>
-        <div className="dropdown-content">
+        <div>
           <div className="dropdown-content">
             {categories.map((item) => (
-              <button
+              <button className='dropdownBtn'
                 key={item._id}
                 onClick={() => {
                   handleClick(item._id)

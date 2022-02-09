@@ -1,33 +1,40 @@
-header {
+footer {
     background-color: #20639b;
     background-repeat: no-repeat;
 }
 
 #logoplanet {
-background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    padding-right: 5%;
 }
 
-.nav {
+.footer {
     list-style-type: none;
 }
   
-.navLinks {
+.footerLinks {
     display: flex;
     flex-direction: row;
 }
 
-.linkContainer {
+.footerContainer {
     display: flex;
+    justify-content: flex-end;
     padding: 5px 5px;
-    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.navImg {
+.footerImg {
     list-style-type: none;
     max-width: 80px;
-    padding: 0 20px;
+    padding: 20px;
+}
+
+.footerImg a img {
+    background-color: white;
+    padding: 5px;
+    border-radius: 10%;
 }
 
 @media screen and (max-width: 765px) {
@@ -40,17 +47,16 @@ background-repeat: no-repeat;
     background-repeat: no-repeat;
     }
     
-    .nav {
+    .footer {
         list-style-type: none;
     }
       
-    /* .navLinks {
+    /* .footerLinks {
         
     } */
     
-    .linkContainer {
+    .footerContainer {
         display: flex;
         padding: 5px 5px;
-        justify-content: space-between;
     }
 }
