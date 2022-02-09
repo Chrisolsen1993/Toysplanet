@@ -5,6 +5,8 @@ import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions'
 import { QUERY_CATEGORIES } from '../../utils/queries'
 import { idbPromise } from '../../utils/helpers'
 import './style.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext()
@@ -47,11 +49,12 @@ function CategoryMenu() {
         {/* Choose a Category */}
       {/* <i class="fa fa-caret-down"></i>  */}
       <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa fa-caret-down">Choose Category</i>
+        <button className="dropbtn">
+          <span>Choose Category</span>
+          <FontAwesomeIcon icon={faCaretDown} />
         </button>
-        <div class="dropdown-content">
-          <div class="dropdown-content">
+        <div className="dropdown-content">
+          <div className="dropdown-content">
             {categories.map((item) => (
               <button
                 key={item._id}
