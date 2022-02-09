@@ -40,7 +40,7 @@ const typeDefs = gql`
   }
   type Message {
     conversationId: String
-    sender: String
+    sender: User
     text: String
   }
   type Conversation{
@@ -56,7 +56,7 @@ const typeDefs = gql`
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
     userConversation(member:ID!): [Conversation]
-    getMessages(conversationId: String!):Message
+    getMessages(id: String!):[Message]
   }
 
   type Mutation {
@@ -66,7 +66,7 @@ const typeDefs = gql`
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
     addConversation(id:ID!): Conversation
-    createMessage(conversationId: String!, sender: String!, text: String!): Message
+    createMessage(conversationId: String!, senderId: ID!, text: String!): Message
   }
 `;
 
