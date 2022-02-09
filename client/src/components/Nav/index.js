@@ -12,7 +12,7 @@ function Nav() {
           <li className='navImg'>
             <Link to="/orderHistory"><img src='images/order-delivery.png' alt='orderhistory'/></Link>
           </li>
-          <li>
+          <li className='navImg'>
             <Link to="/messenger"><img src='images/message.png' alt='messages' /></Link>
           </li>
           <li className='navImg'>
