@@ -67,6 +67,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addConversation(id:ID!): Conversation
     createMessage(conversationId: String!, sender: String!, text: String!): Message
+    addProduct(name: String!, description: String, image: String, price: Float, category: String): Product
   }
 `;
 
