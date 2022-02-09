@@ -98,10 +98,11 @@ const resolvers = {
       }
 
     },
-    getMessages: async(parent,args)=>{
+    getMessages: async(parent,{ id })=>{
       const messages= await Message.find({
-        conversationId: args.conversationId
+        conversationId: id
       })
+      console.log(id)
       return messages
 
     }
@@ -167,10 +168,12 @@ const resolvers = {
       
 
     },
-    createMessage: async(parent,args,context)=>{
-    const newMessage = await Message.create(args)
-        return newMessage
+    createMessage: async(parent, {conversationId, text}, context)=>{
+    const newMessage = await Message.create({conversationId, sender:(context.user._id), text})
+    console.log(conversationId)
+    return newMessage
     }
+   
   }
 };
 
