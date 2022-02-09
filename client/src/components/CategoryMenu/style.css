@@ -12,17 +12,20 @@
   text-align: left;
 }
 .dropdown-content {
+  display: none;
   position: absolute;
-
   min-width: 160px;
-
   z-index: 1;
 }
 .dropdown {
   float: left;
   overflow: hidden;
 }
+.dropbtn span {
+  margin-right: 20px;
+}
 .dropbtn {
+  /* margin-right: 20px; */
   padding: 12px 14px;
   background-color: #20639b;
 }
