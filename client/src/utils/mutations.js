@@ -50,6 +50,40 @@ export const ADD_USER = gql`
   }
 `;
 
+// export const CREATE_CONVERSATION = gql`
+// createConversations ($id:ID!){
+// addConversation(
+//      id:$id
+// )   
+//   {
+//      members{
+//        _id
+     
+//       }
+//     _id
+//   }
+// }
+
+// `
+// export const SEND_MESSAGE = gql`
+// sendMessage($conversationId:String!, $senderId:ID!, $text:String!){
+//   createMessage(
+//     conversationId:$conversationId,
+//     senderId:$senderId,
+//     text:$text
+//   ){
+//     conversationId
+//      sender{
+//        _id
+//        }
+//      text
+  
+//      }
+//   }
+
+// `
+
+
 export const ADD_PRODUCT = gql`
   mutation addProduct(
     $name: String!
@@ -67,3 +101,4 @@ export const ADD_PRODUCT = gql`
     )
   }
 `;
+
