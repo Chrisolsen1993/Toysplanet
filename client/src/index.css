@@ -1,6 +1,6 @@
 :root {
   --primary: #233e37;
-  --secondary: #20639b;
+  --secondary: #0c82ba;
   --tertiary: #b12704;
   --light: #fafafa;
   --dark: #27322cea;
@@ -210,10 +210,11 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('https://cdn4.vectorstock.com/i/1000x1000/49/28/spring-natural-background-with-blue-sky-clouds-vector-3844928.jpg');
+  background-image: url('./assets/toystory.jpg');
   background-attachment:fixed;
   width: 100%;
   height: auto;
+  filter: blur(.2px);
 }
 
 .messengerContainer {
