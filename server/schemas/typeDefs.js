@@ -55,13 +55,8 @@ const typeDefs = gql`
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
-<<<<<<< HEAD
     userConversation(member:ID!): [Conversation]
     getMessages(id: String!):[Message]
-=======
-    userConversation(member: ID!): [Conversation]
-    getMessages(conversationId: String!): Message
->>>>>>> product-model/resolver-update
   }
 
   type Mutation {
@@ -80,10 +75,6 @@ const typeDefs = gql`
     ): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
-<<<<<<< HEAD
-    addConversation(id:ID!): Conversation
-    createMessage(conversationId: String!, senderId: ID!, text: String!): Message
-=======
     addConversation(id: ID!): Conversation
     createMessage(
       conversationId: String!
@@ -97,7 +88,6 @@ const typeDefs = gql`
       price: Float
       category: String
     ): Product
->>>>>>> product-model/resolver-update
   }
 `;
 
