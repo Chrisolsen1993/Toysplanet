@@ -55,8 +55,8 @@ const typeDefs = gql`
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
-    userConversation(member:ID!): [Conversation]
-    getMessages(id: String!):[Message]
+    userConversation(member: ID!): [Conversation]
+    getMessages(id: String!): [Message]
   }
 
   type Mutation {
@@ -78,7 +78,7 @@ const typeDefs = gql`
     addConversation(id: ID!): Conversation
     createMessage(
       conversationId: String!
-      sender: String!
+      senderId: ID!
       text: String!
     ): Message
     addProduct(
