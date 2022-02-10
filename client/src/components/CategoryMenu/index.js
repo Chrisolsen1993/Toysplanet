@@ -8,6 +8,9 @@ import {
 } from "../../utils/actions";
 import { QUERY_CATEGORIES } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import './style.css';
 
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext()
