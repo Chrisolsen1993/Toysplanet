@@ -15,7 +15,8 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import Cart from './pages/Cart'
+import Cart from './pages/Cart';
+import Profile from './pages/Profile';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
@@ -57,6 +58,7 @@ function App() {
               <Route exact path="/products/:id" component={Detail} />
               <Route exact path="/messenger" component={Messenger} />
               <Route exact path="/cart" component={Cart} />
+              <Route exact path="/profile" component={Profile} />
               <Route component={NoMatch} />
             </Switch>
             <Footer />
