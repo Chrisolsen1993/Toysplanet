@@ -1,0 +1,62 @@
+footer {
+    background-color: #20639b;
+    background-repeat: no-repeat;
+}
+
+#logoplanet {
+    background-repeat: no-repeat;
+    padding-right: 5%;
+}
+
+.footer {
+    list-style-type: none;
+}
+  
+.footerLinks {
+    display: flex;
+    flex-direction: row;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 5px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footerImg {
+    list-style-type: none;
+    max-width: 80px;
+    padding: 20px;
+}
+
+.footerImg a img {
+    background-color: white;
+    padding: 5px;
+    border-radius: 10%;
+}
+
+@media screen and (max-width: 765px) {
+    header {
+        background-color: #20639b;
+        background-repeat: no-repeat;
+    }
+    
+    #logoplanet {
+    background-repeat: no-repeat;
+    }
+    
+    .footer {
+        list-style-type: none;
+    }
+      
+    /* .footerLinks {
+        
+    } */
+    
+    .footerContainer {
+        display: flex;
+        padding: 5px 5px;
+    }
+}
