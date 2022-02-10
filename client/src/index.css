@@ -110,9 +110,7 @@ button[disabled] {
 }
 
 img {
-  border-radius: 20px;
   max-width: 100%;
-  height: 50%;
 }
 
 span[role='img'] {
@@ -137,26 +135,9 @@ input:focus {
   box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
 }
 
-.container {
-  background-image: url('https://cdn4.vectorstock.com/i/1000x1000/49/28/spring-natural-background-with-blue-sky-clouds-vector-3844928.jpg');
-  background-attachment:fixed;
-  width: 100%;
-}
-.linkcontainer {
-  display: flex;
-  justify-content: space-evenly;
-}
 .flex-row {
   display: flex;
   flex-wrap: wrap;
-}
-
-.nav {
-  list-style-type: none;
-}
-
-.navLinks {
-  margin-left: 40%;
 }
 
 .space-between {
@@ -217,41 +198,22 @@ input:focus {
   padding-bottom: var(--spacing-two);
 }
 
-.card {
-  /* border-radius: 5px; */
-  width: 23%;
-  text-align: center;
-}
-
-.cardBox {
-  background-color: white;
-  margin: 1%;
-  border-radius: 10%;
-  box-shadow: 5px 10px 8px #888888;
-}
-
 .error-text {
   color: var(--error);
 }
+
 h1 {
   background-repeat: repeat-y;
 }
-header {
-  background-color: #20639b;
-  background-repeat: no-repeat;
-}
-#logoplanet {
-  background-repeat: no-repeat;
-}
-@media screen and (max-width: 768px) {
-  .card {
-    width: 100%;
-  }
-}
 
-.linkContainer {
+.container {
   display: flex;
-  padding: 5px 5px;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('https://cdn4.vectorstock.com/i/1000x1000/49/28/spring-natural-background-with-blue-sky-clouds-vector-3844928.jpg');
+  background-attachment:fixed;
+  width: 100%;
+  height: auto;
 }
 
 .messengerContainer {
@@ -315,14 +277,64 @@ header {
   color: white;
 }
 
-.chatOnline {
-  flex: 3;
-}
-
 .chatMenuWrapper,
-.chatBoxWrapper,
-.chatOnlineWrapper {
+.chatBoxWrapper {
   padding: 10px;
   height: 100%;
 }
 
+.loginSignup {
+  background-color: white;
+  margin: 5%;
+  padding: 2%;
+  box-shadow: 5px 10px 8px #888888;
+}
+
+.cart {
+  background-color: var(--light);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  border-bottom-left-radius: 0.5rem;
+}
+
+.cart h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--dark);
+  padding-bottom: 0.5rem;
+  margin: 1rem 0;
+}
+
+.cart .close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  color: var(--tertiary);
+}
+
+.cart .close:hover {
+  text-decoration: underline;
+}
+
+.cart-closed {
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.541);
+  padding: 0.25rem;
+  width: 100px;
+  height: 50px;
+}
+
+.cart-closed:hover {
+  transform: rotate(8deg);
+}
+
+.cart img {
+  width: 70px;
+  margin-right: 1rem;
+}
+
+.cart input {
+  width: 50px;
+  padding: 0;
+  margin: 0 0.5rem 1rem 0;
+}

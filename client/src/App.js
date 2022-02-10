@@ -14,10 +14,13 @@ import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
+import Cart from './pages/Cart'
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import Messenger from './pages/Messenger';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -53,8 +56,10 @@ function App() {
               <Route exact path="/orderHistory" component={OrderHistory} />
               <Route exact path="/products/:id" component={Detail} />
               <Route exact path="/messenger" component={Messenger} />
+              <Route exact path="/cart" component={Cart} />
               <Route component={NoMatch} />
             </Switch>
+            <Footer />
           </StoreProvider>
         </div>
       </Router>
