@@ -52,7 +52,7 @@ function CategoryMenu() {
         <i class="fa fa-caret-down">Choose a Category</i>
         {/* Choose a Category */}
       {/* <i class="fa fa-caret-down"></i>  */}
-      <div class="dropdown">
+      <div className="dropdown">
         <button className="dropbtn">
           <span>Choose Category</span>
           <FontAwesomeIcon icon={faCaretDown} />

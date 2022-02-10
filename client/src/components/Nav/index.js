@@ -9,6 +9,9 @@ function Nav() {
       return (
         <ul className="navLinks">
           <li className='navImg'>
+            <Link to="/profile"><img src='images/profile.png' alt='profile' /></Link>
+          </li>
+          <li className='navImg'>
             <Link to="/orderHistory"><img src='images/order-delivery.png' alt='orderhistory'/></Link>
           </li>
           <li className='navImg'>
