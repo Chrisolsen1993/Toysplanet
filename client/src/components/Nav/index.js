@@ -26,7 +26,7 @@ function Nav() {
             </a>
           </li>
         </ul>
-      )
+      );
     } else {
       return (
         <ul className='navLinks'>
@@ -46,7 +46,7 @@ function Nav() {
             </Link>
           </li> 
         </ul>
-      )
+      );
     }
   }
 
@@ -64,7 +64,7 @@ function Nav() {
 
       <nav>{showNavigation()}</nav>
     </header>
-  )
+  );
 }
 
-export default Nav
+export default Nav;
