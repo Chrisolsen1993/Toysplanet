@@ -15,43 +15,28 @@
   display: none;
   position: absolute;
   min-width: 160px;
-  z-index: 1;
+  background-color: #20639b;
+  padding: 5px;
+  grid-auto-flow: column;
 }
 .dropdown {
-  float: left;
   overflow: hidden;
 }
 .dropbtn span {
   margin-right: 20px;
 }
+
 .dropbtn {
-  /* margin-right: 20px; */
   padding: 12px 14px;
   background-color: #20639b;
 }
+
+.dropdownBtn {
+  margin: 8px 4px;
+  background-color: white;
+  color: black;
+}
+
 .dropdown:hover .dropdown-content {
   display: block;
-}
-.dropdown:hover:after:after {
-  display: none;
-  visibility: hidden;
-}
-/* .dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-} */
-
-/* .navbar a:hover,
-.dropdown:hover .dropbtn {
-  background-color: red;
-} */
-.dropdown {
-  float: left;
-  overflow: hidden;
 }
