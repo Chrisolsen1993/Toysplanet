@@ -24,9 +24,7 @@ function Nav() {
             </a>
           </li>
           <li className='navImg'>
-            <a href="/cart">
-              <img src='images/cart.png' alt='cart' />
-            </a>
+            <Link to="/cart"><img src='images/cart.png' alt='cart' /></Link>
           </li>
         </ul>
       );
