@@ -30,7 +30,7 @@ export default function Messenger() {
             <div className="chatBoxBottom">
               <textarea
                 className="chatMessageInput"
-                placeholder="write something..."
+                placeholder="Write your message here..."
               ></textarea>
               <button className="chatSubmitButton">Send</button>
             </div>

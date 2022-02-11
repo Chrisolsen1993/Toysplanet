@@ -213,11 +213,14 @@ h1 {
 
 .messengerContainer {
   display: flex;
+  padding: 20px;
+  background-color:#77ADE8ff;
 }
 
 .messenger {
-  height: calc(100vh - 70px);
-  background-color: white;
+  height: auto;
+  background-color:#77ADE8ff;
+  padding-right: 20px;
 }
 
 .chatMenu {
@@ -225,28 +228,32 @@ h1 {
 }
 
 .chatMenuInput {
-  width: 90%;
+  width: 95%;
   padding: 10px 0;
   margin-bottom: 20px;
   border: none;
-  border-bottom: 1px solid gray;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px white;
 }
 
 .chatBox {
   flex: 5.5;
-  background-color: lightgray;
+  height: 80vh;
 }
 
 .chatBoxWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 10px white;
 }
 
 .chatBoxTop {
   height: 100%;
   overflow-y: scroll;
-  padding-right: 10px;
+  padding: 10px;
 }
 
 .chatBoxBottom {
@@ -268,7 +275,8 @@ h1 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: aquamarine;
+  background-color: #FEC641ff;
+  box-shadow: 0 0 5px 5px #FEC641ff;
   color: white;
 }
 
@@ -276,6 +284,12 @@ h1 {
 .chatBoxWrapper {
   padding: 10px;
   height: 100%;
+}
+
+.chatMenuWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .loginSignup {
