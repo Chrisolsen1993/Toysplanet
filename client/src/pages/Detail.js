@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import Cart from '../pages/Cart';
+//this is new
+import PopupMessage from '../components/PopupMessage';
 import { useStoreContext } from '../utils/GlobalState';
 import {
   REMOVE_FROM_CART,
@@ -22,6 +24,8 @@ function Detail() {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   const { products, cart } = state;
+  //add this
+  const [buttonPopup, setButtonPopup]= useState(false)
 
   useEffect(() => {
     // already in global store
@@ -99,6 +103,10 @@ function Detail() {
             >
               Remove from Cart
             </button>
+            <button  onClick= {()=> setButtonPopup(true)}>Send Message</button>
+            <PopupMessage trigger={buttonPopup} setTrigger={setButtonPopup}>
+              <h2>Yesggggg</h2>
+            </PopupMessage>
           </p>
 
           <img
