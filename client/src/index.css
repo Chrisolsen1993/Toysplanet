@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
 :root {
   --primary: #233e37;
   --secondary: #0c82ba;
@@ -80,13 +81,6 @@ a:hover {
   text-decoration: underline;
 }
 
-header {
-  background: var(--primary);
-}
-
-header a {
-  color: var(--light);
-}
 button {
   font-size: 1rem;
   text-decoration: none;
@@ -291,47 +285,20 @@ h1 {
   box-shadow: 5px 10px 8px #888888;
 }
 
-.cart {
-  background-color: var(--light);
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-  border-bottom-left-radius: 0.5rem;
-}
+/* .cart {
+  
+} */
 
 .cart h2 {
-  font-size: 1.5rem;
-  border-bottom: 1px solid var(--dark);
-  padding-bottom: 0.5rem;
-  margin: 1rem 0;
-}
-
-.cart .close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  cursor: pointer;
-  color: var(--tertiary);
-}
-
-.cart .close:hover {
-  text-decoration: underline;
-}
-
-.cart-closed {
-  font-size: 2rem;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.541);
-  padding: 0.25rem;
-  width: 100px;
-  height: 50px;
-}
-
-.cart-closed:hover {
-  transform: rotate(8deg);
+  font-family: 'Modak', cursive;
+  color: #fd9e16;
+  text-shadow: 3px 3px 3px black;
+  margin-bottom: 15px;
 }
 
 .cart img {
   width: 70px;
-  margin-right: 1rem;
+  margin: 1rem;
 }
 
 .cart input {
@@ -342,4 +309,19 @@ h1 {
 
 .addPost {
   margin: 30px 0;
+}
+
+.checkoutContainer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #FEC641ff;
+  margin: 40px;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 10px #FEC641ff;
+}
+
+.checkoutDiv {
+  max-width: 400px;
+  width: 90%;
 }
