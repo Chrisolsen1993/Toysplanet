@@ -5,14 +5,11 @@ header {
 #logoplanet {
 background-repeat: no-repeat;
 }
-
-.nav {
-    list-style-type: none;
-}
   
 .navLinks {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .linkContainer {

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+
+.cartContainer {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    margin: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 10px white;
+}
+
+.cartName {
+    font-family: 'Modak', cursive;
+    color: black;
+    margin: 5px, 0;
+}
+
+.cartQty {
+    font-family: 'Modak', cursive;
+    color: black;
+    margin: 5px, 0;
+    padding: 5px;
+}
+
+.cartQty input {
+    font-weight: 800;
+    color: black;
+    padding: 2px;
+}
