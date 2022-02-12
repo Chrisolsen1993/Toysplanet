@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 // import { QUERY_PRODUCT } from '../utils/queries'
-import Post from '../components/Post/index'
-import Edit from '../components/Edit/index'
+import Post from '../components/Post'
+// import Edit from '../components/Edit'
 import Auth from '../utils/auth'
 import { ADD_PRODUCT } from '../utils/mutations'
 import { useMutation } from '@apollo/client'
 
 function Profile(props) {
   const [formState, setFormState] = useState({
-    email: '',
-    password: '',
+    name: '',
+    description: '',
+    image: '',
+    quantity: '',
+    price: '',
+    category: '',
   })
 
   const [addProduct] = useMutation(ADD_PRODUCT)
@@ -20,7 +24,6 @@ function Profile(props) {
 
     const mutationResponse = await addProduct({
       variables: {
-
         name: formState.name,
         description: formState.description,
         image: formState.image,
@@ -32,61 +35,66 @@ function Profile(props) {
     const token = mutationResponse.data.addProduct.token
     Auth.login(token)
   }
-  const handleChange = (event) => {
+  const handleInputChange = (event) => {
     const { data, value } = event.target
     setFormState({
       ...formState,
       [data]: value,
     })
   }
-  //  const profile = data?.me || data?.profile || {};
+   
 
-  // // Use React Router's `<Redirect />` component to redirect to personal profile page if username is yours
-  // if (Auth.loggedIn() && Auth.getProfile().data._id === profileId) {
-  //   return <Redirect to="/me" />;
-  // }
-
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
-
-  // if (!profile?.name) {
-  //   return (
-  //     <h4>
-  //       You need to be logged in to see your profile page. Use the navigation
-  //       links above to sign up or log in!
-  //     </h4>
-  //   );
-  // }
-
-  // const { data } = useQuery(QUERY_USER);
-  // let user;
-
-  // if (data) {
-  //   user = data.user;
-  // }
 
   return (
-    <div className="container">
-      <Link to="/profile">← Go to profile</Link>
-      <h2>P</h2>
-      <form className="loginSignup" onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <h2>Profile</h2>
-          {/* <div className="container">
-        {user ? (
-          <h3>Hello {user.firstName}, what would you like to do?</h3>
-        ) : null} */}
-        </div>
+    <div>
+      <p>Hello</p>
+      <form className="form">
+        <input
+          value={window.name}
+          name="product"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="name"
+        />
+        <input
+          value={window.description}
+          name="description"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="description"
+        />
+        <input
+          value={window.image}
+          name="image"
+          onChange={handleInputChange}
+          type="file"
+          placeholder="image"
+        />
+        <input
+          value={window.quantity}
+          name=" quantity"
+          onChange={handleInputChange}
+          type="text"
+          placeholder=" quantity"
+        />
+        <input
+          value={window.price}
+          name="price"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="price"
+        />
+        <input
+          value={window.category}
+          name="category"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="category"
+        />
 
-        <div className="addProduct">
-          <button>Add Post</button>
-          <Post />
-        </div>
-        <div className="updateProduct">
-          <button>Edit Post</button>
-          <Edit />
-        </div>
+        <button type="button" onClick={handleFormSubmit}>
+        Add Post
+        </button>
       </form>
     </div>
   )
