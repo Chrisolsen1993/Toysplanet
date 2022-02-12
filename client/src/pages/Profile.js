@@ -8,8 +8,6 @@ import Auth from '../utils/auth'
 import { ADD_PRODUCT } from '../utils/mutations'
 import { useMutation } from '@apollo/client'
 import { useQuery } from '@apollo/client'
-import { resultKeyNameFromField } from '@apollo/client/utilities'
-
 
 function Profile(props) {
   const [formState, setFormState] = useState({
@@ -20,10 +18,8 @@ function Profile(props) {
     price: '',
     category: '',
   })
-  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES)
+  const { loading, data } = useQuery(QUERY_CATEGORIES)
 
-  const categories = categoryData
-  console.log(categoryData)
   // const { category } = state
   // const [state, dispatch] = useStoreContext()
 
@@ -122,13 +118,15 @@ function Profile(props) {
           placeholder="category"
         />
         <select value={formState.category} onChange={handleInputChange}>
-
-        
-
-          
-          {categories.map((item) => (
-            <option value={item.name}>{item.name}</option>
-          ))}
+          {loading ? (
+            <option> still loading</option>
+          ) : (
+            data.categories.map((item) => (
+              <option key={item._id} value={item.name}>
+                {item.name}
+              </option>
+            ))
+          )}
         </select>
 
         {/* <button
