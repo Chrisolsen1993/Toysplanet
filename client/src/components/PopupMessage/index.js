@@ -1,7 +1,10 @@
 import React from 'react';
 import './style.css';
+// import Auth from "../utils/auth";
+import { useContext} from 'react'
 
 function PopupMessage({trigger, setTrigger, children}) {
+    const { user } = useContext
     return (trigger) ? (
         <div className="popupMessage">
           <form  className="popup-inner">

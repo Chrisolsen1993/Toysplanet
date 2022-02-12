@@ -91,7 +91,8 @@ const resolvers = {
     userConversation: async(parent, args, context)=>{
       if (context.user){
         const conversation =await Conversation.find({
-          members: { $in: [context.user._id]}
+          members: { $in: [context.user._id]},
+          productId: args.productID
         })
         console.log(context.user._id)
         return conversation
@@ -138,8 +139,9 @@ const resolvers = {
 
       return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
     },
-    addProduct: async (parents, args, context) => {
-      const newProduct = await Product.create(args);
+    addProduct: async (parents, {name, description, image, price, category}) => {
+      const newProduct = await Product.create({name, description, image, price, category: category  });
+      console.log(category)
       return newProduct;
     },
     login: async (parent, { email, password }) => {
@@ -163,7 +165,8 @@ const resolvers = {
       {
        
       const newConversation =  await Conversation.create({
-        members:[context.user._id, args.id ]
+        members:[context.user._id, args.id ],
+        productId: args.productID
       } )
   
       console.log(args)
