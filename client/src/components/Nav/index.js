@@ -9,6 +9,11 @@ function Nav() {
       return (
         <ul className="navLinks">
           <li className="navImg">
+            <Link to="/">
+              <img src="images/home.png" alt="home" />
+            </Link>
+          </li>
+          <li className="navImg">
             <Link to="/profile">
               <img src="images/profile.png" alt="profile" />
             </Link>
@@ -32,23 +37,12 @@ function Nav() {
 
           <li className='navImg'>
             <Link to="/cart"><img src='images/cart.png' alt='cart' /></Link>
-
           </li>
         </ul>
       )
     } else {
       return (
         <ul className="navLinks">
-          <li className="navImg">
-            <Link to="/">
-              <img src="images/profile.png" alt="profile" />
-            </Link>
-          </li>
-          <li className="navImg">
-            <Link to="/">
-              <img src="images/home.png" alt="home" />
-            </Link>
-          </li>
           <li className="navImg">
             <Link to="/login">
               <img src="images/login.png" alt="login" />
@@ -67,12 +61,9 @@ function Nav() {
   return (
     <header className="linkContainer">
       <h1>
-        <Link to="/">
-          {/* <span role="img" aria-label="shopping bag"> 🧸</span> */}
           <span role="img">
             <img id="logoplanet" src="images/logo.planet.png" width={150} />
           </span>
-        </Link>
       </h1>
 
       <nav>{showNavigation()}</nav>
