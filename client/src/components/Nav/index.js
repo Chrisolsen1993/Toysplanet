@@ -29,10 +29,10 @@ function Nav() {
               <img src="images/logout.png" alt="logout" />
             </a>
           </li>
-          <li className="navImg">
-            <a href="/cart">
-              <img src="images/cart.png" alt="cart" />
-            </a>
+
+          <li className='navImg'>
+            <Link to="/cart"><img src='images/cart.png' alt='cart' /></Link>
+
           </li>
         </ul>
       )

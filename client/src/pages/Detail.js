@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import Cart from '../pages/Cart';
+//this is new
+import PopupMessage from '../components/PopupMessage';
 import { useStoreContext } from '../utils/GlobalState';
 import {
   REMOVE_FROM_CART,
@@ -22,6 +23,8 @@ function Detail() {
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   const { products, cart } = state;
+  //add this
+  const [buttonPopup, setButtonPopup]= useState(false)
 
   useEffect(() => {
     // already in global store
@@ -83,15 +86,17 @@ function Detail() {
   return (
     <>
       {currentProduct && cart ? (
-        <div className="container">
-          <Link to="/">← Back to Products</Link>
-
-          <h2>{currentProduct.name}</h2>
-
-          <p>{currentProduct.description}</p>
-
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{" "}
+        <div className="detailDiv">
+          <Link className="backToProducts" to="/">← Back to Products</Link>
+          <h2 className="details">{currentProduct.name}</h2>
+          <div className="details detailDescription">{currentProduct.description}</div>
+          <div className="imgPriceDiv">
+          <img className="details detailsImg"
+            src={`/images/${currentProduct.image}`}
+            alt={currentProduct.name}
+          />
+          <div className="details detailDescription priceDiv">
+            <strong>Price: </strong>${currentProduct.price}{" "}
             <button onClick={addToCart}>Add to Cart</button>
             <button
               disabled={!cart.find((p) => p._id === currentProduct._id)}
@@ -99,16 +104,15 @@ function Detail() {
             >
               Remove from Cart
             </button>
-          </p>
-
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
+            <button  onClick= {()=> setButtonPopup(true)}>Send Message</button>
+            <PopupMessage trigger={buttonPopup} setTrigger={setButtonPopup}>
+              <h2>Yesggggg</h2>
+            </PopupMessage>
+          </div>
+          </div>
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
-      <Cart />
     </>
   );
 }

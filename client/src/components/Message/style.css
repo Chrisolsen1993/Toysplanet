@@ -8,18 +8,12 @@
     display: flex;
 }
 
-.messageImg {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-}
-
 .messageText {
-    padding: 10px;
+    padding: 5px;
+    margin: 5px;
     border-radius: 20px;
     background-color: #20639b;
+    box-shadow: 0 0 5px 5px #20639b;
     color: white;
     max-width: 300px;
 }
@@ -34,6 +28,7 @@
 }
 
 .message.own .messageText {
-    background-color: white;
+    background-color: lightgray;
     color: black;
+    box-shadow: 0 0 5px 5px lightgray;
 }

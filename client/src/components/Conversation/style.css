@@ -3,7 +3,11 @@
     align-items: center;
     padding: 10px;
     cursor: pointer;
-    margin-top: 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 10px white;
+    width: 90%;
 }
 
 .conversation:hover {
