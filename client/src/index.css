@@ -346,7 +346,7 @@ h1 {
   font-family: 'Modak', cursive;
   color: #fd9e16;
   text-shadow: 3px 3px 3px black;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 
 .cart img {
@@ -429,4 +429,52 @@ h1 {
   align-items: center;
   width: fit-content;
   margin-left: 20px;
+}
+
+.orderTitle {
+  font-family: 'Modak', cursive;
+  color: #e40962;
+  text-shadow: 3px 3px 3px white;
+  font-size: 35px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.totalOrderDiv {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  max-width: 650px;
+  background-color: #FEC641ff;
+  box-shadow: 0 0 5px 5px #FEC641ff;
+  border-radius: 10px;
+}
+
+.orderProducts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 650px;
+}
+
+.orderCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+  background-color: white;
+  box-shadow: 0 0 5px 5px white;
+  border-radius: 10px;
+  width: 200px;
+  max-width: 200px;
+}
+
+.orderCard a {
+  text-align: center;
+}
+
+.orderCard div {
+  align-self: center;
 }
