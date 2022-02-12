@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { QUERY_CATEGORIES } from '../utils/queries'
 import { Link } from 'react-router-dom'
 // import { QUERY_PRODUCT } from '../utils/queries'
 import Post from '../components/Post'
@@ -6,6 +7,9 @@ import Post from '../components/Post'
 import Auth from '../utils/auth'
 import { ADD_PRODUCT } from '../utils/mutations'
 import { useMutation } from '@apollo/client'
+import { useQuery } from '@apollo/client'
+import { resultKeyNameFromField } from '@apollo/client/utilities'
+
 
 function Profile(props) {
   const [formState, setFormState] = useState({
@@ -16,7 +20,35 @@ function Profile(props) {
     price: '',
     category: '',
   })
+  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES)
 
+  const categories = categoryData
+  console.log(categoryData)
+  // const { category } = state
+  // const [state, dispatch] = useStoreContext()
+
+  //   const { categories } = state
+
+  //   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES)
+
+  //   // useEffect(() => {
+  //   if (categoryData) {
+  //     dispatch({
+  //       type: UPDATE_CATEGORIES,
+  //       categories: categoryData.categories,
+  //     })
+  //     categoryData.category.forEach((category) => {
+  //       idbPromise("categories", "put", category);
+  //     });
+  //   } else if (!loading) {
+  //     idbPromise("category", "get").then((category) => {
+  //       dispatch({
+  //         type: UPDATE_CATEGORIES,
+  // //         category: category,
+  // //       })
+  // //     })
+  //   }
+  // }, [categoryData, loading, dispatch])
   const [addProduct] = useMutation(ADD_PRODUCT)
 
   const handleFormSubmit = async (event) => {
@@ -42,58 +74,83 @@ function Profile(props) {
       [data]: value,
     })
   }
-   
-
 
   return (
     <div>
       <p>Hello</p>
       <form className="form">
         <input
-          value={window.name}
+          value={formState.name}
           name="product"
           onChange={handleInputChange}
           type="text"
           placeholder="name"
         />
         <input
-          value={window.description}
+          value={formState.description}
           name="description"
           onChange={handleInputChange}
           type="text"
           placeholder="description"
         />
         <input
-          value={window.image}
+          value={formState.image}
           name="image"
           onChange={handleInputChange}
           type="file"
           placeholder="image"
         />
         <input
-          value={window.quantity}
+          value={formState.quantity}
           name=" quantity"
           onChange={handleInputChange}
           type="text"
           placeholder=" quantity"
         />
         <input
-          value={window.price}
+          value={formState.price}
           name="price"
           onChange={handleInputChange}
           type="text"
           placeholder="price"
         />
         <input
-          value={window.category}
+          value={formState.category}
           name="category"
           onChange={handleInputChange}
           type="text"
           placeholder="category"
         />
+        <select value={formState.category} onChange={handleInputChange}>
+
+        
+
+          
+          {categories.map((item) => (
+            <option value={item.name}>{item.name}</option>
+          ))}
+        </select>
+
+        {/* <button
+              onClick={() =>
+                // dispatch({
+                //   name: ADD_PRODUCT,
+                //   payload: {
+                //     name: newName,
+                //      description: newDescription,
+                //    image: newImage,
+                //     quantity: newQuantity,
+                //     price : newPrice,
+                //    category: newCategory,
+                //   },
+                // })
+              }
+            >
+            
+            </button> */}
 
         <button type="button" onClick={handleFormSubmit}>
-        Add Post
+          Add Post
         </button>
       </form>
     </div>
