@@ -339,3 +339,55 @@ h1 {
   max-width: 400px;
   width: 90%;
 }
+
+.detailDiv {
+  background-color: #77ADE8ff;
+  padding: 10%;
+  width: 100%;
+}
+
+.imgPriceDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.details {
+  background-color: #FEC641ff;
+  box-shadow: 0 0 5px 5px #FEC641ff;
+  border-radius: 10px;
+  font-family: 'Modak', cursive;
+  color: #0c82ba;
+  text-shadow: 0 0 4px white;
+  margin: 15px 0;
+  padding: 5px;
+}
+
+.backToProducts {
+  margin-top: 25px;
+}
+
+.details img {
+  max-width: 30%;
+  border-radius: 10px;
+}
+
+.detailDescription {
+  font-size: 20px;
+}
+
+.detailsImg {
+  background-color: #FEC641ff;
+  box-shadow: 0 0 5px 5px #FEC641ff;
+  border-radius: 10px;
+  width: 65%;
+}
+
+.priceDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin-left: 20px;
+}
