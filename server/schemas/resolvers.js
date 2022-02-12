@@ -24,7 +24,9 @@ const resolvers = {
       return await Product.find(params).populate('category');
     },
     product: async (parent, { _id }) => {
-      return await Product.findById(_id).populate('category');
+      const product = await Product.findById(_id).populate('category');
+
+      return  product;
     },
     user: async (parent, args, context) => {
       if (context.user) {
@@ -93,7 +95,6 @@ const resolvers = {
         const conversation =await Conversation.find({
           members: { $in: [context.user._id]}
         })
-        console.log(context.user._id)
         return conversation
       }
 
@@ -102,7 +103,6 @@ const resolvers = {
       const messages= await Message.find({
         conversationId: id
       })
-      console.log(id)
       return messages
 
     }
@@ -115,7 +115,6 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { products }, context) => {
-      console.log(context);
       if (context.user) {
         const order = new Order({ products });
 
@@ -165,8 +164,6 @@ const resolvers = {
       const newConversation =  await Conversation.create({
         members:[context.user._id, args.id ]
       } )
-  
-      console.log(args)
       return newConversation
       ;}
       
@@ -174,7 +171,6 @@ const resolvers = {
     },
     createMessage: async(parent, {conversationId, text}, context)=>{
     const newMessage = await Message.create({conversationId, sender:(context.user._id), text})
-    console.log(conversationId)
     return newMessage
     }
    
