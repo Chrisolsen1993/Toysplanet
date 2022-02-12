@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import Cart from '../pages/Cart';
 //this is new
 import PopupMessage from '../components/PopupMessage';
 import { useStoreContext } from '../utils/GlobalState';
@@ -87,15 +86,17 @@ function Detail() {
   return (
     <>
       {currentProduct && cart ? (
-        <div className="container">
-          <Link to="/">← Back to Products</Link>
-
-          <h2>{currentProduct.name}</h2>
-
-          <p>{currentProduct.description}</p>
-
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{" "}
+        <div className="detailDiv">
+          <Link className="backToProducts" to="/">← Back to Products</Link>
+          <h2 className="details">{currentProduct.name}</h2>
+          <div className="details detailDescription">{currentProduct.description}</div>
+          <div className="imgPriceDiv">
+          <img className="details detailsImg"
+            src={`/images/${currentProduct.image}`}
+            alt={currentProduct.name}
+          />
+          <div className="details detailDescription priceDiv">
+            <strong>Price: </strong>${currentProduct.price}{" "}
             <button onClick={addToCart}>Add to Cart</button>
             <button
               disabled={!cart.find((p) => p._id === currentProduct._id)}
@@ -107,16 +108,11 @@ function Detail() {
             <PopupMessage trigger={buttonPopup} setTrigger={setButtonPopup}>
               <h2>Yesggggg</h2>
             </PopupMessage>
-          </p>
-
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
+          </div>
+          </div>
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
-      <Cart />
     </>
   );
 }
