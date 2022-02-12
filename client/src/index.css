@@ -292,16 +292,55 @@ h1 {
   align-items: center;
 }
 
-.loginSignup {
-  background-color: white;
-  margin: 5%;
-  padding: 2%;
-  box-shadow: 5px 10px 8px #888888;
+.signup {
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Modak', cursive;
+  color: #e40962
+  ;
+  text-shadow: 0 0 2px #77ADE8ff;
+  font-size: 16px;
 }
 
-/* .cart {
-  
-} */
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Modak', cursive;
+  color: #e40962
+  ;
+  text-shadow: 0 0 2px #77ADE8ff;
+  font-size: 16px;
+}
+
+.loginBackground {
+  background-color: #77ADE8ff;
+  display: flex;
+  justify-content: center;
+  height: 59.4vh;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('./assets/sun-cloud.png');
+  background-color: #77ADE8ff;
+  width: 100%;
+  max-width: 600px;
+}
+
+.loginHeader {
+  font-family: 'Modak', cursive;
+  color: #e40962
+  ;
+  text-shadow: 0 0 4px #77ADE8ff;
+  margin-top: 40px;
+}
+
+.signupInfo {
+  margin-top: 25px;
+}
 
 .cart h2 {
   font-family: 'Modak', cursive;
