@@ -66,18 +66,11 @@ function Profile(props) {
           type="file"
           placeholder="image"
         />
-        {/* <input
-          value={formState.quantity || ""}
-          name="quantity"
-          onChange={handleInputChange}
-          type="Int"
-          placeholder="quantity"
-        /> */}
         <input
           value={formState.price || ""}
           name="price"
           onChange={handleInputChange}
-          type="text"
+          type="String"
           placeholder="price"
         />
         <select
