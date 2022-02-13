@@ -70,33 +70,25 @@ export const QUERY_USER = gql`
     }
   }
 `;
-// export const QUERY_USER_CONVERSATION = gql`
-// userConversations($member:ID!){
-//   userConversation(
-//       member:$member
-//       ) {
-
-//         members{
-//         _id
-//         }
-//         _id
-
-//         }
-//       }
-
-// `
-// export const GET_MESSAGES = gql`
-// getMessages($id:String!){
-// getMessages(id:$id){
-//     conversationId
-//     sender{
-//       _id
-//      }
-//    text
-
-//     }
-  
-//  }
-
-
-// `
+export const QUERY_USER_CONVERSATION = gql`
+  query userConversations($member:ID!){
+    userConversation(member:$member) {
+      members{
+        _id
+      }
+    }
+  }
+`
+export const QUERY_MESSAGES = gql`
+  query getMessages($id:String!){
+    getMessages(id:$id){
+      conversationId{
+        sender{
+          _id{
+            text
+          }
+        }
+      }
+    }
+  }
+`

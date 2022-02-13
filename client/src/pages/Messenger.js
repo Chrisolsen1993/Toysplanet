@@ -1,7 +1,50 @@
 import Conversation from "../components/Conversation/index";
 import Message from "../components/Message/index";
+import React, { useState, useEffect, useQuery, useContext, createContext, useReducer } from 'react';
+import Auth from "../utils/auth";
+import { QUERY_USER } from '../utils/queries';
+import axios from "axios";
 
-export default function Messenger() {
+function Messenger() {
+
+  const INITIAL_STATE = {
+    user:JSON.parse(localStorage.getItem("user")) || null,
+    isFetching: false,
+    error: false,
+  };
+
+  const AuthContext = createContext(INITIAL_STATE);
+
+  const AuthContextProvider = ({ children }) => {
+    const [state, dispatch] = useReducer(Auth, INITIAL_STATE);
+    
+    useEffect(()=>{
+      localStorage.setItem("user", JSON.stringify(state.user))
+    },[state.user])
+    
+    return (
+      <AuthContext.Provider
+        value={{
+          user: state.user,
+          isFetching: state.isFetching,
+          error: state.error,
+          dispatch,
+        }}
+      >
+        {children}
+      </AuthContext.Provider>
+    );
+  };
+
+  const [conversations, setConversations] = useState([]);
+const { user } = useContext(AuthContext);
+
+console.log(user);
+
+useEffect(()=>{
+
+})
+
   return (
     <>
       <div className="messengerContainer">
@@ -40,3 +83,5 @@ export default function Messenger() {
     </>
   );
 }
+
+export default Messenger
