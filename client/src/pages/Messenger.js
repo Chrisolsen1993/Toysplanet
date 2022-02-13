@@ -1,49 +1,20 @@
 import Conversation from "../components/Conversation/index";
 import Message from "../components/Message/index";
-import React, { useState, useEffect, useQuery, useContext, createContext, useReducer } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 import { QUERY_USER } from '../utils/queries';
-import axios from "axios";
 
 function Messenger() {
 
-  const INITIAL_STATE = {
-    user:JSON.parse(localStorage.getItem("user")) || null,
-    isFetching: false,
-    error: false,
-  };
+  const {data} = useQuery(QUERY_USER);
+  let user;
 
-  const AuthContext = createContext(INITIAL_STATE);
+  if (data) {
+    user = data.user;
+  }
 
-  const AuthContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(Auth, INITIAL_STATE);
-    
-    useEffect(()=>{
-      localStorage.setItem("user", JSON.stringify(state.user))
-    },[state.user])
-    
-    return (
-      <AuthContext.Provider
-        value={{
-          user: state.user,
-          isFetching: state.isFetching,
-          error: state.error,
-          dispatch,
-        }}
-      >
-        {children}
-      </AuthContext.Provider>
-    );
-  };
-
-  const [conversations, setConversations] = useState([]);
-const { user } = useContext(AuthContext);
-
-console.log(user);
-
-useEffect(()=>{
-
-})
+  console.log(user);
 
   return (
     <>
