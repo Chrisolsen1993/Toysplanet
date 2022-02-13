@@ -82,6 +82,7 @@ const typeDefs = gql`
       text: String!
     ): Message
     addProduct(
+      user:ID!
       name: String!
       description: String
       image: String
