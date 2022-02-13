@@ -85,20 +85,26 @@ export const ADD_USER = gql`
 
 
 export const ADD_PRODUCT = gql`
-  mutation addProduct(
-    $name: String!
-    $description: String
-    $image: String
-    $price: Float
-    $category: String
+mutation addProduct(
+  $name: String!
+  $description: String
+  $image: String
+  $price: String
+  $category: String
+) {
+  addProduct(
+    name: $name
+    description: $description
+    image: $image
+    price: $price
+    category: $category
   ) {
-    addProduct(
-      name: $name
-      description: $description
-      image: $image
-      price: $price
-      category: $category
-    )
+    name
+    _id
+    description
+    image
+    price
   }
+}
 `;
 
