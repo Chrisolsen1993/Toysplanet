@@ -1,158 +1,97 @@
-import React, { useState } from 'react'
-import { QUERY_CATEGORIES } from '../utils/queries'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { QUERY_CATEGORIES } from "../utils/queries";
+import { Link } from "react-router-dom";
 // import { QUERY_PRODUCT } from '../utils/queries'
-import Post from '../components/Post'
+import Post from "../components/Post";
 // import Edit from '../components/Edit'
-import Auth from '../utils/auth'
-import { ADD_PRODUCT } from '../utils/mutations'
-import { useMutation } from '@apollo/client'
-import { useQuery } from '@apollo/client'
+import Auth from "../utils/auth";
+import { ADD_PRODUCT } from "../utils/mutations";
+import { useMutation } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
 function Profile(props) {
-  const [formState, setFormState] = useState({
-    name: '',
-    description: '',
-    image: '',
-    quantity: '',
-    price: '',
-    category: '',
-  })
-  const { loading, data } = useQuery(QUERY_CATEGORIES)
-
-  // const { category } = state
-  // const [state, dispatch] = useStoreContext()
-
-  //   const { categories } = state
-
-  //   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES)
-
-  //   // useEffect(() => {
-  //   if (categoryData) {
-  //     dispatch({
-  //       type: UPDATE_CATEGORIES,
-  //       categories: categoryData.categories,
-  //     })
-  //     categoryData.category.forEach((category) => {
-  //       idbPromise("categories", "put", category);
-  //     });
-  //   } else if (!loading) {
-  //     idbPromise("category", "get").then((category) => {
-  //       dispatch({
-  //         type: UPDATE_CATEGORIES,
-  // //         category: category,
-  // //       })
-  // //     })
-  //   }
-  // }, [categoryData, loading, dispatch])
-  const [addProduct] = useMutation(ADD_PRODUCT)
+  const [formState, setFormState] = useState({});
+  const { loading, data } = useQuery(QUERY_CATEGORIES);
+  const [addProduct] = useMutation(ADD_PRODUCT);
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
+    try {
+  
 
-    const mutationResponse = await addProduct({
-      variables: {
-        name: formState.name,
-        description: formState.description,
-        image: formState.image,
-        quantity: formState.quantity,
-        price: formState.price,
-        category: formState.category,
-      },
-    })
-    const token = mutationResponse.data.addProduct.token
-    Auth.login(token)
-  }
+       const { data }= await addProduct({
+          variables: {
+            name: formState.name,
+            description: formState.description,
+            image: formState.image,
+            quantity: formState.quantity,
+            price: formState.price,
+            category: formState.category,
+          }
+        })
+    } catch (error) {
+      console.error(error);
+    }
+  };
   const handleInputChange = (event) => {
-    const { data, value } = event.target
-    setFormState({
-      ...formState,
-      [data]: value,
-    })
-  }
+    const name = event.target.name;
+    const value = event.target.value;
+    console.log([name]);
+    console.log(value);
+    setFormState((values) => ({ ...values, [name]: value }));
+  };
 
   return (
     <div>
       <p>Hello</p>
-      <form className="form">
+      <form className="form" onSubmit={handleFormSubmit}>
         <input
-          value={formState.name}
-          name="product"
+          value={formState.name || ""}
+          name="name"
           onChange={handleInputChange}
           type="text"
           placeholder="name"
         />
         <input
-          value={formState.description}
+          value={formState.description || ""}
           name="description"
           onChange={handleInputChange}
           type="text"
           placeholder="description"
         />
         <input
-          value={formState.image}
+          value={formState.image || ""}
           name="image"
           onChange={handleInputChange}
           type="file"
           placeholder="image"
         />
         <input
-          value={formState.quantity}
-          name=" quantity"
-          onChange={handleInputChange}
-          type="text"
-          placeholder=" quantity"
-        />
-        <input
-          value={formState.price}
+          value={formState.price || ""}
           name="price"
           onChange={handleInputChange}
-          type="text"
+          type="String"
           placeholder="price"
         />
-        <input
+        <select
           value={formState.category}
-          name="category"
           onChange={handleInputChange}
-          type="text"
-          placeholder="category"
-        />
-        <select value={formState.category} onChange={handleInputChange}>
+          name="category"
+        >
           {loading ? (
             <option> still loading</option>
           ) : (
             data.categories.map((item) => (
-              <option key={item._id} value={item.name}>
+              <option key={item._id} value={item._id}>
                 {item.name}
               </option>
             ))
           )}
         </select>
-
-        {/* <button
-              onClick={() =>
-                // dispatch({
-                //   name: ADD_PRODUCT,
-                //   payload: {
-                //     name: newName,
-                //      description: newDescription,
-                //    image: newImage,
-                //     quantity: newQuantity,
-                //     price : newPrice,
-                //    category: newCategory,
-                //   },
-                // })
-              }
-            >
-            
-            </button> */}
-
-        <button type="button" onClick={handleFormSubmit}>
-          Add Post
-        </button>
+        <input type="submit" />
       </form>
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

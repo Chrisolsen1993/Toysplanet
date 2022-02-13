@@ -87,7 +87,7 @@ const typeDefs = gql`
       name: String!
       description: String
       image: String
-      price: Float
+      price: String      
       category: String
     ): Product
   }
