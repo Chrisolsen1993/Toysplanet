@@ -38,11 +38,13 @@ const typeDefs = gql`
     token: ID
     user: User
   }
+
   type Message {
     conversationId: String
     sender: User
     text: String
   }
+  
   type Conversation {
     _id: ID
     members: [User]
