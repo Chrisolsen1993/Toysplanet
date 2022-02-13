@@ -29,6 +29,7 @@ function Profile(props) {
     } catch (error) {
       console.error(error);
     }
+    setFormState({})
   };
   const handleInputChange = (event) => {
     const name = event.target.name;
@@ -69,7 +70,7 @@ function Profile(props) {
           placeholder="price"
         />
         <select
-          value={formState.category}
+          value={formState.category || ""}
           onChange={handleInputChange}
           name="category"
         >
