@@ -71,38 +71,39 @@ export const QUERY_USER = gql`
   }
 `;
 export const QUERY_USER_CONVERSATION = gql`
-
-query userConversations($member:ID!, $productID:ID!){
-  userConversation(
-   member:$member,
-   productID:$productID
- ){
-
-      members{
-     _id
-           }
-     productId{
-         _id
-       }
+  query userConversations($member: ID!, $productID: ID!) {
+    userConversation(member: $member, productID: $productID) {
+      members {
+        _id
+      }
+      productId {
+        _id
+      }
       _id
- 
-   }
-}
-
-`
-export const GET_MESSAGES = gql`
-query getMessages($id:String!){
-getMessages(id:$id){
-    conversationId
-    sender{
-      _id
-     }
-   text
-
     }
-  
- }
+  }
+`;
+export const GET_MESSAGES = gql`
+  query getMessages($id: String!) {
+    getMessages(id: $id) {
+      conversationId
+      sender {
+        _id
+      }
+      text
+    }
+  }
+`;
 
-
-
-`
+export const QUERY_PRODUCT_ID = gql`
+  query product($productID: ID!) {
+    product(_id: $productID) {
+      name
+      description
+      image
+      category {
+        name
+      }
+    }
+  }
+`;

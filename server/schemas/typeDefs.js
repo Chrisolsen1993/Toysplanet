@@ -53,12 +53,19 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
+
     products(category: ID, name: String): [Product]
+
     product(_id: ID!): Product
+
     user: User
+
     order(_id: ID!): Order
+
     checkout(products: [ID]!): Checkout
+
     userConversation(member: ID!, productID: ID!): [Conversation]
+    
     getMessages(id: String!): [Message]
   }
 
@@ -69,7 +76,9 @@ const typeDefs = gql`
       email: String!
       password: String!
     ): Auth
+
     addOrder(products: [ID]!): Order
+
     updateUser(
       firstName: String
       lastName: String
@@ -77,13 +86,17 @@ const typeDefs = gql`
       password: String
     ): User
     updateProduct(_id: ID!, quantity: Int!): Product
+    
     login(email: String!, password: String!): Auth
+
     addConversation(id: ID!, productID: ID!): Conversation
+
     createMessage(
       conversationId: String!
       senderId: ID!
       text: String!
     ): Message
+
     addProduct(
       user:ID!
       name: String!

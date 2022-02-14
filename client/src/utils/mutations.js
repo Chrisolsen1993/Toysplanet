@@ -51,65 +51,57 @@ export const ADD_USER = gql`
 `;
 
 export const CREATE_CONVERSATION = gql`
-mutation createConversations ($id:ID!, $productID:ID!){
-  addConversation(
-    id:$id,
-    productID:$productID
-  ){
-    members{
-       _id
-       
+  mutation createConversations($id: ID!, $productID: ID!) {
+    addConversation(id: $id, productID: $productID) {
+      members {
+        _id
+      }
+      _id
     }
-    _id
   }
-  
-    
-}
-
-`
+`;
 export const SEND_MESSAGE = gql`
-mutation sendMessage($conversationId:String!, $senderId:ID!, $text:String!){
-  createMessage(
-    conversationId:$conversationId,
-    senderId:$senderId,
-    text:$text
-  ){
-    conversationId
-     sender{
-       _id
-       }
-     text
-  
-     }
-  }
-
-`
-
-
-export const ADD_PRODUCT = gql`
-mutation addProduct(
-  $user: ID!
-  $name: String!
-  $description: String
-  $image: String
-  $price: String
-  $category: String
-) {
-  addProduct(
-    name: $name
-    description: $description
-    image: $image
-    price: $price
-    category: $category
-    user: $user
+  mutation sendMessage(
+    $conversationId: String!
+    $senderId: ID!
+    $text: String!
   ) {
-    name
-    _id
-    description
-    image
-    price
-    
+    createMessage(
+      conversationId: $conversationId
+      senderId: $senderId
+      text: $text
+    ) {
+      conversationId
+      sender {
+        _id
+      }
+      text
+    }
   }
-}
 `;
 
+export const ADD_PRODUCT = gql`
+  mutation addProduct(
+    $user: ID!
+    $name: String!
+    $description: String
+    $image: String
+    $price: String
+    $category: String
+  ) {
+    addProduct(
+      name: $name
+      description: $description
+      image: $image
+      price: $price
+      category: $category
+      user: $user
+    ) {
+      name
+      _id
+      description
+      image
+      price
+    }
+  }
+`;
