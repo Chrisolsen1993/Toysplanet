@@ -1,38 +1,50 @@
 import React, { useState } from "react";
-import './style.css';
+import "./style.css";
 import { QUERY_CATEGORIES, QUERY_USER } from "../../utils/queries";
-import { Link } from "react-router-dom";
-// import { QUERY_PRODUCT } from '../utils/queries'
-// import Post from "../components/Post";
-// import Edit from '../components/Edit'
-// import Auth from "../utils/auth";
-
-
 import { ADD_PRODUCT } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useQuery } from "@apollo/client";
-
-function CreateProduct({trigger, setTrigger}) {
+import { Cloudinary } from "@cloudinary/url-gen";
+import { image } from "@cloudinary/url-gen/qualifiers/source";
+function CreateProduct({ trigger, setTrigger }) {
   const [formState, setFormState] = useState({});
   const { loading, data } = useQuery(QUERY_CATEGORIES);
   const [addProduct] = useMutation(ADD_PRODUCT);
-  const   data2  = useQuery(QUERY_USER);
+  const data2 = useQuery(QUERY_USER);
+  let imageURL
+  const showWidget = () => {
+    let widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: 'dzjvfg4wt',
+        uploadPreset: "ml_default"
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          console.log(result.info.url);
+          imageURL = result.info.url
+          console.log(imageURL)
+        }
+      }
+    );
+    widget.open();
+
+  };
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    try {
-  
 
-        const { data } = await addProduct({
-            variables: {
-              name: formState.name,
-              description: formState.description,
-              image: formState.image,
-              quantity: formState.quantity,
-              price: formState.price,
-              category: formState.category,
-              user: data2.data.user._id
-            },
-          });
+    try {
+      const { data } = await addProduct({
+        variables: {
+          name: formState.name,
+          description: formState.description,
+          image: imageURL,
+          quantity: formState.quantity,
+          price: formState.price,
+          category: formState.category,
+          user: data2.data.user._id,
+        },
+      });
+      setTrigger(false);
     } catch (error) {
       console.error(error);
     }
@@ -45,75 +57,93 @@ function CreateProduct({trigger, setTrigger}) {
     setFormState((values) => ({ ...values, [name]: value }));
   };
 
-  return (trigger) ? (
+  return trigger ? (
     <div className="popupMessage">
       <p>Hello</p>
-      <form  className="popup-inner" onSubmit={handleFormSubmit}>
-      <button className="close-btn" onClick={() => setTrigger(false)} >close ⨲</button> 
-      <div className="flex-row space-between my-2">
+      <form className="popup-inner" onSubmit={handleFormSubmit}>
+        <button className="close-btn" onClick={() => setTrigger(false)}>
+          close x
+        </button>
+        <div className="flex-row space-between my-2">
           <label htmlFor="name">Product Name:</label>
-        <input
-          value={formState.name || ""}
-          name="name"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="name"
-        />
+          <input
+            value={formState.name || ""}
+            name="name"
+            onChange={handleInputChange}
+            type="text"
+            placeholder="name"
+          />
         </div>
         <div className="flex-row space-between my-2">
           <label htmlFor="Description">Description:</label>
-        <input
-          value={formState.description || ""}
-          name="description"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="description"
-        />
+          <input
+            value={formState.description || ""}
+            name="description"
+            onChange={handleInputChange}
+            type="text"
+            placeholder="description"
+          />
         </div>
         <div className="flex-row space-between my-2">
           <label htmlFor="Image">Image:</label>
-        <input
-          value={formState.image || ""}
-          name="image"
-          onChange={handleInputChange}
-          type="file"
-          placeholder="image"
-        />
+          <button
+            onClick={showWidget}
+            type="button"
+            id="upload_widget"
+            className="cloudinary-button"
+          >
+            Upload files
+          </button>
         </div>
         <div className="flex-row space-between my-2">
           <label htmlFor="Price">Price:</label>
-        <input
-          value={formState.price || ""}
-          name="price"
-          onChange={handleInputChange}
-          type="String"
-          placeholder="price"
-        />
+          <input
+            value={formState.price || ""}
+            name="price"
+            onChange={handleInputChange}
+            type="String"
+            placeholder="price"
+          />
         </div>
         <div className="flex-row space-between my-2">
           <label htmlFor="Category">category:</label>
-        <select
-          value={formState.category}
-          onChange={handleInputChange}
-          name="category"
-        >
-          {loading ? (
-            <option> still loading</option>
-          ) : (
-            data.categories.map((item) => (
-              <option key={item._id} value={item._id}>
-                {item.name}
-              </option>
-            ))
-          )}
-        </select>
+          <select
+            value={formState.category}
+            onChange={handleInputChange}
+            name="category"
+          >
+            {loading ? (
+              <option> still loading</option>
+            ) : (
+              data.categories.map((item) => (
+                <option key={item._id} value={item._id}>
+                  {item.name}
+                </option>
+              ))
+            )}
+          </select>
         </div>
         <div className="flex-row flex-end">
-        <button type="submit" className="submit-msg"> Add Product </button>
+          <button type="submit" className="submit-msg">
+            {" "}
+            Add Product{" "}
+          </button>
         </div>
+        {/* <div className="flex-row flex-end">
+          <button
+            onClick={showWidget}
+            type="button"
+            id="upload_widget"
+            className="cloudinary-button"
+          >
+            Upload files
+          </button>
+        </div> */}
       </form>
     </div>
-  ): "";
+  ) : (
+    ""
+  );
 }
 
 export default CreateProduct;
