@@ -10,6 +10,10 @@ const conversationSchema = new Schema(
         ref: "User",
       },
     ],
+    productId: {
+      type: Schema.Types.ObjectId,
+      ref: 'Product',
+    },
   },
   { timestamps: true }
 );
