@@ -1,7 +1,39 @@
 import Conversation from "../components/Conversation/index";
 import Message from "../components/Message/index";
+import React, { useState, useEffect } from 'react';
+import { useQuery, useLazyQuery } from "@apollo/client";
+import Auth from "../utils/auth";
+import { QUERY_USER, QUERY_USER_CONVERSATION } from '../utils/queries';
+import { idbPromise } from "../utils/helpers";
 
-export default function Messenger() {
+function Messenger() {
+  const [formState, setFormState] = useState({});
+  const [conversations, setConversations] = useState([]);
+  const {data} = useQuery(QUERY_USER);
+  
+  let user;
+
+  if (data) {
+    user = data.user;
+  }
+
+  console.log(user);
+
+  // useEffect(() => {
+  //   async function getConversations() {
+  //     try {
+  //       const conversation = await idbPromise("Conversation", "get");
+  //       dispatchEvent({ type: QUERY_USER_CONVERSATION, members: [...conversation]})
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+
+  //     if (!formState.conversation.length) {
+  //       getConversations();
+  //     }
+  //   }
+  // }, [formState.conversation.length.dispatch]);
+
   return (
     <>
       <div className="messengerContainer">
@@ -40,3 +72,5 @@ export default function Messenger() {
     </>
   );
 }
+
+export default Messenger

@@ -88,6 +88,7 @@ mutation sendMessage($conversationId:String!, $senderId:ID!, $text:String!){
 
 export const ADD_PRODUCT = gql`
 mutation addProduct(
+  $user: ID!
   $name: String!
   $description: String
   $image: String
@@ -100,12 +101,14 @@ mutation addProduct(
     image: $image
     price: $price
     category: $category
+    user: $user
   ) {
     name
     _id
     description
     image
     price
+    
   }
 }
 `;
