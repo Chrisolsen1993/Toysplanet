@@ -50,38 +50,40 @@ export const ADD_USER = gql`
   }
 `;
 
-// export const CREATE_CONVERSATION = gql`
-// createConversations ($id:ID!){
-// addConversation(
-//      id:$id
-// )   
-//   {
-//      members{
-//        _id
-     
-//       }
-//     _id
-//   }
-// }
-
-// `
-// export const SEND_MESSAGE = gql`
-// sendMessage($conversationId:String!, $senderId:ID!, $text:String!){
-//   createMessage(
-//     conversationId:$conversationId,
-//     senderId:$senderId,
-//     text:$text
-//   ){
-//     conversationId
-//      sender{
-//        _id
-//        }
-//      text
+export const CREATE_CONVERSATION = gql`
+mutation createConversations ($id:ID!, $productID:ID!){
+  addConversation(
+    id:$id,
+    productID:$productID
+  ){
+    members{
+       _id
+       
+    }
+    _id
+  }
   
-//      }
-//   }
+    
+}
 
-// `
+`
+export const SEND_MESSAGE = gql`
+mutation sendMessage($conversationId:String!, $senderId:ID!, $text:String!){
+  createMessage(
+    conversationId:$conversationId,
+    senderId:$senderId,
+    text:$text
+  ){
+    conversationId
+     sender{
+       _id
+       }
+     text
+  
+     }
+  }
+
+`
 
 
 export const ADD_PRODUCT = gql`

@@ -48,6 +48,7 @@ const typeDefs = gql`
   type Conversation {
     _id: ID
     members: [User]
+    productId:Product
   }
 
   type Query {
@@ -57,7 +58,7 @@ const typeDefs = gql`
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
-    userConversation(member: ID!): [Conversation]
+    userConversation(member: ID!, productID: ID!): [Conversation]
     getMessages(id: String!): [Message]
   }
 
@@ -77,7 +78,7 @@ const typeDefs = gql`
     ): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
-    addConversation(id: ID!): Conversation
+    addConversation(id: ID!, productID: ID!): Conversation
     createMessage(
       conversationId: String!
       senderId: ID!

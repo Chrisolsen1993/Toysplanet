@@ -97,12 +97,15 @@ const resolvers = {
 
       return { session: session.id };
     },
-    userConversation: async (parent, args, context) => {
-      if (context.user) {
-        const conversation = await Conversation.find({
-          members: { $in: [context.user._id] },
-        });
-        return conversation;
+
+    userConversation: async(parent, args, context)=>{
+      if (context.user){
+        const conversation =await Conversation.find({
+          members: { $in: [context.user._id]},
+          productId: args.productID
+        })
+        return conversation
+ 
       }
     },
     getMessages: async (parent, { id }) => {
@@ -180,21 +183,23 @@ const resolvers = {
     },
     addConversation: async (parent, args, context) => {
       {
-        const newConversation = await Conversation.create({
-          members: [context.user._id, args.id],
-        });
-        return newConversation;
-      }
+       
+      const newConversation =  await Conversation.create({
+        members:[context.user._id, args.id ],
+        productId: args.productID
+      } )
+      return newConversation
+      ;}
+      
+
     },
-    createMessage: async (parent, { conversationId, text }, context) => {
-      const newMessage = await Message.create({
-        conversationId,
-        sender: context.user._id,
-        text,
-      });
-      return newMessage;
-    },
-  },
+    createMessage: async(parent, {conversationId, text}, context)=>{
+    const newMessage = await Message.create({conversationId, sender:(context.user._id), text})
+    return newMessage
+    }
+   
+  }
+
 };
 
 module.exports = resolvers;
