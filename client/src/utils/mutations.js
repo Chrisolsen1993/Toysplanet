@@ -82,7 +82,7 @@ export const SEND_MESSAGE = gql`
 
 export const ADD_PRODUCT = gql`
   mutation addProduct(
-    $user: ID!
+    $user: ID
     $name: String!
     $description: String
     $image: String
