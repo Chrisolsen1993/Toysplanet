@@ -1,49 +1,38 @@
 import Conversation from "../components/Conversation/index";
 import Message from "../components/Message/index";
-import React, { useState, useEffect, useQuery, useContext, createContext, useReducer } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useQuery, useLazyQuery } from "@apollo/client";
 import Auth from "../utils/auth";
-import { QUERY_USER } from '../utils/queries';
-import axios from "axios";
+import { QUERY_USER, QUERY_USER_CONVERSATION } from '../utils/queries';
+import { idbPromise } from "../utils/helpers";
 
 function Messenger() {
-
-  const INITIAL_STATE = {
-    user:JSON.parse(localStorage.getItem("user")) || null,
-    isFetching: false,
-    error: false,
-  };
-
-  const AuthContext = createContext(INITIAL_STATE);
-
-  const AuthContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(Auth, INITIAL_STATE);
-    
-    useEffect(()=>{
-      localStorage.setItem("user", JSON.stringify(state.user))
-    },[state.user])
-    
-    return (
-      <AuthContext.Provider
-        value={{
-          user: state.user,
-          isFetching: state.isFetching,
-          error: state.error,
-          dispatch,
-        }}
-      >
-        {children}
-      </AuthContext.Provider>
-    );
-  };
-
+  const [formState, setFormState] = useState({});
   const [conversations, setConversations] = useState([]);
-const { user } = useContext(AuthContext);
+  const {data} = useQuery(QUERY_USER);
+  
+  let user;
 
-console.log(user);
+  if (data) {
+    user = data.user;
+  }
 
-useEffect(()=>{
+  console.log(user);
 
-})
+  // useEffect(() => {
+  //   async function getConversations() {
+  //     try {
+  //       const conversation = await idbPromise("Conversation", "get");
+  //       dispatchEvent({ type: QUERY_USER_CONVERSATION, members: [...conversation]})
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+
+  //     if (!formState.conversation.length) {
+  //       getConversations();
+  //     }
+  //   }
+  // }, [formState.conversation.length.dispatch]);
 
   return (
     <>
