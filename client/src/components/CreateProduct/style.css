@@ -1,0 +1,21 @@
+input {
+  background-color: lightblue;
+  border-radius: 10px;
+  background-color: white;
+  text-shadow: 0 0 4px white;
+}
+
+#postbutton {
+  padding: 10px;
+  margin-top: 20px;
+  display: inline-block;
+  width: calc(20% - 7px);
+  margin: 10px;
+}
+#postbutton a:hover {
+  color: 3px cornflowerblue;
+}
+#postform {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnR1ddBWWt24A8gP-XrCS9pSa9eSu_d8Cvgw&usqp=CAU');
+  background-repeat: no-repeat;
+}
