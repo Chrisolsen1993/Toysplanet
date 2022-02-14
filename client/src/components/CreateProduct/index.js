@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import './style.css';
-import { QUERY_CATEGORIES } from "../../utils/queries";
+import { QUERY_CATEGORIES, QUERY_USER } from "../../utils/queries";
 import { Link } from "react-router-dom";
 // import { QUERY_PRODUCT } from '../utils/queries'
 // import Post from "../components/Post";
 // import Edit from '../components/Edit'
 // import Auth from "../utils/auth";
+
+
 import { ADD_PRODUCT } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useQuery } from "@apollo/client";
@@ -14,22 +16,23 @@ function CreateProduct({trigger, setTrigger}) {
   const [formState, setFormState] = useState({});
   const { loading, data } = useQuery(QUERY_CATEGORIES);
   const [addProduct] = useMutation(ADD_PRODUCT);
-
+  const   data2  = useQuery(QUERY_USER);
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
   
 
-       const { data }= await addProduct({
-          variables: {
-            name: formState.name,
-            description: formState.description,
-            image: formState.image,
-            quantity: formState.quantity,
-            price: formState.price,
-            category: formState.category,
-          }
-        })
+        const { data } = await addProduct({
+            variables: {
+              name: formState.name,
+              description: formState.description,
+              image: formState.image,
+              quantity: formState.quantity,
+              price: formState.price,
+              category: formState.category,
+              user: data2.data.user._id
+            },
+          });
     } catch (error) {
       console.error(error);
     }
