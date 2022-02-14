@@ -46,6 +46,7 @@ const typeDefs = gql`
   type Conversation {
     _id: ID
     members: [User]
+    productId:Product
   }
 
   type Query {

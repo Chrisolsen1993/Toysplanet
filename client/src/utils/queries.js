@@ -69,33 +69,37 @@ export const QUERY_USER = gql`
     }
   }
 `;
-// export const QUERY_USER_CONVERSATION = gql`
-// userConversations($member:ID!){
-//   userConversation(
-//       member:$member
-//       ) {
+export const QUERY_USER_CONVERSATION = gql`
+query userConversations($member:ID!, $productID:ID!){
+  userConversation(
+   member:$member,
+   productID:$productID
+ ){
 
-//         members{
-//         _id
-//         }
-//         _id
+      members{
+     _id
+           }
+     productId{
+         _id
+       }
+      _id
+ 
+   }
+}
 
-//         }
-//       }
+`
+export const GET_MESSAGES = gql`
+query getMessages($id:String!){
+getMessages(id:$id){
+    conversationId
+    sender{
+      _id
+     }
+   text
 
-// `
-// export const GET_MESSAGES = gql`
-// getMessages($id:String!){
-// getMessages(id:$id){
-//     conversationId
-//     sender{
-//       _id
-//      }
-//    text
-
-//     }
+    }
   
-//  }
+ }
 
 
-// `
+`
