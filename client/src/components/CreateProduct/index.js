@@ -43,10 +43,12 @@ function CreateProduct({trigger, setTrigger}) {
   };
 
   return (trigger) ? (
-    <div>
+    <div className="popupMessage">
       <p>Hello</p>
-      <form className="form" onSubmit={handleFormSubmit}>
-      <button className="close-btn" onClick={() => setTrigger(false)} >close ⨲</button>
+      <form  className="popup-inner" onSubmit={handleFormSubmit}>
+      <button className="close-btn" onClick={() => setTrigger(false)} >close ⨲</button> 
+      <div className="flex-row space-between my-2">
+          <label htmlFor="name">Product Name:</label>
         <input
           value={formState.name || ""}
           name="name"
@@ -54,6 +56,9 @@ function CreateProduct({trigger, setTrigger}) {
           type="text"
           placeholder="name"
         />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="Description">Description:</label>
         <input
           value={formState.description || ""}
           name="description"
@@ -61,6 +66,9 @@ function CreateProduct({trigger, setTrigger}) {
           type="text"
           placeholder="description"
         />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="Image">Image:</label>
         <input
           value={formState.image || ""}
           name="image"
@@ -68,6 +76,9 @@ function CreateProduct({trigger, setTrigger}) {
           type="file"
           placeholder="image"
         />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="Price">Price:</label>
         <input
           value={formState.price || ""}
           name="price"
@@ -75,6 +86,9 @@ function CreateProduct({trigger, setTrigger}) {
           type="String"
           placeholder="price"
         />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="Category">category:</label>
         <select
           value={formState.category}
           onChange={handleInputChange}
@@ -90,7 +104,10 @@ function CreateProduct({trigger, setTrigger}) {
             ))
           )}
         </select>
+        </div>
+        <div className="flex-row flex-end">
         <button type="submit" className="submit-msg"> Add Product </button>
+        </div>
       </form>
     </div>
   ): "";
