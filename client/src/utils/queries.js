@@ -52,6 +52,7 @@ export const QUERY_CATEGORIES = gql`
 export const QUERY_USER = gql`
   {
     user {
+      _id
       firstName
       lastName
       orders {
@@ -70,6 +71,7 @@ export const QUERY_USER = gql`
   }
 `;
 export const QUERY_USER_CONVERSATION = gql`
+
 query userConversations($member:ID!, $productID:ID!){
   userConversation(
    member:$member,
@@ -100,6 +102,7 @@ getMessages(id:$id){
     }
   
  }
+
 
 
 `
