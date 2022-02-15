@@ -62,7 +62,7 @@ function CreateProduct({ trigger, setTrigger }) {
   return trigger ? (
     <div className="popupMessage">
       <p>Hello</p>
-      <form className="popup-inner" onSubmit={handleFormSubmit}>
+      <form id="postform" className="popup-inner" onSubmit={handleFormSubmit}>
         <button className="close-btn" onClick={() => setTrigger(false)}>
           close x
         </button>
@@ -89,10 +89,11 @@ function CreateProduct({ trigger, setTrigger }) {
         <div className="flex-row space-between my-2">
           <label htmlFor="Image">Image:</label>
           <button
+            id="uploadbtn"
             onClick={showWidget}
             type="button"
             id="upload_widget"
-            className="cloudinary-button"
+            className=""
           >
             Upload files
           </button>
@@ -125,7 +126,7 @@ function CreateProduct({ trigger, setTrigger }) {
             )}
           </select>
         </div>
-        <div className="flex-row flex-end">
+        <div id="postbutton" className="flex-row flex-end">
           <button type="submit" className="submit-msg">
             {' '}
             Add Product{' '}
