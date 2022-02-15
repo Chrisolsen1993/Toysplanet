@@ -91,7 +91,7 @@ console.log(productData)
          <input 
          value={formState.text || ""} 
           type="text"
-          placeholder=" Please type your Message"
+          placeholder="Type message here"
           name="text"
           className="textarea"
           onChange={handleInputChange}

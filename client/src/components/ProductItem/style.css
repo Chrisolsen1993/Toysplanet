@@ -21,6 +21,17 @@
   border-radius: 10%;
 }
 
+.itemBtn {
+  background-color: #fec641ff;
+  box-shadow: 0 0 5px 5px #fec641ff;
+  color: #e40962;
+  font-family: 'Modak', cursive;
+}
+
+.itemText {
+  font-family: 'Modak', cursive;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;

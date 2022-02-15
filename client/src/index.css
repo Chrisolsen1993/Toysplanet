@@ -2,7 +2,7 @@
 :root {
   --primary: #233e37;
   --secondary: #0c82ba;
-  --tertiary: #b12704;
+  --tertiary: #e40962;
   --light: #fafafa;
   --dark: #27322cea;
   --error: rgb(228, 46, 1);
@@ -215,6 +215,7 @@ h1 {
   display: flex;
   padding: 20px;
   background-color: #77ade8ff;
+  flex-wrap: wrap-reverse;
 }
 
 .messenger {
@@ -240,6 +241,7 @@ h1 {
 .chatBox {
   flex: 5.5;
   height: 80vh;
+  margin-bottom: 30px;
 }
 
 .chatBoxWrapper {
