@@ -13,6 +13,22 @@ export const QUERY_PRODUCTS = gql`
         _id
         name
       }
+      user {
+        _id
+      }
+    }
+  }
+`;
+
+export const QUERY_PRODUCTS_BY_USER_ID = gql`
+  query productsByUserID($user: ID) {
+    products(user: $user) {
+      name
+      description
+      image
+      category {
+        _id
+      }
     }
   }
 `;
@@ -36,7 +52,9 @@ export const QUERY_ALL_PRODUCTS = gql`
       category {
         name
       }
-
+      user {
+        _id
+      }
     }
   }
 `;
@@ -106,7 +124,7 @@ export const QUERY_PRODUCT_ID = gql`
       category {
         name
       }
-      user{
+      user {
         firstName
         _id
       }

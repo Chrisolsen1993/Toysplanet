@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 //this is new
-import PopupMessage from '../components/PopupMessage';
-import { useStoreContext } from '../utils/GlobalState';
+import PopupMessage from "../components/PopupMessage";
+import { useStoreContext } from "../utils/GlobalState";
 import {
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
@@ -24,7 +24,7 @@ function Detail() {
 
   const { products, cart } = state;
   //add this
-  const [buttonPopup, setButtonPopup]= useState(false)
+  const [buttonPopup, setButtonPopup] = useState(false);
 
   useEffect(() => {
     // already in global store
@@ -87,8 +87,11 @@ function Detail() {
     <>
       {currentProduct && cart ? (
         <div className="detailDiv">
-          <Link className="backToProducts" to="/">← Back to Products</Link>
+          <Link className="backToProducts" to="/">
+            ← Back to Products
+          </Link>
           <h2 className="details">{currentProduct.name}</h2>
+
           <div className="details detailDescription">{currentProduct.description}</div>
           <div className="imgPriceDiv">
           <img className="details detailsImg"
@@ -106,8 +109,28 @@ function Detail() {
             </button>
             <button className="detailBtn" onClick= {()=> setButtonPopup(true)}>Send Message</button>
             <PopupMessage trigger={buttonPopup} setTrigger={setButtonPopup}>
-            </PopupMessage>
           </div>
+          <div className="imgPriceDiv">
+            <img
+              className="details detailsImg"
+              src={`${currentProduct.image}`}
+              alt={currentProduct.name}
+            />
+            <div className="details detailDescription priceDiv">
+              <strong>Price: </strong>${currentProduct.price}{" "}
+              <button onClick={addToCart}>Add to Cart</button>
+              <button
+                disabled={!cart.find((p) => p._id === currentProduct._id)}
+                onClick={removeFromCart}
+              >
+                Remove from Cart
+              </button>
+              <button onClick={() => setButtonPopup(true)}>Send Message</button>
+              <PopupMessage
+                trigger={buttonPopup}
+                setTrigger={setButtonPopup}
+              ></PopupMessage>
+            </div>
           </div>
         </div>
       ) : null}

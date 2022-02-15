@@ -1,24 +1,27 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './style.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./style.css";
 
 function Footer() {
   function showFooter() {
-      return (
-        <ul className='footerLinks'>
-          <li className='footerImg'>
-            <a href='https://github.com/Chrisolsen1993/Toysplanet' alt='githubrepo'>
-              <img src='images/github.png' alt='githublogo'/>
-            </a>
-          </li>
-          <li className='footerImg'>
-            <a href='https://linkedin.com' alt='linkedin'>
-              <img src='images/linkedin.png' alt='linkedinlogo'/>
-            </a>
-          </li>
-        </ul>
-      )
-    }
+    return (
+      <ul className="footerLinks">
+        <li className="footerImg">
+          <a
+            href="https://github.com/Chrisolsen1993/Toysplanet"
+            alt="githubrepo"
+          >
+            <img src="images/github.png" alt="githublogo" />
+          </a>
+        </li>
+        <li className="footerImg">
+          <a href="https://linkedin.com" alt="linkedin">
+            <img src="images/linkedin.png" alt="linkedinlogo" />
+          </a>
+        </li>
+      </ul>
+    );
+  }
 
   return (
     <footer className="footerContainer">
@@ -32,6 +35,7 @@ function Footer() {
         </Link>
       </h1>
     </footer>
-  )}
+  );
+}
 
-export default Footer
+export default Footer;
