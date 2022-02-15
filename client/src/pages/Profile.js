@@ -26,7 +26,7 @@ return(
       ) : null}
     </div>
 
-     <button  onClick= {()=> setButtonPopup(true)}>+ New Post </button>
+     <button  id="btnprofile" onClick= {()=> setButtonPopup(true)}>+ New Post </button>
             <CreateProduct trigger={buttonPopup} setTrigger={setButtonPopup}>
               <h2>Yesggggg</h2>
             </CreateProduct>

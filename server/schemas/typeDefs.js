@@ -45,11 +45,11 @@ const typeDefs = gql`
     sender: User
     text: String
   }
-  
+
   type Conversation {
     _id: ID
     members: [User]
-    productId:Product
+    productId: Product
   }
 
   type Query {
@@ -66,7 +66,7 @@ const typeDefs = gql`
     checkout(products: [ID]!): Checkout
 
     userConversation(member: ID!, productID: ID!): [Conversation]
-    
+
     getMessages(id: String!): [Message]
   }
 
@@ -87,7 +87,7 @@ const typeDefs = gql`
       password: String
     ): User
     updateProduct(_id: ID!, quantity: Int!): Product
-    
+
     login(email: String!, password: String!): Auth
 
     addConversation(id: ID!, productID: ID!): Conversation
@@ -99,11 +99,11 @@ const typeDefs = gql`
     ): Message
 
     addProduct(
-      user:ID!
+      user: ID
       name: String!
       description: String
       image: String
-      price: String      
+      price: String
       category: String
     ): Product
   }

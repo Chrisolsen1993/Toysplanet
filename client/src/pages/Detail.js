@@ -92,7 +92,7 @@ function Detail() {
           <div className="details detailDescription">{currentProduct.description}</div>
           <div className="imgPriceDiv">
           <img className="details detailsImg"
-            src={`/images/${currentProduct.image}`}
+            src={`${currentProduct.image}`}
             alt={currentProduct.name}
           />
           <div className="details detailDescription priceDiv">

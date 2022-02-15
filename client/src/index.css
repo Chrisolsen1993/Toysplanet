@@ -205,21 +205,21 @@ h1 {
   flex-direction: column;
   align-items: center;
   background-image: url('./assets/toystory.jpg');
-  background-attachment:fixed;
+  background-attachment: fixed;
   width: 100%;
   height: auto;
-  filter: blur(.2px);
+  filter: blur(0.2px);
 }
 
 .messengerContainer {
   display: flex;
   padding: 20px;
-  background-color:#77ADE8ff;
+  background-color: #77ade8ff;
 }
 
 .messenger {
   height: auto;
-  background-color:#77ADE8ff;
+  background-color: #77ade8ff;
   padding-right: 20px;
 }
 
@@ -275,8 +275,8 @@ h1 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #FEC641ff;
-  box-shadow: 0 0 5px 5px #FEC641ff;
+  background-color: rgb(254, 197, 65);
+  box-shadow: 0 0 5px 5px #fec641ff;
   color: white;
 }
 
@@ -296,9 +296,8 @@ h1 {
   display: flex;
   justify-content: space-around;
   font-family: 'Modak', cursive;
-  color: #e40962
-  ;
-  text-shadow: 0 0 2px #77ADE8ff;
+  color: #e40962;
+  text-shadow: 0 0 2px #77ade8ff;
   font-size: 16px;
 }
 
@@ -307,14 +306,13 @@ h1 {
   flex-direction: column;
   align-items: center;
   font-family: 'Modak', cursive;
-  color: #e40962
-  ;
-  text-shadow: 0 0 2px #77ADE8ff;
+  color: #e40962;
+  text-shadow: 0 0 2px #77ade8ff;
   font-size: 16px;
 }
 
 .loginBackground {
-  background-color: #77ADE8ff;
+  background-color: #77ade8ff;
   display: flex;
   justify-content: center;
   height: 59.4vh;
@@ -325,16 +323,15 @@ h1 {
   flex-direction: column;
   align-items: center;
   background-image: url('./assets/sun-cloud.png');
-  background-color: #77ADE8ff;
+  background-color: #77ade8ff;
   width: 100%;
   max-width: 600px;
 }
 
 .loginHeader {
   font-family: 'Modak', cursive;
-  color: #e40962
-  ;
-  text-shadow: 0 0 4px #77ADE8ff;
+  color: #e40962;
+  text-shadow: 0 0 4px #77ade8ff;
   margin-top: 40px;
 }
 
@@ -367,11 +364,11 @@ h1 {
 .checkoutContainer {
   display: flex;
   flex-wrap: wrap;
-  background-color: #FEC641ff;
+  background-color: #fec641ff;
   margin: 40px;
   padding: 5px;
   border-radius: 10px;
-  box-shadow: 0 0 5px 10px #FEC641ff;
+  box-shadow: 0 0 5px 10px #fec641ff;
 }
 
 .checkoutDiv {
@@ -380,7 +377,7 @@ h1 {
 }
 
 .detailDiv {
-  background-color: #77ADE8ff;
+  background-color: #77ade8ff;
   padding: 10%;
   width: 100%;
 }
@@ -392,8 +389,8 @@ h1 {
 }
 
 .details {
-  background-color: #FEC641ff;
-  box-shadow: 0 0 5px 5px #FEC641ff;
+  background-color: #fec641ff;
+  box-shadow: 0 0 5px 5px #fec641ff;
   border-radius: 10px;
   font-family: 'Modak', cursive;
   color: #0c82ba;
@@ -416,8 +413,8 @@ h1 {
 }
 
 .detailsImg {
-  background-color: #FEC641ff;
-  box-shadow: 0 0 5px 5px #FEC641ff;
+  background-color: #fec641ff;
+  box-shadow: 0 0 5px 5px #fec641ff;
   border-radius: 10px;
   width: 65%;
 }
@@ -447,8 +444,8 @@ h1 {
   justify-content: center;
   width: 90%;
   max-width: 650px;
-  background-color: #FEC641ff;
-  box-shadow: 0 0 5px 5px #FEC641ff;
+  background-color: #fec641ff;
+  box-shadow: 0 0 5px 5px #fec641ff;
   border-radius: 10px;
 }
 
@@ -464,7 +461,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   margin: 20px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   box-shadow: 0 0 5px 5px white;
   border-radius: 10px;
   width: 200px;
@@ -477,4 +474,27 @@ h1 {
 
 .orderCard div {
   align-self: center;
+}
+h3,
+h2 {
+  text-align: center;
+  margin: 15px;
+  font-family: 'Modak', cursive;
+  color: #e40962;
+  width: 150px;
+  /* flex-direction: column;
+  justify-content: center; */
+  margin: 20px;
+  border-radius: 10px;
+  width: 200px;
+  max-width: 200px;
+}
+h3 {
+  font-size: 40px;
+  text-align: center;
+  width: 50%;
+}
+#btnprofile {
+  text-align: center;
+  
 }
