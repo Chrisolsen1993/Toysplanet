@@ -133,10 +133,7 @@ function CreateProduct({ trigger, setTrigger }) {
           <button id="btn2" type="submit" className="submit-msg">
             {' '}
             Add Product{' '}
-          <button type="submit" className="submit-msg">
-            {" "}
-            Add Product{" "}
-          </button>
+            </button>
         </div>
       </form>
     </div>
