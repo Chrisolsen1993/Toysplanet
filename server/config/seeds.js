@@ -18,124 +18,123 @@ db.once('open', async () => {
 
   const products = await Product.insertMany([
     {
-      name: 'Tin of Cookies',
+      name: 'Toy Story',
       description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+        'The Toys that appear within the Toy Story universe are able to animate to life. Toys have a unique biology, psychology and culture compared to humans..',
       image: '/images/cookie-tin.jpg',
       category: categories[0]._id,
       price: 2.99,
       quantity: 500,
-      user: "620a9c97f6e2df516838b2b5"
+      user: '620a9c97f6e2df516838b2b5',
     },
     {
-      name: 'Canned Coffee',
-      description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
+      name: 'Sulley Plush – Monsters',
+      description: 'Bright and bushy, the spotted star of Disney and Pixar',
       image: '/images/canned-coffee.jpg',
       category: categories[0]._id,
       price: 1.99,
       quantity: 500,
-      user: "620a9c97f6e2df516838b2b5"
+      user: '620a9c97f6e2df516838b2b5',
     },
     {
-      name: 'Toilet Paper',
+      name: 'Minions',
       category: categories[1]._id,
       description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
+        'This super soft, cute and collectable stuffy will be the best versatile toy.',
       image: '/images/toilet-paper.jpg',
       price: 7.99,
       quantity: 20,
-      user: "620a9c97f6e2df516838b2b5"
+      user: '620a9c97f6e2df516838b2b5',
     },
     {
-      name: 'Handmade Soap',
+      name: 'Mickey',
       category: categories[1]._id,
       description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
+        'These timeless characters are made with amazing detail and feature soft deluxe fabrics!.',
       image: '/images/soap.jpg',
       price: 3.99,
       quantity: 50,
-      user: "620a9c97f6e2df516838b2b5"
+      user: '620a9c97f6e2df516838b2b5',
     },
     {
-      name: 'Set of Wooden Spoons',
+      name: 'Magic Hair Elf Dwarf Troll',
       category: categories[1]._id,
       description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
+        'POP Movie Cartoon Magic Hair Elf Dwarf Troll Orange Pink Blue Model Vinyl Action Figure PVC Doll Birthday Collection Toys.',
       image: '/images/wooden-spoons.jpg',
       price: 14.99,
       quantity: 100,
-      user: "620a9c97f6e2df516838b2b5"
+      user: '620a9c97f6e2df516838b2b5',
     },
     {
-      name: 'Camera',
+      name: 'Mattel&Star Wars',
       category: categories[2]._id,
       description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
+        'Perfect for any collector, this adorable, Yoda-like plush stands at 11" tall..',
       image: '/images/camera.jpg',
       price: 399.99,
       quantity: 30,
-      user: "620a9c97f6e2df516838b2b5"
+      user: '620a9c97f6e2df516838b2b5',
     },
     {
-      name: 'Tablet',
+      name: 'Mr. Potato',
       category: categories[2]._id,
       description:
-        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
+        'The Mr. Potato Head toy encourages kids to use their imaginations for lots of creative play when they mix and match the parts and pieces.',
       image: '/images/tablet.jpg',
       price: 199.99,
       quantity: 30,
-      user: "620a9c97f6e2df516838b2b5"
+      user: '620a9c97f6e2df516838b2b5',
     },
     {
-      name: 'Tales at Bedtime',
+      name: 'Bath Ducky',
       category: categories[3]._id,
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
+        'White Hot Safety Disc reveals the word HOT in white when bath water is too hot for baby (104 degrees Fahrenheit and above) Fun, easy to grasp size and shape Water tight to prevent sinking and squirting.',
       image: '/images/bedtime-book.jpg',
       price: 9.99,
       quantity: 100,
-      user: "620a9c97f6e2df516838b2b5"
+      user: '620a9c97f6e2df516838b2b5',
     },
     {
-      name: 'Spinning Top',
+      name: 'Minnie',
       category: categories[4]._id,
       description:
-        'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
+        'Disney Junior Mickey Mouse Funhouse Singing Fun Minnie Mouse Plush.',
       image: '/images/spinning-top.jpg',
       price: 1.99,
       quantity: 1000,
-      user: "620a9c97f6e2df516838b2b5"
+      user: '620a9c97f6e2df516838b2b5',
     },
     {
-      name: 'Set of Plastic Horses',
+      name: 'Shrek',
       category: categories[4]._id,
       description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
+        '32cm Shrek Plush Stuffed Animal Doll Pillow Soft Sleeping Toys Movies TV Collectible Toy.',
       image: '/images/plastic-horses.jpg',
       price: 2.99,
       quantity: 1000,
-      user: "620a9c97f6e2df516838b2b5"
+      user: '620a9c97f6e2df516838b2b5',
     },
     {
-      name: 'Teddy Bear',
+      name: 'Maui',
       category: categories[4]._id,
       description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
+        'Collect your favorite Disney Princess characters. Each sold separately.',
       image: '/images/teddy-bear.jpg',
       price: 7.99,
       quantity: 100,
-      user: "620a9c97f6e2df516838b2b5"
+      user: '620a9c97f6e2df516838b2b5',
     },
     {
-      name: 'Alphabet Blocks',
+      name: 'Tiger',
       category: categories[4]._id,
       description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
+        'Disney Tiger Plush From Winnie the Pooh 20" Tall by Mattel.',
       image: '/images/alphabet-blocks.jpg',
       price: 9.99,
       quantity: 600,
-      user: "620a9c97f6e2df516838b2b5"
+      user: '620a9c97f6e2df516838b2b5',
     },
   ])
 
