@@ -5,8 +5,7 @@ import { QUERY_CATEGORIES, QUERY_USER } from "../../utils/queries";
 import { ADD_PRODUCT } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useQuery } from "@apollo/client";
-import { Cloudinary } from "@cloudinary/url-gen";
-import { image } from "@cloudinary/url-gen/qualifiers/source";
+
 
 function CreateProduct({ trigger, setTrigger }) {
   const [formState, setFormState] = useState({});
@@ -133,10 +132,7 @@ function CreateProduct({ trigger, setTrigger }) {
           <button id="btn2" type="submit" className="submit-msg">
             {' '}
             Add Product{' '}
-          <button type="submit" className="submit-msg">
-            {" "}
-            Add Product{" "}
-          </button>
+            </button>
         </div>
       </form>
     </div>

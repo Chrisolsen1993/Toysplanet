@@ -30,7 +30,7 @@
   border-top-right-radius: 20px;
 }
 
-.itemBtn {
+.itemBtn2 {
   background-color: #fec641ff;
   box-shadow: 0 0 2px 5px #fec641ff;
   color: #e40962;
@@ -40,7 +40,7 @@
   margin: 10px;
 }
 
-.itemBtn:hover {
+.itemBtn2:hover {
   opacity: 1;
   transition: 0.5s;
 }
