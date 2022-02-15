@@ -16,7 +16,6 @@ function ProductByUserList() {
   const [state, dispatch] = useStoreContext();
 
   const { currentCategory, currentUser } = state;
-  console.log(state.products);
   const { loading, data } = useQuery(QUERY_PRODUCTS);
   useEffect(() => {
     if (data) {

@@ -18,7 +18,7 @@ function Profile() {
       <div className="profilecontainer">
         {user ? <h3>Welcome {user.firstName}</h3> : null}
       </div>
-      <div className="stylebtn">
+      <div className="">
         <button id="btnprofile" onClick={() => setButtonPopup(true)}>
           Create Post{" "}
         </button>
@@ -26,10 +26,11 @@ function Profile() {
           trigger={buttonPopup}
           setTrigger={setButtonPopup}
         ></CreateProduct>
-        <div>
+        
+      </div>
+      <div>
           <ProductByUserList />
         </div>
-      </div>
     </>
   );
 }
