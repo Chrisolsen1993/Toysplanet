@@ -91,8 +91,24 @@ function Detail() {
             ← Back to Products
           </Link>
           <h2 className="details">{currentProduct.name}</h2>
-          <div className="details detailDescription">
-            {currentProduct.description}
+
+          <div className="details detailDescription">{currentProduct.description}</div>
+          <div className="imgPriceDiv">
+          <img className="details detailsImg"
+            src={`${currentProduct.image}`}
+            alt={currentProduct.name}
+          />
+          <div className="details detailDescription priceDiv">
+            <strong>Price: </strong>${currentProduct.price}{" "}
+            <button className="detailBtn" onClick={addToCart}>Add to Cart</button>
+            <button className="detailBtn"
+              disabled={!cart.find((p) => p._id === currentProduct._id)}
+              onClick={removeFromCart}
+            >
+              Remove from Cart
+            </button>
+            <button className="detailBtn" onClick= {()=> setButtonPopup(true)}>Send Message</button>
+            <PopupMessage trigger={buttonPopup} setTrigger={setButtonPopup}>
           </div>
           <div className="imgPriceDiv">
             <img

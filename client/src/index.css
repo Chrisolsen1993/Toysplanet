@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Modak&display=swap");
 :root {
   --primary: #233e37;
-  --secondary: #0c82ba;
+  --secondary: #77ade8ff;
   --tertiary: #e40962;
   --light: #fafafa;
   --dark: #27322cea;
@@ -65,20 +65,10 @@ h6 {
   font-size: 1rem;
 }
 
-p {
-  font-size: 1.1rem;
-  margin-top: 0;
-}
-
 a {
   float: right;
   color: var(--tertiary);
   text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 button {
@@ -208,7 +198,6 @@ h1 {
   background-attachment: fixed;
   width: 100%;
   height: auto;
-  filter: blur(0.2px);
 }
 
 .messengerContainer {
@@ -386,11 +375,14 @@ h1 {
 
 .imgPriceDiv {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
   width: 100%;
+  max-width: 750px;
 }
 
 .details {
+  max-width: 750px;
   background-color: #fec641ff;
   box-shadow: 0 0 5px 5px #fec641ff;
   border-radius: 10px;
@@ -399,6 +391,8 @@ h1 {
   text-shadow: 0 0 4px white;
   margin: 15px 0;
   padding: 5px;
+  width: 100%;
+  text-align: center;
 }
 
 .backToProducts {
@@ -419,6 +413,21 @@ h1 {
   box-shadow: 0 0 5px 5px #fec641ff;
   border-radius: 10px;
   width: 65%;
+}
+
+.detailBtn {
+  background-color: #77ade8ff;
+  box-shadow: 0 0 2px 5px #77ade8ff;
+  color: white;
+  font-family: 'Modak', cursive;
+  text-shadow: 0 0 2px black;
+  opacity: 0.9;
+  margin: 10px 0;
+}
+
+.detailBtn:hover {
+  opacity: 1;
+  transition: 0.3s;
 }
 
 .priceDiv {
