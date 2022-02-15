@@ -13,6 +13,7 @@
   text-align: center;
 }
 .dropdown-content {
+  border-radius: 15px;
   display: none;
   position: absolute;
   min-width: 160px;

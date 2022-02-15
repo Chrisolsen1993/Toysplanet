@@ -1,5 +1,6 @@
 input {
-  background-color: lightblue;
+  margin-top: 50px;
+  background-color: rgba(173, 216, 230, 0.288);
   border-radius: 10px;
   background-color: white;
   text-shadow: 0 0 4px white;
@@ -7,17 +8,17 @@ input {
 
 #postbutton {
   padding: 10px;
-  margin-top: 20px;
+  margin-bottom: 300px;
   display: inline-block;
   width: calc(20% - 7px);
-  margin: 10px;
 }
 #postbutton a:hover {
-  color: 3px cornflowerblue;
+  color: 3px rgb(237, 100, 237);
 }
 #postform {
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnR1ddBWWt24A8gP-XrCS9pSa9eSu_d8Cvgw&usqp=CAU');
-  box-shadow: 0 0 5px 5px white;
+  height: 500px;
+  font-family: 'Modak', cursive;
+  text-align: center;
+  box-shadow: 0 0 6px 6px white;
   border-radius: 20px;
-  background-repeat: no-repeat;
-}
+

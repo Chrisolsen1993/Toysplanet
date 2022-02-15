@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "./style.css";
 import { QUERY_CATEGORIES, QUERY_USER } from "../../utils/queries";
@@ -67,7 +68,7 @@ function CreateProduct({ trigger, setTrigger }) {
           close x
         </button>
         <div className="flex-row space-between my-2">
-          <label htmlFor="name">Product Name:</label>
+          <label htmlFor="name">Product Name :</label>
           <input
             value={formState.name || ""}
             name="name"
@@ -77,7 +78,7 @@ function CreateProduct({ trigger, setTrigger }) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="Description">Description:</label>
+          <label htmlFor="Description">Description :</label>
           <input
             value={formState.description || ""}
             name="description"
@@ -85,9 +86,10 @@ function CreateProduct({ trigger, setTrigger }) {
             type="text"
             placeholder="description"
           />
+         
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="Image">Image:</label>
+          <label htmlFor="Image">Image :</label>
           <button
             id="uploadbtn"
             onClick={showWidget}
@@ -99,17 +101,18 @@ function CreateProduct({ trigger, setTrigger }) {
           </button>
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="Price">Price:</label>
+          <label htmlFor="Price">Price :</label>
           <input
             value={formState.price || ""}
             name="price"
             onChange={handleInputChange}
             type="String"
             placeholder="price"
+
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="Category">category:</label>
+          <label htmlFor="Category">Category:</label>
           <select
             value={formState.category}
             onChange={handleInputChange}
@@ -127,6 +130,9 @@ function CreateProduct({ trigger, setTrigger }) {
           </select>
         </div>
         <div id="postbutton" className="flex-row flex-end">
+          <button id="btn2" type="submit" className="submit-msg">
+            {' '}
+            Add Product{' '}
           <button type="submit" className="submit-msg">
             {" "}
             Add Product{" "}

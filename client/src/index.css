@@ -508,7 +508,7 @@ h3 {
 #btnprofile {
   font-family: "Modak", cursive;
   width: 200px;
-
+  margin-top: 40px;
   font-size: 30px;
   background-color: #fec641ff;
   color: #e40962;
@@ -521,7 +521,7 @@ h3 {
   display: flex;
   justify-content: center;
   padding-top: 40px;
-  height: 68vh;
+  height: 50vh;
 }
 .profilecontainer {
   display: flex;
