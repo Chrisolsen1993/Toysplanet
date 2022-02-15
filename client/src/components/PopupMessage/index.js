@@ -65,6 +65,9 @@ console.log(productData)
               text:formState.text
             }
           })
+          setFormState({
+           text:""
+          });
           
         } catch (error) {
           console.error(error);
