@@ -1,7 +1,7 @@
-import React from 'react'
-import Auth from '../../utils/auth'
-import { Link } from 'react-router-dom'
-import './style.css'
+import React from "react";
+import Auth from "../../utils/auth";
+import { Link } from "react-router-dom";
+import "./style.css";
 
 function Nav() {
   function showNavigation() {
@@ -35,11 +35,13 @@ function Nav() {
             </a>
           </li>
 
-          <li className='navImg'>
-            <Link to="/cart"><img src='images/cart.png' alt='cart' /></Link>
+          <li className="navImg">
+            <Link to="/cart">
+              <img src="images/cart.png" alt="cart" />
+            </Link>
           </li>
         </ul>
-      )
+      );
     } else {
       return (
         <ul className="navLinks">
@@ -54,21 +56,21 @@ function Nav() {
             </Link>
           </li>
         </ul>
-      )
+      );
     }
   }
 
   return (
     <header className="linkContainer">
       <h1>
-          <span role="img">
-            <img id="logoplanet" src="images/logo.planet.png" width={150} />
-          </span>
+        <span role="img">
+          <img id="logoplanet" src="images/logo.planet.png" width={150} />
+        </span>
       </h1>
 
       <nav>{showNavigation()}</nav>
     </header>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

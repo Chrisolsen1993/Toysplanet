@@ -3,18 +3,21 @@ import ProductItem from "../ProductItem";
 import { useStoreContext } from "../../utils/GlobalState";
 import { UPDATE_PRODUCTS } from "../../utils/actions";
 import { useQuery } from "@apollo/client";
-import { QUERY_PRODUCTS } from "../../utils/queries";
+import {
+  QUERY_PRODUCTS_BY_USER_ID,
+  QUERY_PRODUCTS,
+  QUERY_USER,
+} from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
 import spinner from "../../assets/spinner.gif";
 import "./style.css";
 
-function ProductList() {
+function ProductByUserList() {
   const [state, dispatch] = useStoreContext();
 
-  const { currentCategory } = state;
-
+  const { currentCategory, currentUser } = state;
+  console.log(state.products);
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-
   useEffect(() => {
     if (data) {
       dispatch({
@@ -35,12 +38,12 @@ function ProductList() {
   }, [data, loading, dispatch]);
 
   function filterProducts() {
-    if (!currentCategory) {
+    if (!currentUser) {
       return state.products;
     }
 
     return state.products.filter(
-      (product) => product.category._id === currentCategory
+      (product) => product.user._id === currentUser.user._id
     );
   }
 
@@ -67,4 +70,4 @@ function ProductList() {
   );
 }
 
-export default ProductList;
+export default ProductByUserList;

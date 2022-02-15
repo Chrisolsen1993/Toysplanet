@@ -1,38 +1,38 @@
-import React, { useState } from 'react'
-import './style.css'
-import { QUERY_CATEGORIES, QUERY_USER } from '../../utils/queries'
-import { ADD_PRODUCT } from '../../utils/mutations'
-import { useMutation } from '@apollo/client'
-import { useQuery } from '@apollo/client'
-import { Cloudinary } from '@cloudinary/url-gen'
-import { image } from '@cloudinary/url-gen/qualifiers/source'
+import React, { useState } from "react";
+import "./style.css";
+import { QUERY_CATEGORIES, QUERY_USER } from "../../utils/queries";
+import { ADD_PRODUCT } from "../../utils/mutations";
+import { useMutation } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { image } from "@cloudinary/url-gen/qualifiers/source";
 
 function CreateProduct({ trigger, setTrigger }) {
-  const [formState, setFormState] = useState({})
-  const { loading, data } = useQuery(QUERY_CATEGORIES)
-  const [addProduct] = useMutation(ADD_PRODUCT)
-  const data2 = useQuery(QUERY_USER)
+  const [formState, setFormState] = useState({});
+  const { loading, data } = useQuery(QUERY_CATEGORIES);
+  const [addProduct] = useMutation(ADD_PRODUCT);
+  const data2 = useQuery(QUERY_USER);
   const [imageUrl, setImageUrl] = useState({
-    imageUrl: '',
-  })
+    imageUrl: "",
+  });
 
   const showWidget = () => {
     let widget = window.cloudinary.createUploadWidget(
       {
-        cloudName: 'dzjvfg4wt',
-        uploadPreset: 'ml_default',
+        cloudName: "dzjvfg4wt",
+        uploadPreset: "ml_default",
       },
       (error, result) => {
-        if (!error && result && result.event === 'success') {
-          console.log('RESULT.INFO.URL', result.info.url)
-          setImageUrl(result.info.secure_url)
+        if (!error && result && result.event === "success") {
+          console.log("RESULT.INFO.URL", result.info.url);
+          setImageUrl(result.info.secure_url);
         }
-      },
-    )
-    widget.open()
-  }
+      }
+    );
+    widget.open();
+  };
   const handleFormSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     try {
       const { data } = await addProduct({
@@ -45,19 +45,19 @@ function CreateProduct({ trigger, setTrigger }) {
           category: formState.category,
           user: data2.data.user._id,
         },
-      })
-      setTrigger(false)
+      });
+      setTrigger(false);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-  }
+  };
   const handleInputChange = (event) => {
-    const name = event.target.name
-    const value = event.target.value
-    console.log([name])
-    console.log(value)
-    setFormState((values) => ({ ...values, [name]: value }))
-  }
+    const name = event.target.name;
+    const value = event.target.value;
+    console.log([name]);
+    console.log(value);
+    setFormState((values) => ({ ...values, [name]: value }));
+  };
 
   return trigger ? (
     <div className="popupMessage">
@@ -69,7 +69,7 @@ function CreateProduct({ trigger, setTrigger }) {
         <div className="flex-row space-between my-2">
           <label htmlFor="name">Product Name:</label>
           <input
-            value={formState.name || ''}
+            value={formState.name || ""}
             name="name"
             onChange={handleInputChange}
             type="text"
@@ -79,7 +79,7 @@ function CreateProduct({ trigger, setTrigger }) {
         <div className="flex-row space-between my-2">
           <label htmlFor="Description">Description:</label>
           <input
-            value={formState.description || ''}
+            value={formState.description || ""}
             name="description"
             onChange={handleInputChange}
             type="text"
@@ -101,7 +101,7 @@ function CreateProduct({ trigger, setTrigger }) {
         <div className="flex-row space-between my-2">
           <label htmlFor="Price">Price:</label>
           <input
-            value={formState.price || ''}
+            value={formState.price || ""}
             name="price"
             onChange={handleInputChange}
             type="String"
@@ -128,25 +128,15 @@ function CreateProduct({ trigger, setTrigger }) {
         </div>
         <div id="postbutton" className="flex-row flex-end">
           <button type="submit" className="submit-msg">
-            {' '}
-            Add Product{' '}
+            {" "}
+            Add Product{" "}
           </button>
         </div>
-        {/* <div className="flex-row flex-end">
-          <button
-            onClick={showWidget}
-            type="button"
-            id="upload_widget"
-            className="cloudinary-button"
-          >
-            Upload files
-          </button>
-        </div> */}
       </form>
     </div>
   ) : (
-    ''
-  )
+    ""
+  );
 }
 
-export default CreateProduct
+export default CreateProduct;

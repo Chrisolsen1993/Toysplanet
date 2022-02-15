@@ -29,6 +29,7 @@ const typeDefs = gql`
     lastName: String
     email: String
     orders: [Order]
+    products: [Product]
   }
 
   type Checkout {
@@ -55,7 +56,7 @@ const typeDefs = gql`
   type Query {
     categories: [Category]
 
-    products(category: ID, name: String): [Product]
+    products(category: ID, name: String, user: ID): [Product]
 
     product(_id: ID!): Product
 

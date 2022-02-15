@@ -1,16 +1,16 @@
 import Conversation from "../components/Conversation/index";
 import Message from "../components/Message/index";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { useQuery, useLazyQuery } from "@apollo/client";
 import Auth from "../utils/auth";
-import { QUERY_USER, QUERY_USER_CONVERSATION } from '../utils/queries';
+import { QUERY_USER, QUERY_USER_CONVERSATION } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
 
 function Messenger() {
   const [formState, setFormState] = useState({});
   const [conversations, setConversations] = useState([]);
-  const {data} = useQuery(QUERY_USER);
-  
+  const { data } = useQuery(QUERY_USER);
+
   let user;
 
   if (data) {
@@ -73,4 +73,4 @@ function Messenger() {
   );
 }
 
-export default Messenger
+export default Messenger;

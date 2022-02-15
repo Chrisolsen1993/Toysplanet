@@ -4,7 +4,7 @@ import { pluralize } from "../../utils/helpers";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
-import './style.css';
+import "./style.css";
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
@@ -46,7 +46,9 @@ function ProductItem(item) {
         </div>
         <span className="itemText">${price}</span>
       </div>
-      <button className="itemBtn" onClick={addToCart}>Add to cart</button>
+      <button className="itemBtn" onClick={addToCart}>
+        Add to cart
+      </button>
     </div>
   );
 }

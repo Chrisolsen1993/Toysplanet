@@ -12,7 +12,7 @@ const conversationSchema = new Schema(
     ],
     productId: {
       type: Schema.Types.ObjectId,
-      ref: 'Product',
+      ref: "Product",
     },
   },
   { timestamps: true }
