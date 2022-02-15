@@ -36,6 +36,7 @@ export const QUERY_ALL_PRODUCTS = gql`
       category {
         name
       }
+
     }
   }
 `;
@@ -98,11 +99,16 @@ export const GET_MESSAGES = gql`
 export const QUERY_PRODUCT_ID = gql`
   query product($productID: ID!) {
     product(_id: $productID) {
+      _id
       name
       description
       image
       category {
         name
+      }
+      user{
+        firstName
+        _id
       }
     }
   }
