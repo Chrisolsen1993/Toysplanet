@@ -11,7 +11,7 @@ function OrderHistory() {
   if (data) {
     user = data.user;
   }
-  console.log(user._id)
+
   return (
     <>
       <div className="container">

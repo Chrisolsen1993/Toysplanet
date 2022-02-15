@@ -97,14 +97,14 @@ function Detail() {
           />
           <div className="details detailDescription priceDiv">
             <strong>Price: </strong>${currentProduct.price}{" "}
-            <button onClick={addToCart}>Add to Cart</button>
-            <button
+            <button className="detailBtn" onClick={addToCart}>Add to Cart</button>
+            <button className="detailBtn"
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick={removeFromCart}
             >
               Remove from Cart
             </button>
-            <button  onClick= {()=> setButtonPopup(true)}>Send Message</button>
+            <button className="detailBtn" onClick= {()=> setButtonPopup(true)}>Send Message</button>
             <PopupMessage trigger={buttonPopup} setTrigger={setButtonPopup}>
             </PopupMessage>
           </div>

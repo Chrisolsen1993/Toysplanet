@@ -5,35 +5,76 @@
 }
 
 .cardBox {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
   background-color: white;
   margin: 20px;
-  border-radius: 10%;
+  border-radius: 20px;
   box-shadow: 0 0 5px 10px white;
-  opacity: 0.95;
 }
 
 .cardBox:hover {
-  opacity: 1;
-  transition: 2s;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  background-color: white;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 10px white;
 }
 
 .cardBox img {
-  border-radius: 10%;
+  box-shadow: 0 0 10px 10px white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .itemBtn {
   background-color: #fec641ff;
-  box-shadow: 0 0 5px 5px #fec641ff;
+  box-shadow: 0 0 2px 5px #fec641ff;
   color: #e40962;
   font-family: 'Modak', cursive;
+  text-shadow: 0 0 2px #77ade8ff;
+  opacity: 0.90;
+  margin: 10px;
+}
+
+.itemBtn:hover {
+  opacity: 1;
+  transition: 0.5s;
 }
 
 .itemText {
   font-family: 'Modak', cursive;
+  color: #e40962;
+  text-shadow: 0 0 2px white;
 }
 
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
   }
+}
+
+.itemLink {
+  background-color: #77ade8ff;
+  box-shadow: 0 0 2px 4px #77ade8ff;
+  align-self: center;
+  align-items: center;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  opacity: .9;
+}
+
+.itemLink:hover {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.itemTextTitle {
+  font-family: 'Modak', cursive;
+  color: #e40962;
+  text-shadow: 0 0 2px white;
+  text-align:inherit;
 }

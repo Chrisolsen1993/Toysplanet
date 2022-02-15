@@ -36,16 +36,16 @@ function ProductItem(item) {
 
   return (
     <div className="card px-1 py-1 cardBox">
-      <Link to={`/products/${_id}`}>
+      <Link className="itemLink" to={`/products/${_id}`}>
         <img alt={name} src={`${image}`} />
-        <p className="itemText">{name}</p>
-      </Link>
-      <div>
+        <p className="itemTextTitle">{name}</p>
+        <div>
         <div className="itemText">
           {quantity} {pluralize("item", quantity)} in stock
         </div>
         <span className="itemText">${price}</span>
       </div>
+      </Link>
       <button className="itemBtn" onClick={addToCart}>Add to cart</button>
     </div>
   );
