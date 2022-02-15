@@ -1,0 +1,19 @@
+.productContainer {
+  margin: 0 5px;
+  max-width: 1000px;
+  align-items: center;
+}
+
+@media screen and (max-width: 765px) {
+  .productContainer {
+    margin: 0 5px;
+    max-width: 300px;
+    align-items: center;
+  }
+}
+input {
+  background-color: lightblue;
+  border-radius: 10px;
+  background-color: white;
+  text-shadow: 0 0 4px white;
+}

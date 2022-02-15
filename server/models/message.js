@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 // change the setup
 const { Schema } = mongoose;
 
-
 const messageSchema = new Schema(
   {
     conversationId: {
@@ -10,7 +9,7 @@ const messageSchema = new Schema(
     },
     sender: {
       type: Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
     },
     text: {
       type: String,
