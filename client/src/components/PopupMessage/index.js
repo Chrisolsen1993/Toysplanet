@@ -67,7 +67,7 @@ function PopupMessage({trigger, setTrigger, children}) {
         <h2>{/* pass the prop here from cache the name of the user who list the product so this will be message xander for exemple  */}</h2>
         <h3> {/* the product image will be here */} </h3>
          <input  type="text"
-          placeholder=" Please type your Message"
+          placeholder="Type message here"
           name="text"
           className="textarea"
           onChange={handleInputChange}

@@ -106,7 +106,6 @@ function Detail() {
             </button>
             <button  onClick= {()=> setButtonPopup(true)}>Send Message</button>
             <PopupMessage trigger={buttonPopup} setTrigger={setButtonPopup}>
-              <h2>Yesggggg</h2>
             </PopupMessage>
           </div>
           </div>
