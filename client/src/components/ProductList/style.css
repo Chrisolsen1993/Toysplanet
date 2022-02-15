@@ -4,6 +4,12 @@
     align-items: center;
 }
 
+.productDiv {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
 @media screen and (max-width: 765px) {
     .productContainer {
         margin: 0 5px;
