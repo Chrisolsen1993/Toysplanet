@@ -1,62 +1,84 @@
 import React, { useState }from 'react';
 import './style.css';
-// import { useQuery } from "@apollo/client";
-// import { QUERY_PRODUCT } from "../utils/queries";
-import { CREATE_CONVERSATION} from "../../utils/mutations";
-import { SEND_MESSAGE} from "../../utils/mutations";
-import { useMutation } from "@apollo/client";
-// import Auth from "../utils/auth";
-import { useContext} from 'react'
-// import the two use mutation
-//Create a single function create the message
-//handle submit function if there is no conversation create one and still post the message
+import { useQuery } from "@apollo/client";
+import { useParams } from 'react-router-dom';
+ import { QUERY_PRODUCT_ID, QUERY_USER_CONVERSATION  } from "../../utils/queries";
+import { CREATE_CONVERSATION, SEND_MESSAGE} from "../../utils/mutations";
 
+import { useMutation } from "@apollo/client";
+import Auth from "../../utils/auth";
+import { useContext} from 'react'
+  
 function PopupMessage({trigger, setTrigger, children}) {
-    const { user } = useContext
-    const [formState, setFormState] = useState({});
-    // const { loading, data } = useQuery(QUERY_CATEGORIES);
+
+  const [formState, setFormState] = useState({});
+  const {id}= useParams()
+
+     const { loading, data } = useQuery(QUERY_PRODUCT_ID,{
+    variables:{productID:id}
+   });
+  const productData = data?.product || {}
+console.log(productData)
+  
+  const user = Auth.getProfile()
+    
+    console.log(user)
+    
+
+     
     const [createConversation] = useMutation(CREATE_CONVERSATION);
+
+   const { loading2, data2 } = useQuery(QUERY_USER_CONVERSATION,{
+    variables:{member:user.data._id,
+                 productID:productData._id          
+    }
+  });
+  const conversationData = data2?.userConversation || {}
+  console.log(conversationData)
     const [sendMsg] = useMutation(SEND_MESSAGE);
+
     const handleFormSubmit = async (event) => {
       event.preventDefault();
-      if (!createConversation) {   
+      let conversation = {...conversationData}
+      
+      if (!conversation._id) {   
       try {
   
          const { data }= await createConversation({
             variables: {
-              productUserId: formState.id,
-              productID: formState.productID
+              id: productData.user._id,
+              productID: productData._id
               
             }
           })
+          conversation={...data}
+          console.log("here we are",conversation)
       } catch (error) {
         console.error(error);
       }}
-      else {
+     
         try {
           const { data }= await sendMsg({
             variables: {
-              conversationId: formState.conversationId,
-              senderId: formState.senderId,
+              conversationId: conversation.addConversation._id,
+              senderId: user.data._id,
               text:formState.text
             }
           })
           
         } catch (error) {
           console.error(error);
-        }
-
-
-      }
+        
+}
     };
     const handleInputChange = (event) => {
-      const { data, value } = event.target
-      setFormState({
-        ...formState,
-        ...value,
-      })
-      console.log('value', value)
-    }
+      const name = event.target.name;
+      const value = event.target.value;
+      console.log([name]);
+      console.log(value);
+      setFormState((values) => ({ ...values, [name]: value }));
+    };
+  
 
 
     return (trigger) ? (
@@ -66,7 +88,9 @@ function PopupMessage({trigger, setTrigger, children}) {
         
         <h2>{/* pass the prop here from cache the name of the user who list the product so this will be message xander for exemple  */}</h2>
         <h3> {/* the product image will be here */} </h3>
-         <input  type="text"
+         <input 
+         value={formState.text || ""} 
+          type="text"
           placeholder="Type message here"
           name="text"
           className="textarea"

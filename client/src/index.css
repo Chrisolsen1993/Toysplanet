@@ -497,6 +497,29 @@ h3 {
   width: 50%;
 }
 #btnprofile {
-  text-align: center;
-  
+  font-family: 'Modak', cursive;
+  width: 200px;
+
+  font-size: 30px;
+  background-color: #fec641ff;
+  color: #e40962;
+  text-shadow: 3px 3px 3px white;
+  box-shadow: 0 0 5px 5px #fec641ff;
+  height: 100px;
+}
+.stylebtn {
+  background-color: #77ade8ff;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  height: 68vh;
+}
+.profilecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #77ade8ff;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
 }

@@ -17,5 +17,8 @@ input {
 }
 #postform {
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnR1ddBWWt24A8gP-XrCS9pSa9eSu_d8Cvgw&usqp=CAU');
+  box-shadow: 0 0 5px 5px white;
+  border-radius: 20px;
+
   background-repeat: no-repeat;
 }
