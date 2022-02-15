@@ -215,6 +215,7 @@ h1 {
   display: flex;
   padding: 20px;
   background-color: #77ade8ff;
+  flex-wrap: wrap-reverse;
 }
 
 .messenger {
@@ -240,6 +241,7 @@ h1 {
 .chatBox {
   flex: 5.5;
   height: 80vh;
+  margin-bottom: 30px;
 }
 
 .chatBoxWrapper {
