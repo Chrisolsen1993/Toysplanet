@@ -41,7 +41,7 @@ function Messenger() {
           <div className="chatMenu">
             <div className="chatMenuWrapper">
               <input
-                placeholder="Search for friends"
+                placeholder="Search for Products"
                 className="chatMenuInput"
               />
               <Conversation />
