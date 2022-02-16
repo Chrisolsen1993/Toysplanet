@@ -28,7 +28,7 @@
 ```
 
 
-ToySwap is a full-stack, one-stop shop web application for people who want to get swap their unused toys with new or used ones from other users.
+ToyPlanet is a full-stack, one-stop shop web application for people who want to get swap their unused toys with new or used ones from other users.
 There is no payment required to use ToySwap, we only require that you create an account so that you can navigate throughout our toy listings. 
 In order to swap with another user, you need to have at least one toy of your own saved in our database, which you can upload after you've logged in. 
 When you offer a toy to swap, the owner of the other toy has the option to confirm or deny your request. If they decide they want to swap theirs with yours,
@@ -42,6 +42,13 @@ you both can say hello to your brand new used toys! This app works great with vi
 <br />
 
 ## Demo
+<img width="1427" alt="Screen Shot 2022-02-15 at 3 59 52 PM" src="https://user-images.githubusercontent.com/85656320/154170066-5e8e5bbe-ee24-4861-88de-25fafec6d6c9.png">
+
+
+
+
+<img width="1314" alt="Screen Shot 2022-02-15 at 7 00 44 PM" src="https://user-images.githubusercontent.com/85656320/154170409-a0e457ad-41a5-4054-9116-b5c02a1d3d1c.png">
+
 
 <br />
 <br />
