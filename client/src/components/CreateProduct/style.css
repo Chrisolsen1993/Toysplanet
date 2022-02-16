@@ -1,5 +1,4 @@
 input {
-  margin-top: 50px;
   background-color: rgba(173, 216, 230, 0.288);
   border-radius: 10px;
   background-color: white;
@@ -7,19 +6,49 @@ input {
 }
 
 #postbutton {
-  padding: 10px;
-  margin-bottom: 300px;
+  align-self: center;
   display: inline-block;
   width: calc(20% - 7px);
 }
-#postbutton a:hover {
-  color: 3px rgb(237, 100, 237);
-}
+
 #postform {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   height: 500px;
   font-family: 'Modak', cursive;
   text-align: center;
   box-shadow: 0 0 6px 6px white;
   border-radius: 20px;
+  background-color: white;
+}
 
+#postform label {
+  padding: 2px 0;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  max-width: 600px;
+  width: 90%;
+}
+
+figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e40962;
+  box-shadow: 0 0 2px 5px #e40962;
+  border-radius: 5px;
+  color: white;
+  text-shadow: 1px 1px 1px #77ade8ff;
+}
+
+#btn2 {
+  align-items: center;
 }

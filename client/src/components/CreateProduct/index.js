@@ -60,13 +60,12 @@ function CreateProduct({ trigger, setTrigger }) {
   };
 
   return trigger ? (
-    <div className="popupMessage">
-      <p>Hello</p>
+    <aside>
       <form id="postform" className="popup-inner" onSubmit={handleFormSubmit}>
         <button className="close-btn" onClick={() => setTrigger(false)}>
           close x
         </button>
-        <div className="flex-row space-between my-2">
+        <figure className="flex-row space-between my-2">
           <label htmlFor="name">Product Name :</label>
           <input
             value={formState.name || ""}
@@ -75,8 +74,8 @@ function CreateProduct({ trigger, setTrigger }) {
             type="text"
             placeholder="name"
           />
-        </div>
-        <div className="flex-row space-between my-2">
+        </figure>
+        <figure className="flex-row space-between my-2">
           <label htmlFor="Description">Description :</label>
           <input
             value={formState.description || ""}
@@ -86,8 +85,8 @@ function CreateProduct({ trigger, setTrigger }) {
             placeholder="description"
           />
          
-        </div>
-        <div className="flex-row space-between my-2">
+        </figure>
+        <figure className="flex-row space-between my-2">
           <label htmlFor="Image">Image :</label>
           <button
             id="uploadbtn"
@@ -98,8 +97,8 @@ function CreateProduct({ trigger, setTrigger }) {
           >
             Upload files
           </button>
-        </div>
-        <div className="flex-row space-between my-2">
+        </figure>
+        <figure className="flex-row space-between my-2">
           <label htmlFor="Price">Price :</label>
           <input
             value={formState.price || ""}
@@ -109,8 +108,8 @@ function CreateProduct({ trigger, setTrigger }) {
             placeholder="price"
 
           />
-        </div>
-        <div className="flex-row space-between my-2">
+        </figure>
+        <figure className="flex-row space-between my-2">
           <label htmlFor="Category">Category:</label>
           <select
             value={formState.category}
@@ -127,15 +126,15 @@ function CreateProduct({ trigger, setTrigger }) {
               ))
             )}
           </select>
-        </div>
-        <div id="postbutton" className="flex-row flex-end">
+        </figure>
+        <figure id="postbutton" className="flex-row flex-end">
           <button id="btn2" type="submit" className="submit-msg">
             {' '}
             Add Product{' '}
             </button>
-        </div>
+        </figure>
       </form>
-    </div>
+    </aside>
   ) : (
     ""
   );
