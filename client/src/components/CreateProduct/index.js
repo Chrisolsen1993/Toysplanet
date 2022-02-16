@@ -63,9 +63,9 @@ function CreateProduct({ trigger, setTrigger }) {
     <aside>
       <form id="postform" className="popup-inner" onSubmit={handleFormSubmit}>
         <button className="close-btn" onClick={() => setTrigger(false)}>
-          close x
+          Close X
         </button>
-        <figure className="flex-row space-between my-2">
+        <figure className="inputField">
           <label htmlFor="name">Product Name :</label>
           <input
             value={formState.name || ""}
@@ -75,7 +75,7 @@ function CreateProduct({ trigger, setTrigger }) {
             placeholder="name"
           />
         </figure>
-        <figure className="flex-row space-between my-2">
+        <figure className="inputField">
           <label htmlFor="Description">Description :</label>
           <input
             value={formState.description || ""}
@@ -86,7 +86,7 @@ function CreateProduct({ trigger, setTrigger }) {
           />
          
         </figure>
-        <figure className="flex-row space-between my-2">
+        <figure className="inputField">
           <label htmlFor="Image">Image :</label>
           <button
             id="uploadbtn"
@@ -98,7 +98,7 @@ function CreateProduct({ trigger, setTrigger }) {
             Upload files
           </button>
         </figure>
-        <figure className="flex-row space-between my-2">
+        <figure className="inputField">
           <label htmlFor="Price">Price :</label>
           <input
             value={formState.price || ""}
@@ -109,7 +109,7 @@ function CreateProduct({ trigger, setTrigger }) {
 
           />
         </figure>
-        <figure className="flex-row space-between my-2">
+        <figure className="inputField">
           <label htmlFor="Category">Category:</label>
           <select
             value={formState.category}
@@ -127,7 +127,7 @@ function CreateProduct({ trigger, setTrigger }) {
             )}
           </select>
         </figure>
-        <figure id="postbutton" className="flex-row flex-end">
+        <figure id="postbutton">
           <button id="btn2" type="submit" className="submit-msg">
             {' '}
             Add Product{' '}
