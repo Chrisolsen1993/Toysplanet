@@ -34,7 +34,7 @@ function OrderHistory() {
                       ({ _id, image, name, price }, index) => (
                         <div key={index} className="orderCard">
                           <Link to={`/products/${_id}`}>
-                            <img alt={name} src={`/images/${image}`} />
+                            <img alt={name} src={`${image}`} />
                             <p>{name}</p>
                           </Link>
                           <div>
