@@ -11,14 +11,10 @@ function Profile() {
   const { user } = currentUser;
   return (
     <>
-      {/* <div>
-          < h3>DASHBOARD</h3>
-       </div> */}
-
       <div className="profilecontainer">
         {user ? <h3>Welcome {user.firstName}</h3> : null}
       </div>
-      <div className="">
+      <article>
         <button id="btnprofile" onClick={() => setButtonPopup(true)}>
           Create Post{" "}
         </button>
@@ -27,10 +23,10 @@ function Profile() {
           setTrigger={setButtonPopup}
         ></CreateProduct>
         
-      </div>
-      <div>
+      </article>
+      <section>
           <ProductByUserList />
-        </div>
+        </section>
     </>
   );
 }

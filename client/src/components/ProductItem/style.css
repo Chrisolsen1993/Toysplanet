@@ -1,13 +1,9 @@
-.card {
-  /* border-radius: 5px; */
-  width: 200px;
-  text-align: center;
-}
-
 .cardBox {
   display: flex;
   flex-direction: column;
   justify-content:center;
+  width: 200px;
+  text-align: center;
   background-color: white;
   margin: 20px;
   border-radius: 20px;
@@ -24,23 +20,31 @@
   box-shadow: 0 0 5px 10px white;
 }
 
+/* .cardBox div {
+
+}
+
+.cardBox div:hover {
+
+} */
+
 .cardBox img {
   box-shadow: 0 0 10px 10px white;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
-.itemBtn2 {
+.cardBox button {
   background-color: #fec641ff;
   box-shadow: 0 0 2px 5px #fec641ff;
   color: #e40962;
   font-family: 'Modak', cursive;
   text-shadow: 0 0 2px #77ade8ff;
-  opacity: 0.90;
+  opacity: 0.80;
   margin: 10px;
 }
 
-.itemBtn2:hover {
+.cardBox button:hover {
   opacity: 1;
   transition: 0.5s;
 }
@@ -57,7 +61,7 @@
   }
 }
 
-.itemLink {
+.cardBox a {
   background-color: #77ade8ff;
   box-shadow: 0 0 2px 4px #77ade8ff;
   align-self: center;
@@ -67,7 +71,7 @@
   opacity: .9;
 }
 
-.itemLink:hover {
+.cardBox a:hover {
   opacity: 1;
   transition: 0.5s;
 }
