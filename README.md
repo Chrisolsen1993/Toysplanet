@@ -42,6 +42,10 @@ you both can say hello to your brand new used toys! This app works great with vi
 <br />
 
 ## Demo
+
+https://docs.google.com/presentation/d/1nfIB0W5KuGfzbwD-WE7qG7BwSyQ8ZhaczJIlWsoyM1A/edit?usp=sharing
+
+
 <img width="1427" alt="Screen Shot 2022-02-15 at 3 59 52 PM" src="https://user-images.githubusercontent.com/85656320/154170066-5e8e5bbe-ee24-4861-88de-25fafec6d6c9.png">
 
 
@@ -84,6 +88,10 @@ npm run develop
 ## Deployment
 
 **Visit Toy Planet 🪐  on Heroku:**
+
+https://obscure-journey-81724.herokuapp.com/
+
+
 
 
 
