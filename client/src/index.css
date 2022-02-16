@@ -367,6 +367,23 @@ h1 {
   box-shadow: 0 0 5px 10px #fec641ff;
 }
 
+.checkoutContainer button {
+  background-color: #77ade8ff;
+  color: white;
+  text-shadow: 0 0px 2px #e40962;
+  box-shadow: 0 0 2px 2px #77ade8ff;
+  opacity: 0.8;
+}
+
+.checkoutContainer button:hover {
+  background-color: #77ade8ff;
+  color: white;
+  text-shadow: 0 0px 2px #e40962;
+  box-shadow: 0 0 2px 2px #77ade8ff;
+  opacity: 1;
+  transition: .5s;
+}
+
 .checkoutDiv {
   max-width: 400px;
   width: 90%;
@@ -420,7 +437,7 @@ h1 {
   width: 65%;
 }
 
-.detailBtn {
+.details button {
   background-color: #77ade8ff;
   box-shadow: 0 0 2px 5px #77ade8ff;
   color: white;
