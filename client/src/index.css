@@ -35,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Rubik", sans-serif;
+  font-family: "Modak", cursive;
   font-weight: 500;
   margin: 0px 0;
   line-height: 1.25;
@@ -67,8 +67,9 @@ h6 {
 
 a {
   float: right;
-  color: var(--tertiary);
+  color: #e40962;
   text-decoration: none;
+  font-family: "Modak", cursive;
 }
 
 button {
@@ -81,7 +82,7 @@ button {
   cursor: pointer;
   margin: 1px 1px;
   color: white;
-  background-color: var(--secondary);
+  font-family: "Modak", cursive;
 }
 
 button:hover {
@@ -296,11 +297,16 @@ h1 {
   font-size: 16px;
 }
 
+.login button {
+  background-color: #e40962;
+  box-shadow: 0 0 2px 5px #e40962;
+}
+
 .loginBackground {
   background-color: #77ade8ff;
   display: flex;
   justify-content: center;
-  height: 59.4vh;
+  height: 70vh;
 }
 
 .loginContainer {
@@ -318,6 +324,11 @@ h1 {
   color: #e40962;
   text-shadow: 0 0 4px #77ade8ff;
   margin-top: 40px;
+}
+
+.signup button {
+  background-color: #e40962;
+  box-shadow: 0 0 2px 5px #e40962;
 }
 
 .signupInfo {

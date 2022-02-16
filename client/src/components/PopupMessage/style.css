@@ -32,7 +32,7 @@
 .close-btn {
     font-family: 'Modak', cursive;
     background-color: #e40962;
-    box-shadow: 0 0 5px 5px #e40962;
+    box-shadow: 0 0 2px 5px #e40962;
 }
 
 .textarea{
