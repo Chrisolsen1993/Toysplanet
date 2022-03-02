@@ -4,8 +4,21 @@ import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
 import ProductByUserList from "../components/ProductByUserList";
 import { useStoreContext } from "../utils/GlobalState";
+import { UPDATE_CURRENT_USER } from "../utils/actions";
 function Profile() {
+  const { data } = useQuery(QUERY_USER);
   const [state, dispatch] = useStoreContext();
+  
+  useEffect(() => {
+    if (data) {
+      dispatch({
+        type: UPDATE_CURRENT_USER,
+        currentUser: data,
+      });
+    }
+  }, [data, dispatch]);
+
+
   const [buttonPopup, setButtonPopup] = useState(false);
   const { currentUser } = state;
   const { user } = currentUser;
