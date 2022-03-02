@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import "./style.css";
-import { QUERY_CATEGORIES, QUERY_USER } from "../../utils/queries";
+import { QUERY_CATEGORIES, QUERY_USER, QUERY_ALL_PRODUCTS} from "../../utils/queries";
 import { ADD_PRODUCT } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useQuery } from "@apollo/client";
@@ -10,7 +10,22 @@ import { useQuery } from "@apollo/client";
 function CreateProduct({ trigger, setTrigger }) {
   const [formState, setFormState] = useState({});
   const { loading, data } = useQuery(QUERY_CATEGORIES);
-  const [addProduct] = useMutation(ADD_PRODUCT);
+  const [addProduct] = useMutation(ADD_PRODUCT,  {
+    update(cache, { data: { addProduct } }) {
+      try {
+        const { products } = cache.readQuery({ query: QUERY_ALL_PRODUCTS});
+
+        cache.writeQuery({
+          query: QUERY_ALL_PRODUCTS,
+          data: { products: [...products, addProduct] },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
+
+
   const data2 = useQuery(QUERY_USER);
   const [imageUrl, setImageUrl] = useState({
     imageUrl: "",
@@ -51,12 +66,21 @@ function CreateProduct({ trigger, setTrigger }) {
       console.error(error);
     }
   };
+  // const handleInputChange = (event) => {
+  //   const name = event.target.name;
+  //   const value = event.target.value;
+  //   console.log([name]);
+  //   console.log(value);
+  //   setFormState((values) => ({ ...values, [name]: value }));
+  // };
+
   const handleInputChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
+    const { name, value } = event.target;
+    // const name = event.target.name;
+    // const value = event.target.value;
     console.log([name]);
     console.log(value);
-    setFormState((values) => ({ ...values, [name]: value }));
+    setFormState({ ...formState, [name]: value });
   };
 
   return trigger ? (
@@ -129,7 +153,7 @@ function CreateProduct({ trigger, setTrigger }) {
         </figure>
         <figure id="postbutton">
           <button id="btn2" type="submit" className="submit-msg">
-            {' '}
+          {' '}
             Add Product{' '}
             </button>
         </figure>
