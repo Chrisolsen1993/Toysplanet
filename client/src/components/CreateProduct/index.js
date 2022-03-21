@@ -8,8 +8,14 @@ import { useQuery } from "@apollo/client";
 
 
 function CreateProduct({ trigger, setTrigger }) {
-  const [formState, setFormState] = useState({});
-  const { loading, data } = useQuery(QUERY_CATEGORIES);
+  const [formState, setFormState] = useState({
+    name:'',
+    description:'',
+    price: '',
+    category:''
+
+  });
+  const { loading, error, data } = useQuery(QUERY_CATEGORIES);
   const [addProduct] = useMutation(ADD_PRODUCT,  {
     update(cache, { data: { addProduct } }) {
       try {
@@ -47,24 +53,22 @@ function CreateProduct({ trigger, setTrigger }) {
     widget.open();
   };
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
+   
 
     try {
       const { data } = await addProduct({
         variables: {
-          name: formState.name,
-          description: formState.description,
+          ...formState,
           image: imageUrl,
-          quantity: formState.quantity,
-          price: formState.price,
-          category: formState.category,
+    
           user: data2.data.user._id,
         },
       });
-      setTrigger(false);
+      //setTrigger(false);
     } catch (error) {
       console.error(error);
     }
+    event.preventDefault();
   };
   // const handleInputChange = (event) => {
   //   const name = event.target.name;
@@ -82,7 +86,14 @@ function CreateProduct({ trigger, setTrigger }) {
     console.log(value);
     setFormState({ ...formState, [name]: value });
   };
+if (loading){
+  console.log(loading)
+  return <h3>loading</h3>
+} 
+if (error){
 
+  return <h3>{error.message}</h3>
+}
   return trigger ? (
     <aside>
       <form id="postform" className="popup-inner" onSubmit={handleFormSubmit}>
@@ -92,7 +103,7 @@ function CreateProduct({ trigger, setTrigger }) {
         <figure className="inputField">
           <label htmlFor="name">Product Name :</label>
           <input
-            value={formState.name || ""}
+            value={formState.name }
             name="name"
             onChange={handleInputChange}
             type="text"
@@ -102,7 +113,7 @@ function CreateProduct({ trigger, setTrigger }) {
         <figure className="inputField">
           <label htmlFor="Description">Description :</label>
           <input
-            value={formState.description || ""}
+            value={formState.description }
             name="description"
             onChange={handleInputChange}
             type="text"
@@ -125,7 +136,7 @@ function CreateProduct({ trigger, setTrigger }) {
         <figure className="inputField">
           <label htmlFor="Price">Price :</label>
           <input
-            value={formState.price || ""}
+            value={formState.price }
             name="price"
             onChange={handleInputChange}
             type="String"
@@ -153,8 +164,8 @@ function CreateProduct({ trigger, setTrigger }) {
         </figure>
         <figure id="postbutton">
           <button id="btn2" type="submit" className="submit-msg">
-          {' '}
-            Add Product{' '}
+          
+            Add Product
             </button>
         </figure>
       </form>
