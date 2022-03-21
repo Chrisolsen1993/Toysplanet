@@ -10,12 +10,14 @@ function Profile() {
   const [state, dispatch] = useStoreContext();
   
   useEffect(() => {
+    console.log("yes",data)
     if (data) {
       dispatch({
         type: UPDATE_CURRENT_USER,
         currentUser: data,
       });
     }
+    console.log("yes",dispatch)
   }, [data, dispatch]);
 
 
