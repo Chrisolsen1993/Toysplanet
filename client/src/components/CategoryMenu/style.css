@@ -1,10 +1,14 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;1,700&family=Fruktur&family=Red+Hat+Mono:ital,wght@1,300&display=swap'); */
+
 .categoryNav {
   margin: 0 10px;
   overflow: hidden;
   margin-bottom: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .dropdown-content a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   float: none;
   color: black;
   padding: 18px 18px;
@@ -13,13 +17,14 @@
   text-align: center;
 }
 .dropdown-content {
-  border-radius: 15px;
+  /* border-radius: px; */
   display: none;
   position: absolute;
   min-width: 160px;
   background-color: #20639b;
-  padding: 5px;
+  padding-bottom: 10px;
   grid-auto-flow: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .dropdown {
   overflow: hidden;
@@ -31,12 +36,15 @@
 .dropbtn {
   padding: 12px 14px;
   background-color: #20639b;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 10px;
 }
 
 .dropdownBtn {
   margin: 8px 4px;
   background-color: white;
   color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .dropdown:hover .dropdown-content {
