@@ -1,16 +1,37 @@
 
 import React, { useState } from "react";
 import "./style.css";
-import { QUERY_CATEGORIES, QUERY_USER } from "../../utils/queries";
+import { QUERY_CATEGORIES, QUERY_USER, QUERY_ALL_PRODUCTS} from "../../utils/queries";
 import { ADD_PRODUCT } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useQuery } from "@apollo/client";
 
 
 function CreateProduct({ trigger, setTrigger }) {
-  const [formState, setFormState] = useState({});
-  const { loading, data } = useQuery(QUERY_CATEGORIES);
-  const [addProduct] = useMutation(ADD_PRODUCT);
+  const [formState, setFormState] = useState({
+    name:'',
+    description:'',
+    price: '',
+    category:''
+
+  });
+  const { loading, error, data } = useQuery(QUERY_CATEGORIES);
+  const [addProduct] = useMutation(ADD_PRODUCT,  {
+    update(cache, { data: { addProduct } }) {
+      try {
+        const { products } = cache.readQuery({ query: QUERY_ALL_PRODUCTS});
+
+        cache.writeQuery({
+          query: QUERY_ALL_PRODUCTS,
+          data: { products: [...products, addProduct] },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
+
+
   const data2 = useQuery(QUERY_USER);
   const [imageUrl, setImageUrl] = useState({
     imageUrl: "",
@@ -32,62 +53,75 @@ function CreateProduct({ trigger, setTrigger }) {
     widget.open();
   };
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
+   
 
     try {
       const { data } = await addProduct({
         variables: {
-          name: formState.name,
-          description: formState.description,
+          ...formState,
           image: imageUrl,
-          quantity: formState.quantity,
-          price: formState.price,
-          category: formState.category,
+    
           user: data2.data.user._id,
         },
       });
-      setTrigger(false);
+      //setTrigger(false);
     } catch (error) {
       console.error(error);
     }
+    event.preventDefault();
   };
+  // const handleInputChange = (event) => {
+  //   const name = event.target.name;
+  //   const value = event.target.value;
+  //   console.log([name]);
+  //   console.log(value);
+  //   setFormState((values) => ({ ...values, [name]: value }));
+  // };
+
   const handleInputChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
+    const { name, value } = event.target;
+    // const name = event.target.name;
+    // const value = event.target.value;
     console.log([name]);
     console.log(value);
-    setFormState((values) => ({ ...values, [name]: value }));
+    setFormState({ ...formState, [name]: value });
   };
+if (loading){
+  console.log(loading)
+  return <h3>loading</h3>
+} 
+if (error){
 
+  return <h3>{error.message}</h3>
+}
   return trigger ? (
-    <div className="popupMessage">
-      <p>Hello</p>
+    <aside>
       <form id="postform" className="popup-inner" onSubmit={handleFormSubmit}>
         <button className="close-btn" onClick={() => setTrigger(false)}>
-          close x
+          Close X
         </button>
-        <div className="flex-row space-between my-2">
+        <figure className="inputField">
           <label htmlFor="name">Product Name :</label>
           <input
-            value={formState.name || ""}
+            value={formState.name }
             name="name"
             onChange={handleInputChange}
             type="text"
             placeholder="name"
           />
-        </div>
-        <div className="flex-row space-between my-2">
+        </figure>
+        <figure className="inputField">
           <label htmlFor="Description">Description :</label>
           <input
-            value={formState.description || ""}
+            value={formState.description }
             name="description"
             onChange={handleInputChange}
             type="text"
             placeholder="description"
           />
          
-        </div>
-        <div className="flex-row space-between my-2">
+        </figure>
+        <figure className="inputField">
           <label htmlFor="Image">Image :</label>
           <button
             id="uploadbtn"
@@ -98,19 +132,19 @@ function CreateProduct({ trigger, setTrigger }) {
           >
             Upload files
           </button>
-        </div>
-        <div className="flex-row space-between my-2">
+        </figure>
+        <figure className="inputField">
           <label htmlFor="Price">Price :</label>
           <input
-            value={formState.price || ""}
+            value={formState.price }
             name="price"
             onChange={handleInputChange}
             type="String"
             placeholder="price"
 
           />
-        </div>
-        <div className="flex-row space-between my-2">
+        </figure>
+        <figure className="inputField">
           <label htmlFor="Category">Category:</label>
           <select
             value={formState.category}
@@ -127,15 +161,15 @@ function CreateProduct({ trigger, setTrigger }) {
               ))
             )}
           </select>
-        </div>
-        <div id="postbutton" className="flex-row flex-end">
+        </figure>
+        <figure id="postbutton">
           <button id="btn2" type="submit" className="submit-msg">
-            {' '}
-            Add Product{' '}
+          
+            Add Product
             </button>
-        </div>
+        </figure>
       </form>
-    </div>
+    </aside>
   ) : (
     ""
   );

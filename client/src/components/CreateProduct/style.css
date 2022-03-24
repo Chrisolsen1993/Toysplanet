@@ -1,25 +1,106 @@
 input {
-  margin-top: 50px;
   background-color: rgba(173, 216, 230, 0.288);
   border-radius: 10px;
   background-color: white;
   text-shadow: 0 0 4px white;
 }
 
-#postbutton {
-  padding: 10px;
-  margin-bottom: 300px;
-  display: inline-block;
-  width: calc(20% - 7px);
-}
-#postbutton a:hover {
-  color: 3px rgb(237, 100, 237);
-}
 #postform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 500px;
   font-family: 'Modak', cursive;
   text-align: center;
-  box-shadow: 0 0 6px 6px white;
+  box-shadow: 0 0 6px 6px #fec641ff;
   border-radius: 20px;
+  background-color: #fec641ff;
+}
 
+@media screen and (max-width: 550px) {
+  #postform {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    font-family: 'Modak', cursive;
+    text-align: center;
+    box-shadow: 0 0 6px 6px #fec641ff;
+    border-radius: 20px;
+    background-color: #fec641ff;
+    height: fit-content;
+  }
+
+  
+}
+
+#postform label {
+  padding: 2px 0;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  max-width: 600px;
+  width: 90%;
+}
+
+figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e40962;
+  box-shadow: 0 0 2px 5px #e40962;
+  border-radius: 5px;
+  color: white;
+  text-shadow: 1px 1px 1px #77ade8ff;
+  max-width: 550px;
+  width: 70%;
+}
+
+#btn2 {
+  align-items: center;
+  background-color: #e40962;
+  box-shadow: 0 0 2px 5px #e40962;
+  opacity: 0.8;
+}
+
+#btn2:hover {
+  align-items: center;
+  background-color: #e40962;
+  box-shadow: 0 0 2px 5px #e40962;
+  opacity: 1;
+  transition: .5s;
+}
+
+.inputField {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.inputField select {
+  background-color: #77ade8ff;
+  color: white;
+  text-shadow: 0px 0px 2px #fec641ff;
+  box-shadow: 0 0 1px 2px #77ade8ff;
+  border-radius: 5px;
+  padding: 2px;
+  border-color: #77ade8ff;
+}
+
+.inputField button {
+  background-color: #77ade8ff;
+  color: white;
+  text-shadow: 0px 0px 2px #fec641ff;
+  box-shadow: 0 0 1px 2px #77ade8ff;
+  border-radius: 5px;
+  padding: 2px;
+  border-color: #77ade8ff;
 }

@@ -35,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Rubik", sans-serif;
+  font-family: "Modak", cursive;
   font-weight: 500;
   margin: 0px 0;
   line-height: 1.25;
@@ -67,8 +67,9 @@ h6 {
 
 a {
   float: right;
-  color: var(--tertiary);
+  color: #e40962;
   text-decoration: none;
+  font-family: "Modak", cursive;
 }
 
 button {
@@ -81,7 +82,7 @@ button {
   cursor: pointer;
   margin: 1px 1px;
   color: white;
-  background-color: var(--secondary);
+  font-family: "Modak", cursive;
 }
 
 button:hover {
@@ -101,22 +102,16 @@ span[role="img"] {
   cursor: default;
 }
 
-form {
-  width: 40%;
-}
-
 input {
-  font-size: 1rem;
-  padding: 0.25rem;
-  border: 1px solid var(--dark);
+  border: 2px solid black;
   outline: none;
   border-radius: 3px;
-  transition: box-shadow 0.2s;
+  padding: 5px;
+  font-family: "Modak", cursive;
 }
 
-input:focus {
-  border: 1px solid var(--secondary);
-  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5);
+select {
+  font-family: "Modak", cursive;
 }
 
 .flex-row {
@@ -302,11 +297,16 @@ h1 {
   font-size: 16px;
 }
 
+.login button {
+  background-color: #e40962;
+  box-shadow: 0 0 2px 5px #e40962;
+}
+
 .loginBackground {
   background-color: #77ade8ff;
   display: flex;
   justify-content: center;
-  height: 59.4vh;
+  height: 70vh;
 }
 
 .loginContainer {
@@ -324,6 +324,11 @@ h1 {
   color: #e40962;
   text-shadow: 0 0 4px #77ade8ff;
   margin-top: 40px;
+}
+
+.signup button {
+  background-color: #e40962;
+  box-shadow: 0 0 2px 5px #e40962;
 }
 
 .signupInfo {
@@ -360,6 +365,23 @@ h1 {
   padding: 5px;
   border-radius: 10px;
   box-shadow: 0 0 5px 10px #fec641ff;
+}
+
+.checkoutContainer button {
+  background-color: #77ade8ff;
+  color: white;
+  text-shadow: 0 0px 2px #e40962;
+  box-shadow: 0 0 2px 2px #77ade8ff;
+  opacity: 0.8;
+}
+
+.checkoutContainer button:hover {
+  background-color: #77ade8ff;
+  color: white;
+  text-shadow: 0 0px 2px #e40962;
+  box-shadow: 0 0 2px 2px #77ade8ff;
+  opacity: 1;
+  transition: .5s;
 }
 
 .checkoutDiv {
@@ -415,7 +437,7 @@ h1 {
   width: 65%;
 }
 
-.detailBtn {
+.details button {
   background-color: #77ade8ff;
   box-shadow: 0 0 2px 5px #77ade8ff;
   color: white;
@@ -516,13 +538,25 @@ h3 {
   box-shadow: 0 0 5px 5px #fec641ff;
   height: 100px;
 }
-.stylebtn {
+
+article {
+  background-color: #77ade8ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
   background-color: #77ade8ff;
   display: flex;
   justify-content: center;
-  padding-top: 40px;
-  height: 50vh;
 }
+
+section .productContainer {
+  margin: 30px;
+}
+
 .profilecontainer {
   display: flex;
   flex-direction: column;

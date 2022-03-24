@@ -42,7 +42,9 @@ function ProductByUserList() {
     }
 
     return state.products.filter(
-      (product) => product.user._id === currentUser.user._id
+      (product) => product.user._id === currentUser.user._id,
+      console.log("oui",  currentUser.user._id)
+      // (product) => product.user._id === currentUser
     );
   }
 
