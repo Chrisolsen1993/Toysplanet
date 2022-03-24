@@ -1,3 +1,5 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;1,700&family=Fruktur&family=Red+Hat+Mono:ital,wght@1,300&display=swap'); */
+
 input {
   background-color: rgba(173, 216, 230, 0.288);
   border-radius: 10px;
@@ -11,7 +13,7 @@ input {
   justify-content: center;
   align-items: center;
   height: 500px;
-  font-family: 'Modak', cursive;
+
   text-align: center;
   box-shadow: 0 0 6px 6px #fec641ff;
   border-radius: 20px;
@@ -26,15 +28,13 @@ input {
     justify-content: center;
     align-items: center;
     height: 500px;
-    font-family: 'Modak', cursive;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     box-shadow: 0 0 6px 6px #fec641ff;
     border-radius: 20px;
     background-color: #fec641ff;
     height: fit-content;
   }
-
-  
 }
 
 #postform label {
@@ -76,7 +76,7 @@ figure {
   background-color: #e40962;
   box-shadow: 0 0 2px 5px #e40962;
   opacity: 1;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .inputField {

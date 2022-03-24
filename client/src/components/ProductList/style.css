@@ -1,19 +1,20 @@
 .productContainer {
-    margin: 0 5px;
-    max-width: 1000px;
-    align-items: center;
+  margin: 0 5px;
+  max-width: 1000px;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .productDiv {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 @media screen and (max-width: 765px) {
-    .productContainer {
-        margin: 0 5px;
-        max-width: 300px;
-        align-items: center;
-    }
+  .productContainer {
+    margin: 0 5px;
+    max-width: 300px;
+    align-items: center;
+  }
 }

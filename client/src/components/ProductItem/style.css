@@ -1,7 +1,10 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;1,700&family=Fruktur&family=Red+Hat+Mono:ital,wght@1,300&display=swap'); */
+
 .cardBox {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   width: 200px;
   text-align: center;
   background-color: white;
@@ -13,7 +16,7 @@
 .cardBox:hover {
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   background-color: white;
   margin: 20px;
   border-radius: 20px;
@@ -32,15 +35,15 @@
   box-shadow: 0 0 10px 10px white;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  color: black;
 }
 
 .cardBox button {
   background-color: #fec641ff;
-  box-shadow: 0 0 2px 5px #fec641ff;
-  color: #e40962;
-  font-family: 'Modak', cursive;
-  text-shadow: 0 0 2px #77ade8ff;
-  opacity: 0.80;
+  padding-top: 10px;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
   margin: 10px;
 }
 
@@ -50,9 +53,8 @@
 }
 
 .itemText {
-  font-family: 'Modak', cursive;
-  color: #e40962;
-  text-shadow: 0 0 2px white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
 }
 
 @media screen and (max-width: 768px) {
@@ -68,7 +70,7 @@
   align-items: center;
   border-radius: 20px;
   margin-bottom: 15px;
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .cardBox a:hover {
@@ -77,8 +79,8 @@
 }
 
 .itemTextTitle {
-  font-family: 'Modak', cursive;
-  color: #e40962;
-  text-shadow: 0 0 2px white;
-  text-align:inherit;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+
+  text-align: inherit;
 }

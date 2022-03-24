@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Modak&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
 :root {
   --primary: #233e37;
   --secondary: #77ade8ff;
@@ -22,7 +22,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Karla", sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
@@ -35,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500;
   margin: 0px 0;
   line-height: 1.25;
@@ -69,7 +69,7 @@ a {
   float: right;
   color: #e40962;
   text-decoration: none;
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button {
@@ -82,7 +82,7 @@ button {
   cursor: pointer;
   margin: 1px 1px;
   color: white;
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button:hover {
@@ -91,27 +91,22 @@ button:hover {
 
 button[disabled] {
   cursor: default;
-  opacity: 0.8;
 }
 
 img {
   max-width: 100%;
 }
 
-span[role="img"] {
-  cursor: default;
-}
-
 input {
   border: 2px solid black;
   outline: none;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 5px;
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 select {
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .flex-row {
@@ -189,7 +184,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("./assets/toystory.jpg");
+  background-image: url('./assets/toystory.jpg');
   background-attachment: fixed;
   width: 100%;
   height: auto;
@@ -281,7 +276,7 @@ h1 {
 .signup {
   display: flex;
   justify-content: space-around;
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #e40962;
   text-shadow: 0 0 2px #77ade8ff;
   font-size: 16px;
@@ -291,7 +286,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #e40962;
   text-shadow: 0 0 2px #77ade8ff;
   font-size: 16px;
@@ -313,14 +308,14 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("./assets/sun-cloud.png");
+  background-image: url('./assets/sun-cloud.png');
   background-color: #77ade8ff;
   width: 100%;
   max-width: 600px;
 }
 
 .loginHeader {
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #e40962;
   text-shadow: 0 0 4px #77ade8ff;
   margin-top: 40px;
@@ -336,7 +331,7 @@ h1 {
 }
 
 .cart h2 {
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #fd9e16;
   text-shadow: 3px 3px 3px black;
   margin-bottom: 35px;
@@ -364,7 +359,7 @@ h1 {
   margin: 40px;
   padding: 5px;
   border-radius: 10px;
-  box-shadow: 0 0 5px 10px #fec641ff;
+  /* box-shadow: 0 0 5px 10px #fec641ff; */
 }
 
 .checkoutContainer button {
@@ -381,7 +376,7 @@ h1 {
   text-shadow: 0 0px 2px #e40962;
   box-shadow: 0 0 2px 2px #77ade8ff;
   opacity: 1;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .checkoutDiv {
@@ -408,7 +403,7 @@ h1 {
   background-color: #fec641ff;
   box-shadow: 0 0 5px 5px #fec641ff;
   border-radius: 10px;
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #0c82ba;
   text-shadow: 0 0 4px white;
   margin: 15px 0;
@@ -441,7 +436,7 @@ h1 {
   background-color: #77ade8ff;
   box-shadow: 0 0 2px 5px #77ade8ff;
   color: white;
-  font-family: 'Modak', cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-shadow: 0 0 2px black;
   opacity: 0.9;
   margin: 10px 0;
@@ -462,7 +457,7 @@ h1 {
 }
 
 .orderTitle {
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #e40962;
   text-shadow: 3px 3px 3px white;
   font-size: 35px;
@@ -512,7 +507,7 @@ h3,
 h2 {
   text-align: center;
   margin: 15px;
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #e40962;
   width: 150px;
   /* flex-direction: column;
@@ -528,7 +523,7 @@ h3 {
   width: 50%;
 }
 #btnprofile {
-  font-family: "Modak", cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   width: 200px;
   margin-top: 40px;
   font-size: 30px;
