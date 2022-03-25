@@ -169,6 +169,23 @@ const resolvers = {
       console.log("ADD PRODUCT ARGSSS", args);
       return newProduct;
     },
+
+    removeProduct: async (parent, { productID }, context) => {
+      if (context.user) {
+        const product = await Product.findOneAndDelete({
+          _id: productID,
+          user: context.user._id,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { products: product._id } }
+        );
+
+        return product;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
