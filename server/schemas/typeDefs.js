@@ -88,6 +88,7 @@ const typeDefs = gql`
       password: String
     ): User
     updateProduct(_id: ID!, quantity: Int!): Product
+    removeProduct(productID: ID!): Product
 
     login(email: String!, password: String!): Auth
 

@@ -105,3 +105,18 @@ export const ADD_PRODUCT = gql`
     }
   }
 `;
+export const REMOVE_PRODUCT = gql`
+mutation removeProduct($productID: ID!){
+  removeProduct(productID:$productID){
+    name
+    description
+    image
+    price
+    category {
+      name
+    }
+    user {
+      firstName
+    }
+  }
+}`
