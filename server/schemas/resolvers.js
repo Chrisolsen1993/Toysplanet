@@ -186,6 +186,23 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+
+    editProduct: async (parent, args, context) => {
+      if (context.user){
+      const editProduct =  await Product.findByIdAndUpdate(
+        { _id: args._id },
+        {  name: args.name,
+          description: args.description,
+          image: args.image,
+          price: args.price,
+          category: args.category },
+        { new: true }
+      );
+    return editProduct;    
+      }
+      throw new AuthenticationError('You need to be logged in!');
+  },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
