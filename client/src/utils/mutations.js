@@ -120,3 +120,33 @@ mutation removeProduct($productID: ID!){
     }
   }
 }`
+export const EDIT_PRODUCT = gql`
+mutation editProduct(
+  $productID:ID!
+  $name: String!
+  $description: String
+  $image: String
+  $price: String
+  $category: String
+
+) {
+  editProduct(
+    _id:$productID
+    name: $name
+    description: $description
+    image: $image
+    price: $price
+    category: $category
+    
+  ) {
+    name
+    description
+    image
+    price
+    category {
+      name
+    }
+    
+  }
+}`
+
