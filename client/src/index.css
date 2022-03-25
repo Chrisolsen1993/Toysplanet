@@ -27,6 +27,7 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
+  height: 100%;
 }
 
 h1,
@@ -187,7 +188,7 @@ h1 {
   background-image: url('./assets/toystory.jpg');
   background-attachment: fixed;
   width: 100%;
-  height: auto;
+  height: 550px;
 }
 
 .messengerContainer {
@@ -333,7 +334,7 @@ h1 {
 .cart h2 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #fd9e16;
-  text-shadow: 3px 3px 3px black;
+
   margin-bottom: 35px;
 }
 
@@ -546,6 +547,7 @@ section {
   background-color: #77ade8ff;
   display: flex;
   justify-content: center;
+  height: 300px;
 }
 
 section .productContainer {
@@ -557,7 +559,7 @@ section .productContainer {
   flex-direction: column;
   align-items: center;
   background-color: #77ade8ff;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   width: 100%;
-  height: auto;
+  height: 100%;
 }
