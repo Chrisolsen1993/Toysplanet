@@ -31,7 +31,7 @@ const resolvers = {
         params.user = user;
       }
 
-      return await Product.find(params).populate("category");
+      return await Product.find(params).populate("category").populate("user");
     },
     product: async (parent, { _id }) => {
       const product = await Product.findById(_id)
