@@ -15,6 +15,7 @@ export const QUERY_PRODUCTS = gql`
       }
       user {
         _id
+        firstName
       }
     }
   }

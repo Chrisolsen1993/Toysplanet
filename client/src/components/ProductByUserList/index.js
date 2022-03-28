@@ -15,7 +15,11 @@ import "./style.css";
 function ProductByUserList() {
   const [state, dispatch] = useStoreContext();
 
-  const { currentCategory, currentUser } = state;
+  const { currentCategory, currentUser, products } = state;
+  console.log("The truth", products)
+  const {category, description, user}= products
+  
+  console.log(products[20])
   const { loading, data } = useQuery(QUERY_PRODUCTS);
   useEffect(() => {
     if (data) {
@@ -35,6 +39,7 @@ function ProductByUserList() {
       });
     }
   }, [data, loading, dispatch]);
+  
 
   function filterProducts() {
     if (!currentUser) {
@@ -42,9 +47,14 @@ function ProductByUserList() {
     }
 
     return state.products.filter(
-      (product) => product.user._id === currentUser.user._id,
-      console.log("oui",  currentUser.user._id)
-      // (product) => product.user._id === currentUser
+
+      (product) => {
+        if (product.user === null){
+          return false
+        }
+        return product?.user?._id === currentUser?.user?._id}
+  
+    
     );
   }
 

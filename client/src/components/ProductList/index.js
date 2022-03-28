@@ -55,6 +55,7 @@ function ProductList() {
               image={product.image}
               name={product.name}
               price={product.price}
+              user={product.user}
               quantity={product.quantity}
             />
           ))}
