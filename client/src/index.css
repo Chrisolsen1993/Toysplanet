@@ -9,10 +9,10 @@
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
   opacity: 0, 5;
-  /* background-repeat: no-repeat; */
-  /* background-attachment: fixed; */
+  /* background-repeat: no-repeat; 
+   background-attachment: fixed;  */
 
-  width: 100%;
+  /* width: 100%; */
 }
 
 * {
@@ -185,7 +185,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   background-image: url('./assets/toystory.jpg');
-  height: 1600px;
+  height: 100%;
   width: 100%;
 }
 
@@ -283,8 +283,9 @@ h1 {
 
 .login {
   display: flex;
+
   flex-direction: column;
-  align-items: center;
+  align-items: end;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #e40962;
   text-shadow: 0 0 2px #77ade8ff;
@@ -294,23 +295,35 @@ h1 {
 .login button {
   background-color: #e40962;
   box-shadow: 0 0 2px 5px #e40962;
+  
+}
+#submitBtn{
+  margin:20px auto;
 }
 
 .loginBackground {
   background-color: #77ade8ff;
   display: flex;
   justify-content: center;
-  height: 70vh;
+  height: 85vh;
+}
+.inputField {
+  box-shadow: 0 0 2px 5px rgb(12, 74, 139);
+  background-color: rgb(12, 74, 139);
 }
 
 .loginContainer {
   display: flex;
+
   flex-direction: column;
   align-items: center;
-  background-image: url('./assets/sun-cloud.png');
+  
+  background-repeat: no-repeat;
   background-color: #77ade8ff;
   width: 100%;
   max-width: 600px;
+  justify-content: center;
+  background-position-y: center;
 }
 
 .loginHeader {
@@ -320,14 +333,36 @@ h1 {
   margin-top: 40px;
 }
 
-.signup button {
-  background-color: #e40962;
-  box-shadow: 0 0 2px 5px #e40962;
+.signup .signBtn{
+  margin-left: 5px;
+  height: 50px;
+    width:160px;
 }
+.signup button{
+  height: 80%;
+  width:80%;
+  border: 2px solid #e40962;
+  background: #e40962;
+  color: white;
+  font-size: 15px;
+  font-weight: 550;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 
-.signupInfo {
-  margin-top: 25px;
 }
+.signupInfo {
+  margin-top:0px;
+ margin-left:50px;
+ 
+}
+/* #postbutton{
+  
+    height: 50px;
+    width:100px;
+
+} */
+
 
 .cart h2 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -545,19 +580,41 @@ section {
   background-color: #77ade8ff;
   display: flex;
   justify-content: center;
-  height: 300px;
+
 }
 
 section .productContainer {
   margin: 30px;
 }
-
+.procontainer{
+  
+  width: 100%;
+  height: 100%;
+}
 .profilecontainer {
+  
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #77ade8ff;
   /* background-attachment: fixed; */
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
+}
+@media screen and (max-width: 550px) {
+  #postform {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    box-shadow: 0 0 6px 6px #fec641ff;
+    border-radius: 20px;
+    background-color: #fec641ff;
+    height: fit-content;
+  }
 }

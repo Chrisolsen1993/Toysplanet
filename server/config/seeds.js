@@ -28,7 +28,7 @@ db.once("open", async () => {
       user: "620a9c97f6e2df516838b2b5",
     },
     {
-      name: "Sulley Plush – Monsters",
+      name: "Sulley–Monsters",
       description: "Bright and bushy, the spotted star of Disney and Pixar",
       image: "/images/canned-coffee.jpg",
       category: categories[0]._id,

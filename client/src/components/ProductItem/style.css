@@ -37,6 +37,14 @@
   border-top-right-radius: 20px;
   color: black;
 }
+.image{
+  width:200px;
+  height: 200px;
+}
+.itemTextp{
+  color:rgba(204, 36, 36, 0.904);
+  font-size: 18px;
+}
 
 .cardBox button {
   background-color: #fec641ff;

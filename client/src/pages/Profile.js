@@ -25,10 +25,11 @@ function Profile() {
   const { currentUser } = state;
   const { user } = currentUser;
   return (
-    <>
+    <> 
+    <div className="procontainer">
       <div className="profilecontainer">
         {user ? <h3>Welcome {user.firstName}</h3> : null}
-      </div>
+        </div>
       <article>
         <button id="btnprofile" onClick={() => setButtonPopup(true)}>
           Create Post{" "}
@@ -42,6 +43,8 @@ function Profile() {
       <section>
           <ProductByUserList />
         </section>
+        
+    </div>
     </>
   );
 }

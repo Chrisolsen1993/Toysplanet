@@ -2,6 +2,7 @@ import { useReducer } from "react";
 import {
   UPDATE_PRODUCTS,
   ADD_PRODUCT,
+  DELETE_PRODUCT,
   ADD_TO_CART,
   UPDATE_CART_QUANTITY,
   REMOVE_FROM_CART,
@@ -28,6 +29,16 @@ export const reducer = (state, action) => {
         ...state,
         product: [...action.product],
       };
+
+      case DELETE_PRODUCT:
+        let newStates = state.products.filter((product) => {
+          return product._id !== action._id;
+        });
+
+        return {
+          ...state,
+         state: newStates
+        };
 
     case ADD_TO_CART:
       return {

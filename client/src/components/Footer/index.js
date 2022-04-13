@@ -25,7 +25,7 @@ function Footer() {
 
   return (
     <footer className="footerContainer">
-      <footer>{showFooter()}</footer>
+      <div>{showFooter()}</div>
       <h1>
         <Link to="/">
           {/* <span role="img" aria-label="shopping bag"> 🧸</span> */}
