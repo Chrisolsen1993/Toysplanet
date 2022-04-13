@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect }from "react";
 import { useLocation } from 'react-router-dom';
 
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers";
 import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
+import { ADD_TO_CART, UPDATE_CART_QUANTITY, DELETE_PRODUCT} from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 import "./style.css";
 //import { QUERY_PRODUCT_ID, QUERY_USER_CONVERSATION } from "../../utils/queries";
@@ -45,9 +45,18 @@ function ProductItem(props) {
       idbPromise("cart", "put", { ...props, purchaseQuantity: 1 });
     }
   };
+//   useEffect(() => {
+//     if (removeProduct) {
+//      idbPromise("products", "delete").then((products) => {
+//        dispatch({
+//          type: DELETE_PRODUCT,
+//          products: products,
+//        });
+//      });
+//    }
+//  }, [removeProduct]);
   const handleDeleteProduct = async (productID, event) => {
-
-    // get token
+// get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -58,13 +67,15 @@ function ProductItem(props) {
       const { data } = await removeProduct({
         variables: { productID },
       });
-      
       // upon success, remove book's id from localStorage
       //removeBookId(bookId);
+     
     } catch (err) {
       console.error(err);
     }
+    window.location.reload()
     event.prevent.default()
+   
   };
 
   return (location.pathname==="/profile")?
@@ -77,7 +88,7 @@ function ProductItem(props) {
     <div className="itemText">
       {quantity} {pluralize("item", quantity)} in stock
     </div>
-    <span className="itemText">${price}</span>
+    <span className="itemTextp">${price}</span>
   </div>
   <button className="" >
    edit Product
@@ -88,19 +99,19 @@ function ProductItem(props) {
 </div>:(
     <div className="card px-1 py-1 cardBox">
       <Link to={`/products/${_id}`}>
-        <img alt={name} src={`${image}`} />
+        <img className="image" alt={name} src={`${image}`} />
         <p className="itemText">{name}</p>
       </Link>
       <div>
         <div className="itemText">
           {quantity} {pluralize("item", quantity)} in stock
         </div>
-        <span className="itemText">${price}</span>
+        <span className="itemTextp">${price}</span>
       </div>
       <button className="" onClick={addToCart}>
         Add to cart
       </button>
-      <div> <p>Created by {props?.user?.firstName}</p></div>
+      <div> <p>Created by <span  className="itemTextp">{props?.user?.firstName}</span></p></div>
     </div>
   );
 }

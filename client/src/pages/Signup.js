@@ -33,12 +33,14 @@ function Signup(props) {
   return (
     <div className="loginBackground">
       <div className="loginContainer">
-        <Link to="/login">← Go to Login</Link>
+       
 
-        <h2 className="loginHeader">Signup</h2>
-        <form className="signup" onSubmit={handleFormSubmit}>
+        
+        <asside>
+        <form  id="postform" className="popup-inner" className="signup" onSubmit={handleFormSubmit}>
           <div className="signupInfo">
-            <div className="flex-row space-between my-2">
+          <div className="flex-row space-between my-2"> 
+            <figure className="inputField">
               <label htmlFor="firstName">First Name:</label>
               <input
                 placeholder="First"
@@ -47,8 +49,10 @@ function Signup(props) {
                 id="firstName"
                 onChange={handleChange}
               />
-            </div>
-            <div className="flex-row space-between my-2">
+              </figure>
+            
+           
+            <figure className="inputField">
               <label htmlFor="lastName">Last Name:</label>
               <input
                 placeholder="Last"
@@ -57,13 +61,13 @@ function Signup(props) {
                 id="lastName"
                 onChange={handleChange}
               />
-            </div>
-            <div className="flex-row flex-end">
-              <button type="submit">Submit</button>
-            </div>
+              </figure>
+            
+            
           </div>
-          <div className="signupInfo">
+         
             <div className="flex-row space-between my-2">
+            <figure className="inputField">
               <label htmlFor="email">Email:</label>
               <input
                 placeholder="youremail@test.com"
@@ -72,8 +76,10 @@ function Signup(props) {
                 id="email"
                 onChange={handleChange}
               />
+              </figure>
             </div>
             <div className="flex-row space-between my-2">
+            <figure className="inputField">
               <label htmlFor="pwd">Password:</label>
               <input
                 placeholder="******"
@@ -82,9 +88,20 @@ function Signup(props) {
                 id="pwd"
                 onChange={handleChange}
               />
+              </figure>
+              
             </div>
+
+       
+          
           </div>
+          <figure id="postbutton">
+              <button className="signBtn" type="submit">Signup</button>
+               <Link to="/login"><button className="signBtn">Login Instead</button></Link>
+            </figure>
+          
         </form>
+        </asside>
       </div>
     </div>
   );

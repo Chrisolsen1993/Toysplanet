@@ -55,8 +55,7 @@ figure {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e40962;
-  box-shadow: 0 0 2px 5px #e40962;
+
   border-radius: 5px;
   color: white;
   text-shadow: 1px 1px 1px #77ade8ff;

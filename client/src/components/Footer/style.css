@@ -1,5 +1,7 @@
 footer {
+ 
     background-image: linear-gradient(#77ADE8ff, #FEC641ff );
+ 
 }
 
 #logoplanet {
@@ -17,11 +19,14 @@ footer {
 }
 
 .footerContainer {
+    position: relative;
+    bottom: 0;
     display: flex;
     justify-content: flex-end;
     padding: 5px 5px;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 
 .footerImg {
